@@ -1,0 +1,103 @@
+.mainContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+    padding-bottom: 50px;
+}
+.headingContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    width: 50%;
+}
+.headingContainer .p1 {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.headingContainer img {
+    object-fit: cover;
+    margin-top: 50px;
+}
+.headingContainer .p2 {
+    margin-top: 45px;
+    font-size: 1.1rem;
+    text-align: center;
+    color: gray;
+}
+.container {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+.container .cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+.container .cardContainer .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .cardContainer .card .cardImg {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    outline: none;
+}
+.container .cardContainer .card .cardImg img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+.container .cardContainer .card .cardText {
+    margin-left: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.container .cardContainer .card .cardText p {
+    color: gray;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin: auto 0;
+}
+.container .buttonWrapper {
+    margin-top: 80px;
+}
+.container .buttonWrapper button {
+    background: #2091F9;
+    color: #fff;
+    border-radius: 35px;
+    border: none;
+    padding: 8px 30px;
+    font-weight: 700;
+    transition: all 0.3s ease-in-out;
+}
+.container .buttonWrapper button:hover {
+    background: #116dc4;
+}
+
+@media (max-width: 992px) {
+
+}
+@media (max-width: 576px) {
+    .mainContainer {
+        padding: 80px 0;
+    }
+    .headingContainer {
+        width: 70%;
+    }
+}
+@media (max-width: 400px) {
+
+}

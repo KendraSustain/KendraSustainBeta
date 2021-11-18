@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+.mainContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 0;
+    background: #252B42;
+}
+.headingContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    width: 50%;
+    color: #fff;
+}
+.headingContainer .p1 {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.headingContainer .p2 {
+    margin-top: 7px;
+    font-size: 0.9rem;
+    text-align: center;
+    color: rgb(219, 211, 211);
+}
+.container {
+    position: relative;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    min-height: 60vh;
+}
+.container .card {
+    position: absolute;
+    /* top: 15%; */
+    min-width: 200px;
+    background: #fff;
+    border: 1px solid #DEDEDE;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+.container .card:first-child {
+    left: 0;
+}
+.container .card:last-child {
+    right: 0;
+}
+.container .card .topSection {
+    width: 70%;
+}
+.container .card .topSection .cardHeading {
+    font-size: 0.9rem;
+    font-weight: 900;
+    text-align: center;
+    color: #252B42;
+    font-family: 'Roboto', sans-serif;
+}
+.container .card .topSection .cardSubHeading {
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-align: center;
+    color: gray;
+    margin-top: 4px;
+}
+.container .card .priceSection {
+    margin: 12px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .card .priceSection .price {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #252B42;
+}
+.container .card .priceSection .cardText {
+    margin-left: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.container .card .priceSection .cardText p {
+    color: gray;
+    font-size: 0.6rem;
+    font-weight: 600;
+    margin: auto 0;
+}
+.container .card .priceSection .cardText p:first-child {
+    color: #252B42;
+    font-size: 0.7rem;
+    font-weight: 900;
+}
+.container .card .featureSection p {
+    color: gray;
+    font-size: 0.6rem;
+    font-weight: 600;
+    margin: 5px 0;
+}
+.container .card .buttonWrapper {
+    width: 100%;
+    margin-top: 15px;
+}
+.container .card .buttonWrapper button {
+    background: #2091F9;
+    width: 100%;
+    color: #fff;
+    border-radius: 35px;
+    border: none;
+    padding: 8px 30px;
+    font-weight: 700;
+    transition: all 0.3s ease-in-out;
+}
+.container .card .buttonWrapper button:hover {
+    background: #116dc4;
+}
+.container .card:hover {
+    background: #2091F9;
+    padding: 40px 20px;
+    box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+}
+.container .card:hover .topSection .cardHeading {
+    color: #fff;
+}
+.container .card:hover .topSection .cardSubHeading {
+    color: #fff;
+}
+.container .card:hover .priceSection .price {
+    color: #fff;
+}
+.container .card:hover .priceSection .cardText p {
+    color: #fff;
+}
+.container .card:hover .priceSection .cardText p:first-child {
+    color: #fff;
+}
+.container .card:hover .featureSection p {
+    color: #fff;
+}
+.container .card:hover .buttonWrapper button {
+    background: #fff;
+    color: #2091F9;
+}
+.container .card:hover .buttonWrapper button:hover {
+    background: #116dc4;
+    color: #fff;
+}
+
+@media (max-width: 992px) {
+
+}
+@media (max-width: 576px) {
+    .headingContainer {
+        width: 80%;
+    }
+    .headingContainer .p2{
+        font-size: 1rem;
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        min-height: 165vh;
+        height: auto;
+    }
+    .container .card {
+        width: 80%;
+    }
+    .container .card:first-child {
+        top: 0;
+        left: initial;
+    }
+    .container .card:last-child {
+        bottom: 0;
+        right: initial;
+    }
+    .container .card .topSection .cardHeading {
+        font-size: 1.1rem;
+    }
+    .container .card .topSection .cardSubHeading {
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-align: center;
+        color: gray;
+        margin-top: 4px;
+    }
+    .container .card .priceSection {
+        margin: 12px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container .card .priceSection .price {
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: #252B42;
+    }
+    .container .card .priceSection .cardText {
+        margin-left: 10px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .container .card .priceSection .cardText p {
+        color: gray;
+        font-size: 0.6rem;
+        font-weight: 600;
+        margin: auto 0;
+    }
+    .container .card .priceSection .cardText p:first-child {
+        color: #252B42;
+        font-size: 0.7rem;
+        font-weight: 900;
+    }
+    .container .card .featureSection p {
+        color: gray;
+        font-size: 0.6rem;
+        font-weight: 600;
+        margin: 5px 0;
+    }
+    .container .card .buttonWrapper {
+        width: 100%;
+        margin-top: 15px;
+    }
+    .container .card:hover {
+        background: #2091F9;
+        padding: 40px 20px;
+        box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+    }
+}
+
+@media (max-width: 400px) {
+
+}

@@ -1,0 +1,166 @@
+.navTop {
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navTop .brand {
+    position: relative;
+    width: 300px;
+    margin-left: 30px;
+}
+.navTop ul {
+    display: flex;
+    list-style: none;
+}
+.navTop .navOptions {
+    padding: 40px 0x;
+    margin-top: 10px;
+}
+.navTop ul.navOptions li {
+    margin: 0 10px;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
+}
+.navTop ul.navOptions li:hover {
+    border: 1px solid #116dc4;
+    background: #2091F9;
+}
+.navTop ul.navOptions li a {
+    font-size: 0.8em;
+    color: #fff;
+}
+.navTop .socialMediaIcons {
+    margin-top: 10px;
+    padding: 50px 0;
+}
+.navTop ul.socialMediaIcons li {
+    margin: 0 20px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.navTop ul.socialMediaIcons li:last-child {
+    background: #2091F9;
+    border-radius: 20px;
+    padding: 5px 15px;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+.navTop ul.socialMediaIcons li:last-child i {
+    font-size: 0.8em;
+    margin-right: 5px;
+}
+.navTop ul.socialMediaIcons li i {
+    font-size: 1.5em;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+.navTop ul.socialMediaIcons li:hover i {
+    font-size: 1.2em;
+    color: #2091F9;
+}
+.navTop ul.socialMediaIcons li:last-child:hover {
+    background-color: #116dc4;
+}
+.navTop ul.socialMediaIcons li:last-child:hover i {
+    font-size: 0.8em;
+    color: #fff;
+}
+
+@media (max-width: 1000px) {
+    .navTop .brand {
+        position: absolute;
+        top: 25px;
+    }
+    .navTop .navOptions {
+        margin-top: 30px;
+        margin-left: 30px;
+    }
+    .navTop .socialMediaIcons {
+        margin-top: 30px;
+        margin-right: 30px;
+    }
+}
+@media (max-width: 776px) {
+    .navTop .navOptions {
+        margin: 0 auto;
+        margin-top: 70px;
+    }
+    .navTop .socialMediaIcons {
+        position: absolute;
+        top: 0;
+        right: 0px;
+        padding: 0;
+    }
+}
+@media (max-width: 576px) {
+    .navTop {
+        z-index: 0;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        width: 80%;
+        right: 0;
+    }
+    .navTop ul {
+        flex-direction: column;
+    }
+    .navTop .navOptions {
+        padding: 0px 70px;
+    }
+    .navTop ul.navOptions li {
+        transition: all 0.3s ease-in-out;
+        text-align: center;
+        padding: 0 5px;
+    }
+    .navTop ul.navOptions li:hover {
+        border: 1px solid #116dc4;
+        background: #2091F9;
+    }
+    .navTop ul.navOptions li a {
+        color: #252B42;
+        white-space: nowrap;
+    }
+    .navTop ul.navOptions li:hover a {
+        color: #fff;
+        font-weight: bold;
+    }
+    .navTop .socialMediaIcons {
+        position: absolute;
+        top: unset;
+        bottom: -50px;
+        right: 0;
+        padding: 0;
+        flex-direction: row;
+    }
+    .navTop ul.socialMediaIcons li {
+        margin: 0 10px;
+    }
+    .navTop ul.socialMediaIcons li i {
+        font-size: 1.2em;
+        color: #2091F9;
+        transition: all 0.3s ease-in-out;
+    }
+    .navTop ul.socialMediaIcons li:hover i {
+        font-size: 1.2em;
+        color: #252B42;
+    }
+    .navTop ul.socialMediaIcons li:last-child i {
+        color: #fff;
+    }
+    .navTop ul.socialMediaIcons li:last-child:hover i {
+        font-size: unset;
+        color: #252B42;
+    }
+    .navTop .brand {
+        height: 30px;
+        width: 200px;
+        margin-left: -30px;
+        left: 25%;
+    }
+}

@@ -1,0 +1,198 @@
+.mainContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+    padding-bottom: 80px;
+}
+.headingContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    width: 50%;
+}
+.headingContainer .p1 {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.headingContainer .p2 {
+    margin-top: 7px;
+    font-size: 0.8rem;
+    text-align: center;
+    color: gray;
+}
+.container {
+    margin-top: 25px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: 1px solid #DDDDDD;
+    box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+    border-radius: 15px;
+    padding: 30px;
+    margin-right: 30px;
+}
+.formContainer label {
+    font-weight: 800;
+}
+.formContainer input[type="text"], .formContainer input[type="email"], .formContainer textarea {
+    background: #F5F5F5;
+    border: 1px solid #E8E8E8;
+    color: #18171D;
+    border-radius: 35px;
+    border: none;
+    padding: 8px 15px;
+    margin-top: 20px;
+    outline-color: #116dc4;
+    text-decoration: none;
+    min-width: 220px;
+}
+.formContainer textarea {
+    border-radius: 5px;
+    padding-top: 16px;
+    resize: none;
+}
+.formContainer div {
+    position: relative;
+    width: 100%;
+}
+.formContainer div input[type=submit] {
+    width: 40%;
+    font-weight: 700;
+    background: #2091F9;
+    color: #fff;
+    border-radius: 35px;
+    border: none;
+    padding: 8px;
+    margin-top: 25px;
+    transition: all 0.3s ease-in-out;
+}
+.formContainer div input[type=submit]:hover {
+    background: #116dc4;
+}
+.contactDetailsContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    margin-left: 20px;
+}
+.contactDetailsContainer .addressbar {
+    display: flex;
+    justify-content: center;
+}
+.contactDetailsContainer .addressbar .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contactDetailsContainer .addressbar .box i {
+    color: #2091F9;
+    font-size: 1.3rem;
+    transition: all 0.3s ease-in-out;
+}
+.contactDetailsContainer .addressbar .box i:hover {
+    color: #2b4e6e;
+}
+.contactDetailsContainer .addressbar .box p {
+    text-align: center;
+    font-size: 0.6rem;
+    color: gray;
+    font-weight: 600;
+    margin: 10px 15px;
+}
+.contactDetailsContainer .mapContainer {
+    margin-top: 15px;
+    width: 80%;
+    height: 240px;
+}
+.contactDetailsContainer .mapContainer iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.contactDetailsContainer .socailMediaIconsContainer {
+    margin-top: 15px;
+}
+.contactDetailsContainer .socailMediaIconsContainer .socialMediaIcons {
+    list-style: none;
+    margin-top: 10px;
+    display: flex;
+}
+.contactDetailsContainer .socailMediaIconsContainer ul.socialMediaIcons li {
+    margin-right: 20px;
+    transition: all 0.3s ease-in-out;
+}
+.contactDetailsContainer .socailMediaIconsContainer ul.socialMediaIcons li i {
+    font-size: 1.4em;
+    color: #2091F9;
+    transition: all 0.3s ease-in-out;
+}
+.contactDetailsContainer .socailMediaIconsContainer ul.socialMediaIcons li:hover i {
+    color: #2b4e6e;
+}
+
+@media (max-width: 992px) {
+
+}
+@media (max-width: 576px) {
+    .mainContainer {
+        padding: 70px 0;
+        padding-bottom: 40px;
+    }
+    .headingContainer {
+        width: 70%;
+    }
+    .container {
+        flex-direction: column;
+    }
+    .formContainer {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    .contactDetailsContainer {
+        margin: 10px 0;
+    }
+    .contactDetailsContainer .addressbar {
+        flex-direction: column;
+        margin: 20px auto;
+    }
+    .contactDetailsContainer .addressbar .box {
+        flex-direction: row;
+    }
+    .contactDetailsContainer .addressbar .box i {
+        font-size: 1.5rem;
+        min-width: 30px;
+    }
+    .contactDetailsContainer .addressbar .box p {
+        text-align: left;
+        font-size: 0.7rem;
+    }
+    .contactDetailsContainer .mapContainer {
+        margin-top: 15px;
+        width: 100%;
+        height: 240px;
+    }
+    .contactDetailsContainer .socailMediaIconsContainer {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+
+}
