@@ -10,7 +10,14 @@ const PieChart = (props) => {
   const data = {
     datasets: [
       {
-        backgroundColor: '#3F51B5',
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)',
+          'rgb(213, 45, 183)',
+          'rgb(255, 107, 69)'
+
+        ],
         barPercentage: 0.5,
         barThickness: 12,
         borderRadius: 4,
@@ -20,7 +27,14 @@ const PieChart = (props) => {
         maxBarThickness: 10
       },
       {
-        backgroundColor: 'black',
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)',
+          'rgb(213, 45, 183)',
+          'rgb(255, 107, 69)'
+
+        ],
         barPercentage: 0.5,
         barThickness: 12,
         borderRadius: 4,

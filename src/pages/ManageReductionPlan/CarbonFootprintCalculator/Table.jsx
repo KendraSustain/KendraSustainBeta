@@ -22,7 +22,7 @@ export default function BasicTable() {
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                        <TableCell align="right">Months</TableCell>
+                        <TableCell align="right">Months(2021)</TableCell>
                         <TableCell align="right">Jan</TableCell>
                         <TableCell align="right">Feb</TableCell>
                         <TableCell align="right">Mar</TableCell>

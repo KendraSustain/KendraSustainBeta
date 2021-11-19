@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Bar } from 'react-chartjs-2';
 import styles from './CarbonFootprint.module.css';
 import Grid from '@mui/material/Grid';
@@ -9,14 +9,24 @@ import { Context } from '../../../context/Contexts';
 import LineGraph from '../CarbonFootprintCalculator/LineGraph';
 import LineGraph2 from '../CarbonFootprintCalculator/LineGraph2';
 import BasicTable from './Table';
+import Cookies from 'js-cookie';
+import jwt_decode from "jwt-decode";
 // import BarChart from '../../../components/chart/BarChart';
 
 const CarbonFootprintCalculator = () => {
     const theme = useTheme();
     const context = useContext(Context);
-
+    const [line, setLine] = useState(< LineGraph />)
+    const [line2, setLine2] = useState(<LineGraph2 />)
+    const [table, setTable] = useState(<BasicTable />)
 
     useEffect(() => {
+        let decoded = jwt_decode(Cookies.get("tok_sustain"));
+        if (decoded.id !== 63) {
+            setLine()
+            setLine2()
+            setTable()
+        }
         context.setShowNavTop(true);
     }, [context]);
 
@@ -25,14 +35,14 @@ const CarbonFootprintCalculator = () => {
             <Box sx={{ width: '100%' }}>
                 <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                     <Grid item xs={6}>
-                        <LineGraph2 />
+                        {line2}
                     </Grid>
 
                     <Grid item xs={6}>
-                        <LineGraph />
+                        {line}
                     </Grid>
                     <Grid item xs={12}>
-                        <BasicTable />
+                        {table}
                     </Grid>
                 </Grid>
             </Box>

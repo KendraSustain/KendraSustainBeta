@@ -86,14 +86,8 @@ const LineGraph = (props) => {
     return (
         <Card {...props} className={styles.chart} style={{ borderRadius: "15px" }}>
             <CardHeader
-                // action={(
-                //   <Button
-                //     endIcon={<ArrowDropDownIcon fontSize="small" />}
-                //     size="small">
-                //     Last 7 days
-                //   </Button>
-                // )}
-                title="Total Energy Consumption(All Assets)"
+
+                title="Total Energy Consumption(All Assets) *1000 kgCO2/kWh"
             />
             <Divider />
             <CardContent>

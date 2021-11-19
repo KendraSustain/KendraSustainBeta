@@ -93,7 +93,7 @@ const LineGraph2 = (props) => {
                 //     Last 7 days
                 //   </Button>
                 // )}
-                title="Total Carbon Emission(All Assets)"
+                title="Total Carbon Emission(All Assets) *1000 kgCO2/kWh"
             />
             <Divider />
             <CardContent>
