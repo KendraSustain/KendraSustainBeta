@@ -37,31 +37,51 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 const LineChart = (props) => {
   const theme = useTheme();
+  console.log(props.data)
 
   const data = {
-    datasets: [
+    datasets: props.data.datasets.map((item, pos) => (
+
       {
         backgroundColor: '#3F51B5',
         barPercentage: 0.5,
         barThickness: 12,
         borderRadius: 4,
         categoryPercentage: 0.5,
-        data: [252, 130, 311, 354, 332, 359, 346, 338],
-        label: "Carbon Intensity",
+        data: item.data,
+        label: item.label,
         maxBarThickness: 10
-      },
-      // {
-      //   backgroundColor: '#EEEEEE',
-      //   barPercentage: 0.5,
-      //   barThickness: 12,
-      //   borderRadius: 4,
-      //   categoryPercentage: 0.5,
-      //   data: [434, 153, 565, 387, 654, 413, 765, 462, 204],
-      //   maxBarThickness: 10
-      // }
-    ],
-    labels: ['00:00', '03:00', '06:00', '09:00', '12:00', '15:00', '18:00', '21:00']
+      }
+    )),
+
+    // datasets: [
+    //   {
+    //     backgroundColor: '#3F51B5',
+    //     barPercentage: 0.5,
+    //     barThickness: 12,
+    //     borderRadius: 4,
+    //     categoryPercentage: 0.5,
+    //     data: props.data,
+    //     label: "Carbon Intensity",
+    //     maxBarThickness: 10
+    //   },
+    // {
+    //   backgroundColor: '#EEEEEE',
+    //   barPercentage: 0.5,
+    //   barThickness: 12,
+    //   borderRadius: 4,
+    //   categoryPercentage: 0.5,
+    //   data: [434, 153, 565, 387, 654, 413, 765, 462, 204],
+    //   maxBarThickness: 10
+    // }
+    // ],
+    // labels: ['00:00', '03:00', '06:00', '09:00', '12:00', '15:00', '18:00', '21:00']
+    labels: props.data.labels
+
+
+
   };
+  // console.log(data);
 
   const options = {
     animation: false,
@@ -112,7 +132,9 @@ const LineChart = (props) => {
     }
   };
 
+
   return (
+
     <Card {...props} className={styles.chart} style={{ borderRadius: "15px" }}>
       <CardHeader
         // action={(
@@ -122,8 +144,9 @@ const LineChart = (props) => {
         //     Last 7 days
         //   </Button>
         // )}
-        title="Carbon Intensity for Wales(gC02/Kwh)"
+        title={props.data.titles}
       />
+
       <Divider />
       <CardContent>
         <Box
@@ -136,8 +159,10 @@ const LineChart = (props) => {
             data={data}
             options={options}
           />
+
         </Box>
       </CardContent>
+
       <Box
         sx={{
           display: 'flex',

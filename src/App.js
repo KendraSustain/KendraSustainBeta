@@ -12,6 +12,7 @@ import { useState, useContext, useEffect } from 'react';
 import Cookies from 'js-cookie';
 import DataMonitor from "./pages/Asset/DataMonitor/DataMonitor";
 import KendraFlow from "./pages/DataIngestion/KendraFlow";
+import PredictionModel from "./pages/AI Models/Prediction Model/PredictionModel";
 import CarbonFootprintCalculator from "./pages/ManageReductionPlan/CarbonFootprintCalculator/CarbonFootprintCalculator";
 
 const routes = [
@@ -24,7 +25,7 @@ const routes = [
     ["/reduction/calculate", < CarbonFootprintCalculator />],
     ["/models/energy_consumption", < NewProduct />],
     ["/models/carbon_emission_prediction", < NewProduct />],
-    ["/models/prediction_model", < NewProduct />],
+    ["/models/prediction_model", <PredictionModel />],
     ["/offset", < NewProduct />],
 ]
 

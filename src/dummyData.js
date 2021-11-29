@@ -1,50 +1,103 @@
-export const userData = [
-  {
-    "Time": "16:35",
-    "Demand": 38332
-  },
-  {
-    "Time": "16:40",
-    "Demand": 38491
-  },
-  {
-    "Time": "16:45",
-    "Demand": 38721
-  },
-  {
-    "Time": "16:50",
-    "Demand": 38961
-  },
-  {
-    "Time": "16:55",
-    "Demand": 39112
-  },
-  {
-    "Time": "17",
-    "Demand": 39201
-  },
-  {
-    "Time": "17:05",
-    "Demand": 39395
-  },
-  {
-    "Time": "17:10",
-    "Demand": 39487
-  },
-  {
-    "Time": "17:15",
-    "Demand": 39568
-  },
-  {
-    "Time": "17:20",
-    "Demand": 39600
-  },
-  {
-    "Time": "17:25",
-    "Demand": 39591
-  },
-  {
-    "Time": "17:30",
-    "Demand": 39602
-  },
-];
+export const Data = {
+  datasets: [
+    {
+      "data": [190, 189, 178, 135, 127, 129, 137, 131, 120, 144, 153, 152],
+      "label": [2020]
+    },
+    {
+      "data": [135, 116, 132, 123, 129, 128, 140, 135, 131, 148, 60],
+      "label": [2021]
+    },
+  ],
+
+  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  titles: ['Total Carbon Emission(All Assets) *1000 kgCO2/kWh']
+
+};
+
+
+export const Data2 = {
+  datasets: [
+    {
+      "data": [252, 130, 311, 354, 332, 359, 346, 338],
+      "label": "Carbon Intensity"
+    }
+  ],
+
+  labels: ['00:00', '03:00', '06:00', '09:00', '12:00', '15:00', '18:00', '21:00'],
+  titles: ['Carbon Intensity for Wales(gC02/Kwh)']
+
+
+};
+
+export const Data3 = {
+
+  datasets: [
+    {
+      "data": [822, 820, 775, 587, 550, 562, 595, 571, 520, 623, 664, 662],
+      "label": ['Energy Consumption']
+    },
+    {
+      "data": [190, 182, 118, 115, 127, 189, 137, 131, 140, 144, 173, 122],
+      "label": ['Carbon Emission']
+    },
+  ],
+
+  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  titles: ['Energy Consumption vs Carbon Emissions(All Assets) *1000 kgCO2/kWh']
+
+};
+
+export const Data4 = {
+
+  datasets: [
+    {
+      "data": [856, 800, 800, 600, 589, 564, 543, 678, 654, 765, 665, 600],
+      "label": ['Predicted Energy']
+    },
+    {
+      "data": [185, 146, 102, 113, 125, 120, 130, 123, 125, 142, 80],
+      "label": ['Predicted Carbon']
+    },
+  ],
+
+  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  titles: ['Predicted Energy vs Predicted Carbon(All Assets) *1000 kgCO2/kWh']
+
+};
+
+export const Data5 = {
+
+  datasets: [
+    {
+      "data": [190, 189, 178, 135, 127, 129, 137, 131, 120, 144, 153, 152],
+      "label": [2020]
+    },
+    {
+      "data": [135, 116, 132, 123, 129, 128, 140, 135, 131, 148, 60],
+      "label": [2021]
+    },
+  ],
+
+  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  titles: ['Total Carbon Emission(All Assets) *1000 kgCO2/kWh']
+
+};
+
+export const Data6 = {
+
+  datasets: [
+    {
+      "data": [190, 189, 178, 135, 127, 129, 137, 131, 120, 144, 153, 152],
+      "label": [2020]
+    },
+    {
+      "data": [135, 116, 132, 123, 129, 128, 140, 135, 131, 148, 60],
+      "label": [2021]
+    },
+  ],
+
+  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  titles: ['Total Carbon Emission(All Assets) *1000 kgCO2/kWh']
+
+};

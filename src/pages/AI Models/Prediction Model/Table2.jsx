@@ -12,17 +12,17 @@ function createData(jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec) 
 }
 
 const rows = [
-    createData('Energy Consumption (kW/h)', 640, 571, 630, 583, 615, 609, 666, 642, 629, 704, 283),
-    createData('Carbon Emission (kgCO2/kWh)', 135, 116, 132, 123, 129, 128, 140, 135, 131, 148, 60),
+    createData('Predicted Energy Consumption (kW/h)', 856, 800, 800, 600, 589, 564, 543, 678, 654, 765, 665, 600),
+    createData('Predicted Carbon Emission (kgCO2/kWh)', 185, 146, 102, 113, 125, 120, 130, 123, 125, 142, 80),
 ];
 
-export default function BasicTable() {
+export default function BasicTable2() {
     return (
         <TableContainer component={Paper} style={{ borderRadius: "15px" }}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                        <TableCell align="right">Months(2021)</TableCell>
+                        <TableCell align="right">Months</TableCell>
                         <TableCell align="right">Jan</TableCell>
                         <TableCell align="right">Feb</TableCell>
                         <TableCell align="right">Mar</TableCell>

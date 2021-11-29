@@ -1,37 +1,33 @@
 import { Line } from 'react-chartjs-2';
-import styles from "./Line.module.css";
+import styles from "./Chart.module.css";
 import { Box, Button, Card, CardContent, CardHeader, Divider, useTheme } from '@mui/material';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+// import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 // import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 
 
-const LineGraph2 = (props) => {
+const AreaChart = (props) => {
     const theme = useTheme();
+    // console.log(props.data)
 
     const data = {
-        datasets: [
+        datasets: props.data.datasets.map((item, pos) => (
+
             {
                 backgroundColor: '#3F51B5',
                 barPercentage: 0.5,
                 barThickness: 12,
                 borderRadius: 4,
                 categoryPercentage: 0.5,
-                data: [190, 189, 178, 135, 127, 129, 137, 131, 120, 144, 153, 152],
-                label: '2020',
-                maxBarThickness: 10
-            },
-            {
-                backgroundColor: 'black',
-                barPercentage: 0.5,
-                barThickness: 12,
-                borderRadius: 4,
-                categoryPercentage: 0.5,
-                data: [135, 116, 132, 123, 129, 128, 140, 135, 131, 148, 60],
-                label: '2021',
+                data: item.data,
+                label: item.label,
                 maxBarThickness: 10
             }
-        ],
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        )),
+
+        labels: props.data.labels
+
+
+
     };
 
     const options = {
@@ -83,7 +79,9 @@ const LineGraph2 = (props) => {
         }
     };
 
+
     return (
+
         <Card {...props} className={styles.chart} style={{ borderRadius: "15px" }}>
             <CardHeader
                 // action={(
@@ -93,8 +91,9 @@ const LineGraph2 = (props) => {
                 //     Last 7 days
                 //   </Button>
                 // )}
-                title="Total Carbon Emission(All Assets) *1000 kgCO2/kWh"
+                title={props.data.titles}
             />
+
             <Divider />
             <CardContent>
                 <Box
@@ -107,18 +106,20 @@ const LineGraph2 = (props) => {
                         data={data}
                         options={options}
                     />
+
                 </Box>
             </CardContent>
+
             <Box
                 sx={{
                     display: 'flex',
                     justifyContent: 'center',
                     p: 1
                 }}>
-                Months
+                Date
             </Box>
         </Card>
     );
 };
 
-export default LineGraph2;
+export default AreaChart;

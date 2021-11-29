@@ -10,7 +10,8 @@ import BarChart from '../../../components/chart/BarChart';
 import PieChart from '../../../components/chart/PieChart';
 import Cookies from 'js-cookie';
 import jwt_decode from "jwt-decode";
-import NewProduct from '../../newProduct/NewProduct';
+import { Data2 } from "../../../dummyData";
+// import NewProduct from '../../newProduct/NewProduct';
 // import DoughnutChart from '../../../components/chart/DoughnutChart';
 // import { userData } from "../../../dummyData";
 
@@ -25,7 +26,7 @@ import NewProduct from '../../newProduct/NewProduct';
 const DataMonitor = () => {
     const context = useContext(Context);
     const [bar, setBar] = useState(<BarChart />)
-    const [line, setLine] = useState(<LineChart />)
+    const [line, setLine] = useState(<LineChart data={Data2} />)
     const [pie, setPie] = useState(<PieChart />)
     useEffect(() => {
         let decoded = jwt_decode(Cookies.get("tok_sustain"));

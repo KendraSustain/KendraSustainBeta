@@ -15,13 +15,7 @@ import { useHistory } from "react-router-dom";
 const Register = () => {
     const context = useContext(Context);
     const history = useHistory();
-    const apiGetAsset = axios.create({
-        baseURL: process.env.REACT_APP_API_URL,
-        headers: {
-            Accept: 'application/json',
-            'Authorization': `Bearer ${Cookies.get("tok_sustain")}`,
-        },
-    });
+
     const apiAsset = axios.create({
         baseURL: process.env.REACT_APP_API_URL,
         headers: {
@@ -51,23 +45,31 @@ const Register = () => {
     useEffect(() => {
         async function getData() {
             let decoded = jwt_decode(Cookies.get("tok_sustain"));
+            const apiGetAsset = axios.create({
+                baseURL: process.env.REACT_APP_API_URL,
+                headers: {
+                    Accept: 'application/json',
+                    'Authorization': `Bearer ${Cookies.get("tok_sustain")}`,
+                },
+            });
             try {
                 const { data } = await apiGetAsset.get(`/api/asset/${decoded.id}`)
                 setLocalData(data);
-                // updatePageSize(data);    
-                if (localData) {
-                    for (let i = 5; i < localData.length; i = i + 5)
-                        setPageSizeOptions([...pageSizeOptions, i]);
-                    setPageSizeOptions([...pageSizeOptions, localData.length]);
+                // updatePageSize(data);
+                if (data) {
+                    for (let i = 5; i < data.length; i = i + 5)
+                        setPageSizeOptions(p => [...p, i]);
+                    setPageSizeOptions(p => [...p, data.length]);
                 }
             } catch (error) {
                 console.log(error);
                 console.log("Unable to get Asset");
             }
         }
-        getData();
+        if (context.showNavTop)
+            getData();
         context.setShowNavTop(true);
-    }, [context, apiGetAsset, pageSizeOptions, localData]);
+    }, [context]);
 
     const addRow = async (newRow) => {
         let jsonData = {

@@ -21,8 +21,8 @@ const menus = [
             { "to": "/reduction/calculate", "menu": "Carbon Footprint Calculator" }]
     }, {
         "menu": "AI Models", "icon": "bx bx-trending-up", "list": "AI Models", "subMenu": [
-            { "to": "/models/energy_consumption", "menu": "Energy Consumption" },
-            { "to": "/models/carbon_emission_prediction", "menu": "Carbon Emission Prediction" },
+            // { "to": "/models/energy_consumption", "menu": "Energy Consumption" },
+            // { "to": "/models/carbon_emission_prediction", "menu": "Carbon Emission Prediction" },
             { "to": "/models/prediction_model", "menu": "Prediction Model" },]
     }, {
         "menu": "Offset", "icon": "bx bx-shield-alt-2", "list": "Offset", "to": "/offset"
@@ -53,15 +53,15 @@ const Sidebar = () => {
     }
     useEffect(() => {
         let decoded = jwt_decode(Cookies.get("tok_sustain"));
-        if(decoded.id === 62){
+        if (decoded.id === 62) {
             setImage("/images/lsbuprofile.jpg");
             setProfileName("LSBU");
             setJob("User");
-        } else if(decoded.id === 63){
+        } else if (decoded.id === 63) {
             setImage("/images/swanseaprofile.jpg");
             setProfileName("Swansea");
             setJob("User");
-        } else if(decoded.id === 64){
+        } else if (decoded.id === 64) {
             setImage("/images/fintricityprofile.jpg");
             setProfileName("Fintricity");
             setJob("Admin");
