@@ -10,7 +10,7 @@ import styles from './KendraBlogCard.module.css';
 export default function KendraBlogCard() {
     return (
         <div className={styles.container}>
-            <Card sx={{ margin: "0 5px 0 20px", borderRadius: "15px", height: "100%"}}>
+            <Card sx={{ margin: "0 5px 0 20px", borderRadius: "15px", height: "100%" }}>
                 <CardMedia
                     component="img"
                     height="140"
@@ -22,10 +22,7 @@ export default function KendraBlogCard() {
                         Kendra Sustain
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000
-                        species, ranging across all continents except Antarctica
-                        Lizards are a widespread group of squamate reptiles, with over 6,000
-                        species, ranging across all continents except Antarctica
+                        Kendra Sustain enables enterprises to embed data-driven Sustainability Decision-Making across business operations by providing enterprises with the tools to build a Circular Economy model through Data and Artificial Intelligence.
                     </Typography>
                 </CardContent>
                 <CardActions>

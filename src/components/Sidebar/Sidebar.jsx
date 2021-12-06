@@ -26,6 +26,8 @@ const menus = [
             { "to": "/models/prediction_model", "menu": "Prediction Model" },]
     }, {
         "menu": "Offset", "icon": "bx bx-shield-alt-2", "list": "Offset", "to": "/offset"
+    }, {
+        "menu": "API", "icon": "bx bx-analyse", "list": "Offset", "to": "/api"
     }
 ];
 
@@ -67,7 +69,7 @@ const Sidebar = () => {
             setJob("Admin");
         } else {
             setImage("/images/defaultprofile.jpg");
-            setProfileName("Subhashis Paul");
+            setProfileName("Admin");
             setJob("Designer");
         }
     }, []);

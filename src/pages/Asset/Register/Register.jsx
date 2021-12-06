@@ -55,6 +55,7 @@ const Register = () => {
             try {
                 const { data } = await apiGetAsset.get(`/api/asset/${decoded.id}`)
                 setLocalData(data);
+                console.log(data)
                 // updatePageSize(data);
                 if (data) {
                     for (let i = 5; i < data.length; i = i + 5)
@@ -117,8 +118,7 @@ const Register = () => {
     return (
         <div className={[styles.register, context.close ? styles.close : ""].join(" ")}>
             {localData && (
-
-                <MaterialTable
+                < MaterialTable
                     icons={{
                         Add: () => <AddBoxIcon style={{ color: "#0b2738" }} />,
                         Edit: () => <EditIcon style={{ color: "#0a5e91" }} />,
@@ -138,7 +138,7 @@ const Register = () => {
                         {
                             icon: () => <AddCircleOutlineIcon />,
                             tooltip: 'Add Data',
-                            onClick: (event, rowData) => history.push("/ingestion/flow"),
+                            onClick: (event, rowData) => console.log(rowData),
                         }
                     ]}
                     editable={{
@@ -175,6 +175,7 @@ const Register = () => {
                     }}
                 />
             )}
+
         </div>
     )
 }

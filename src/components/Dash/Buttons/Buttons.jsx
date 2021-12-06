@@ -12,6 +12,7 @@ const Buttons = () => {
             <Button className={styles.btn} variant="contained" onClick={() => history.push("/measure/register")}>Measure</Button>
             <Button className={styles.btn} variant="contained" onClick={() => history.push("/reduction/models")}>Manage Reduction Plan</Button>
             <Button className={styles.btn} variant="contained" onClick={() => history.push("/offset")}>Offset</Button>
+            <Button className={styles.btn} variant="contained" onClick={() => history.push("/Api")}>API</Button>
         </div>
     )
 }

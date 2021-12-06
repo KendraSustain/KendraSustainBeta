@@ -30,6 +30,7 @@ const DataMonitor = () => {
     const [pie, setPie] = useState(<PieChart />)
     useEffect(() => {
         let decoded = jwt_decode(Cookies.get("tok_sustain"));
+        console.log(decoded)
         if (decoded.id !== 63) {
             setBar()
             setLine()

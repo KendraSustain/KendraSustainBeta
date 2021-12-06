@@ -14,12 +14,14 @@ import DataMonitor from "./pages/Asset/DataMonitor/DataMonitor";
 import KendraFlow from "./pages/DataIngestion/KendraFlow";
 import PredictionModel from "./pages/AI Models/Prediction Model/PredictionModel";
 import CarbonFootprintCalculator from "./pages/ManageReductionPlan/CarbonFootprintCalculator/CarbonFootprintCalculator";
+import Api from "./pages/API/Api";
 
 const routes = [
     ["/dashboard", < Dash />],
     ["/ingestion/flow", < KendraFlow />],
     ["/measure/register", < Register />],
     // ["/measure/register", < NewProduct />],
+    ["/api", < Api />],
     ["/measure/monitor", < DataMonitor />],
     ["/reduction/models", < NewProduct />],
     ["/reduction/calculate", < CarbonFootprintCalculator />],
