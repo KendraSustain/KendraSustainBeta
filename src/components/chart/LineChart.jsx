@@ -43,7 +43,7 @@ const LineChart = (props) => {
     datasets: props.data.datasets.map((item, pos) => (
 
       {
-        backgroundColor: '#3F51B5',
+        backgroundColor: item.backgroundColor,
         barPercentage: 0.5,
         barThickness: 12,
         borderRadius: 4,
@@ -169,7 +169,7 @@ const LineChart = (props) => {
           justifyContent: 'center',
           p: 1
         }}>
-        Date
+        Months
       </Box>
     </Card>
   );

@@ -33,6 +33,9 @@ const PredictionModel = () => {
         <div className={[styles.monitor, context.close ? styles.close : ""].join(" ")}>
             <Box sx={{ width: '100%' }}>
                 <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                    <Grid item xs={12} style={{ textAlign: "center", height: "50px", color: "black", fontSize: "30px", fontWeight: "bold" }}>
+                        AI Prediction Models
+                    </Grid>
                     <Grid item xs={6}>
                         {area}
                     </Grid>

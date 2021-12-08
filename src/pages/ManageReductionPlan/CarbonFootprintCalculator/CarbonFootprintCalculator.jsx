@@ -114,12 +114,15 @@ const CarbonFootprintCalculator = () => {
         <div className={[styles.monitor, context.close ? styles.close : ""].join(" ")}>
             <Box sx={{ width: '100%' }}>
                 <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                    <Grid item xs={12} style={{ textAlign: "center", height: "50px", color: "black", fontSize: "30px", fontWeight: "bold" }}>
+                        Carbon Footprint Calculator
+                    </Grid>
                     <Grid item xs={6}>
-                        {line2}
+                        {line}
                     </Grid>
 
                     <Grid item xs={6}>
-                        {line}
+                        {line2}
                     </Grid>
                     <Grid item xs={12}>
                         {table}

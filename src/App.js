@@ -15,10 +15,12 @@ import KendraFlow from "./pages/DataIngestion/KendraFlow";
 import PredictionModel from "./pages/AI Models/Prediction Model/PredictionModel";
 import CarbonFootprintCalculator from "./pages/ManageReductionPlan/CarbonFootprintCalculator/CarbonFootprintCalculator";
 import Api from "./pages/API/Api";
+import ActiveFlow from "./pages/DataIngestion/ActiveFlow";
 
 const routes = [
     ["/dashboard", < Dash />],
     ["/ingestion/flow", < KendraFlow />],
+    ["/ingestion/activeflow", < ActiveFlow />],
     ["/measure/register", < Register />],
     // ["/measure/register", < NewProduct />],
     ["/api", < Api />],

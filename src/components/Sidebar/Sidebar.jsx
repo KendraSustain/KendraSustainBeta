@@ -10,7 +10,8 @@ const menus = [
         "menu": "Dashboard", "icon": "bx bxs-dashboard", "list": "Dashboard", "to": "/dashboard"
     }, {
         "menu": "Data Ingestion", "icon": "bx bx-data", "list": "Ingestion", "subMenu": [
-            { "to": "/ingestion/flow", "menu": "Kendra Flow" }]
+            { "to": "/ingestion/flow", "menu": "Flow" },
+            { "to": "/ingestion/activeflow", "menu": "Active Flows" }]
     }, {
         "menu": "Measure", "icon": "bx bx-list-plus", "list": "Measure", "subMenu": [
             { "to": "/measure/register", "menu": "Asset Register" },
