@@ -13,6 +13,8 @@ import BasicTable from './Table';
 import Cookies from 'js-cookie';
 import jwt_decode from "jwt-decode";
 import { Data, Months } from '../../../dummyData';
+import AreaChart from '../../../components/chart/AreaChart';
+import { Data5, Data6, Data7, Data8, Data9, Data10, Data11 } from '../../../dummyData';
 // import BarChart from '../../../components/chart/BarChart';
 
 const CarbonFootprintCalculator = () => {
@@ -98,6 +100,12 @@ const CarbonFootprintCalculator = () => {
     const context = useContext(Context);
     const [line, setLine] = useState(< LineGraph data={data} options={options} />)
     const [line2, setLine2] = useState(<LineChart data={Data} />)
+    const [line5, setLine5] = useState(<AreaChart data={Data5} />)
+    const [line6, setLine6] = useState(<AreaChart data={Data6} />)
+    const [line7, setLine7] = useState(<AreaChart data={Data7} />)
+    const [line8, setLine8] = useState(<AreaChart data={Data8} />)
+    const [line9, setLine9] = useState(<AreaChart data={Data9} />)
+    const [line10, setLine10] = useState(<AreaChart data={Data10} />)
     const [table, setTable] = useState(<BasicTable />)
 
     useEffect(() => {
@@ -105,6 +113,12 @@ const CarbonFootprintCalculator = () => {
         if (decoded.id !== 63) {
             setLine()
             setLine2()
+            setLine5()
+            setLine6()
+            setLine7()
+            setLine8()
+            setLine9()
+            setLine10()
             setTable()
         }
         context.setShowNavTop(true);
@@ -124,9 +138,28 @@ const CarbonFootprintCalculator = () => {
                     <Grid item xs={6}>
                         {line2}
                     </Grid>
+                    <Grid item xs={6}>
+                        {line5}
+                    </Grid>
+                    <Grid item xs={6}>
+                        {line6}
+                    </Grid>
+                    <Grid item xs={6}>
+                        {line7}
+                    </Grid>
+                    <Grid item xs={6}>
+                        {line8}
+                    </Grid>
+                    <Grid item xs={6}>
+                        {line9}
+                    </Grid>
+                    <Grid item xs={6}>
+                        {line10}
+                    </Grid>
                     <Grid item xs={12}>
                         {table}
                     </Grid>
+
                 </Grid>
             </Box>
         </div>

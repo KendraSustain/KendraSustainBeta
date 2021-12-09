@@ -16,12 +16,13 @@ import PredictionModel from "./pages/AI Models/Prediction Model/PredictionModel"
 import CarbonFootprintCalculator from "./pages/ManageReductionPlan/CarbonFootprintCalculator/CarbonFootprintCalculator";
 import Api from "./pages/API/Api";
 import ActiveFlow from "./pages/DataIngestion/ActiveFlow";
-
+import Realtime from "./pages/DataIngestion/Realtime";
 const routes = [
     ["/dashboard", < Dash />],
     ["/ingestion/flow", < KendraFlow />],
     ["/ingestion/activeflow", < ActiveFlow />],
     ["/measure/register", < Register />],
+    ["/measure/realtime", < Realtime />],
     // ["/measure/register", < NewProduct />],
     ["/api", < Api />],
     ["/measure/monitor", < DataMonitor />],

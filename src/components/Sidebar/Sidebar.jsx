@@ -10,12 +10,14 @@ const menus = [
         "menu": "Dashboard", "icon": "bx bxs-dashboard", "list": "Dashboard", "to": "/dashboard"
     }, {
         "menu": "Data Ingestion", "icon": "bx bx-data", "list": "Ingestion", "subMenu": [
-            { "to": "/ingestion/flow", "menu": "Flow" },
+            { "to": "/ingestion/flow", "menu": "Flow Engine" },
             { "to": "/ingestion/activeflow", "menu": "Active Flows" }]
     }, {
         "menu": "Measure", "icon": "bx bx-list-plus", "list": "Measure", "subMenu": [
             { "to": "/measure/register", "menu": "Asset Register" },
-            { "to": "/measure/monitor", "menu": "Data Monitor" }]
+            { "to": "/measure/monitor", "menu": "Data Monitor" },
+            { "to": "/measure/realtime", "menu": "Real-Time Data Feeds" }
+        ]
     }, {
         "menu": "Manage Reduction Plan", "icon": "bx bx-calculator", "list": "MDP", "subMenu": [
             // { "to": "/reduction/models", "menu": "Energy Prediction Models" },

@@ -77,17 +77,19 @@ export const Data5 = {
 
   datasets: [
     {
-      "data": [190, 189, 178, 135, 127, 129, 137, 131, 120, 144, 153, 152],
+      "backgroundColor": ['#3F51B5'],
+      "data": [190, 189, 178, 135, 127, 129, 130, 131, 120, 144, 153, 152],
       "label": [2020]
     },
     {
+      "backgroundColor": ['black'],
       "data": [135, 116, 132, 123, 129, 128, 140, 135, 131, 148, 60],
       "label": [2021]
     },
   ],
 
   labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-  titles: ['Total Carbon Emission(All Assets) *1000 kgCO2/kWh']
+  titles: ['Carbon Emission for Swansea Bay Campus The CoreBuilding *1000 kgCO2/kWh']
 
 };
 
@@ -95,16 +97,98 @@ export const Data6 = {
 
   datasets: [
     {
-      "data": [190, 189, 178, 135, 127, 129, 137, 131, 120, 144, 153, 152],
+      "backgroundColor": ['#3F51B5'],
+      "data": [70, 189, 178, 135, 127, 129, 137, 131, 120, 144, 153, 152],
       "label": [2020]
     },
     {
+      "backgroundColor": ['black'],
       "data": [135, 116, 132, 123, 129, 128, 140, 135, 131, 148, 60],
       "label": [2021]
     },
   ],
 
   labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-  titles: ['Total Carbon Emission(All Assets) *1000 kgCO2/kWh']
+  titles: ['Carbon Emission for Swansea Bay Campus Engineering CentreBuilding *1000 kgCO2/kWh']
+
+};
+
+export const Data7 = {
+
+  datasets: [
+    {
+      "backgroundColor": ['#3F51B5'],
+      "data": [190, 189, 178, 135, 76, 129, 137, 131, 120, 144, 153, 152],
+      "label": [2020]
+    },
+    {
+      "backgroundColor": ['black'],
+      "data": [135, 116, 132, 123, 129, 128, 140, 15, 131, 148, 60],
+      "label": [2021]
+    },
+  ],
+
+  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  titles: ['Carbon Emission for Swansea Bay Campus Great HallBuilding *1000 kgCO2/kWh']
+
+};
+
+export const Data8 = {
+
+  datasets: [
+    {
+      "backgroundColor": ['#3F51B5'],
+      "data": [190, 189, 178, 135, 127, 129, 13, 131, 120, 144, 153, 152],
+      "label": [2020]
+    },
+    {
+      "backgroundColor": ['black'],
+      "data": [135, 116, 132, 123, 129, 128, 140, 135, 131, 148, 60],
+      "label": [2021]
+    },
+  ],
+
+  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  titles: ['Carbon Emission for Swansea Bay Campus ESRI BuildingBuilding *1000 kgCO2/kWh']
+
+};
+
+export const Data9 = {
+
+  datasets: [
+    {
+      "backgroundColor": ['#3F51B5'],
+      "data": [260, 189, 178, 135, 127, 129, 137, 131, 120, 144, 153, 152],
+      "label": [2020]
+    },
+    {
+      "backgroundColor": ['black'],
+      "data": [135, 116, 132, 123, 129, 128, 140, 135, 131, 148, 60],
+      "label": [2021]
+    },
+  ],
+
+  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  titles: ['Carbon Emission for Swansea Bay Campus Great HallBuilding *1000 kgCO2/kWh']
+
+};
+
+export const Data10 = {
+
+  datasets: [
+    {
+      "backgroundColor": ['#3F51B5'],
+      "data": [190, 189, 178, 135, 127, 129, 137, 181, 120, 144, 153, 152],
+      "label": [2020]
+    },
+    {
+      "backgroundColor": ['black'],
+      "data": [135, 116, 132, 123, 129, 178, 140, 135, 131, 148, 60],
+      "label": [2021]
+    },
+  ],
+
+  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  titles: ['Carbon Emission for Swansea Bay Campus LibraryBuilding *1000 kgCO2/kWh']
 
 };

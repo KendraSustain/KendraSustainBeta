@@ -15,6 +15,10 @@ export const columns = [
         render: rowData => <span style={{ borderRadius: '5px', background: "#fff", padding: "5px 8px", color: "#333" }}>{rowData.asset_type}</span>
     },
     {
+        title: "Tags", field: "asset_type", cellStyle: { borderBottom: "1px solid rgba(0,0,0,0.03)", fontSize: "0.8rem", whiteSpace: "nowrap", textAlign: "center", fontFamily: "'Poppins', sans-serif" }, headerStyle: { fontSize: "1rem", fontWeight: "bold", borderBottom: "none", whiteSpace: "nowrap", textAlign: "center" },
+        render: rowData => <span style={{ borderRadius: '5px', background: "#fff", padding: "5px 8px", color: "white", backgroundColor: "grey", fontStyle: "italic" }}>Educational Institution</span>
+    },
+    {
         title: "Location", field: "location", cellStyle: { borderBottom: "1px solid rgba(0,0,0,0.03)", fontSize: "0.8rem", whiteSpace: "nowrap", textAlign: "center", fontFamily: "'Poppins', sans-serif" }, headerStyle: { fontSize: "1rem", fontWeight: "bold", borderBottom: "none", whiteSpace: "nowrap", textAlign: "center" },
         render: rowData => <span style={{ borderRadius: '5px', background: "#fff", padding: "5px 8px", color: "#333" }}>{rowData.location}</span>
     }
