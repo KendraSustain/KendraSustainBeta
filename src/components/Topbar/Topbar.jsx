@@ -32,9 +32,25 @@ export default function Topbar() {
           <span className="logo">Kendra Sustain</span> */}
         </div>
         <div className={styles.topRight}>
-          <div className={[styles.topbarIconContainer, styles.flowBtn].join(" ")}>
-            <AddIcon style={{ color: "#fff" }} />
-            <span className={styles.topIconText} onClick={() => history.push("/ingestion/flow")}> Create Your Flow</span>
+          <div className={[styles.topbarIconContainer2, styles.flowBtn2].join(" ")}>
+            <span className={styles.topIconText2} onClick={() => history.push("/ingestion/flow")}> Data Ingestion</span>
+          </div>
+          <div className={[styles.topbarIconContainer2, styles.flowBtn2].join(" ")}>
+            <span className={styles.topIconText2} onClick={() => history.push("/measure/register")}>  Measure</span>
+          </div>
+          <div className={[styles.topbarIconContainer2, styles.flowBtn2].join(" ")}>
+            <span className={styles.topIconText2} onClick={() => history.push("/reduction/calculate")}> Manage Reduction Plan</span>
+          </div>
+          <div className={[styles.topbarIconContainer2, styles.flowBtn2].join(" ")}>
+            <span className={styles.topIconText2} onClick={() => history.push("/offset")}> Offset</span>
+          </div>
+          <div className={[styles.topbarIconContainer2, styles.flowBtn2].join(" ")}>
+            <span className={styles.topIconText2} onClick={() => history.push("/Api")}>API</span>
+          </div>
+          <div className={styles.topbarIconContainer}>
+            <Tooltip title="Create Your Flow">
+              <AddIcon onClick={() => history.push("/ingestion/flow")} />
+            </Tooltip>
           </div>
           <div className={styles.topbarIconContainer}>
             <NotificationsNone />

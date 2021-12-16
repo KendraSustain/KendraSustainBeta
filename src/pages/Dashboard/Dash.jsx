@@ -16,7 +16,7 @@ function Dash() {
   }, [context]);
   return (
     <div className={[styles.home, context.close ? styles.close : ""].join(" ")}>
-      <Buttons />
+      {/* <Buttons /> */}
       <FeaturedInfo />
       <Grid item xs={12}>
         <Grid container spacing={3}>
