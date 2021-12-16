@@ -8,6 +8,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 import LineGraph from '../../ManageReductionPlan/CarbonFootprintCalculator/LineGraph';
 import Spinner from '../../../components/Spinner/Spinner'
+import BlogCard from "../../../components/Dash/KendraBlogCard/BlogCard";
 // import jwt_decode from "jwt-decode";
 
 const RealTime = (props) => {
@@ -61,6 +62,7 @@ const RealTime = (props) => {
         if (context.showNavTop) {
 
             getCarbonData();
+
 
         }
 
@@ -151,10 +153,14 @@ const RealTime = (props) => {
                     {/* <Grid item xs={12} style={{ textAlign: "center", height: "50px", color: "black", fontSize: "30px", fontWeight: "bold" }}>
                         Carbon Footprint Calculator
                     </Grid> */}
-                    <Grid item xs={8} style={{ marginLeft: "200px" }}>
+                    <Grid item xs={8} style={{ left: 0 }}>
 
                         {spinner ? <Spinner /> : line}
                         <button style={{ marginLeft: "380px", backgroundColor: "#004599", border: "none", color: "white", width: "100px", height: "50px", fontSize: "1.1rem" }} onClick={() => getCarbonData()}>Show Data</button>
+                    </Grid>
+                    <Grid item xs={4} >
+
+                        <BlogCard />
                     </Grid>
                 </Grid>
             </Box>

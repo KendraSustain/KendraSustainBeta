@@ -27,7 +27,7 @@ const menus = [
             // { "to": "/models/energy_consumption", "menu": "Energy Consumption" },
             // { "to": "/models/carbon_emission_prediction", "menu": "Carbon Emission Prediction" },
             { "to": "/models/prediction_model", "menu": "Prediction Model" },
-            { "to": "/models/realtime_model", "menu": "Realtime Data" },
+            // { "to": "/models/realtime_model", "menu": "Realtime Data" },
 
         ]
     }, {
