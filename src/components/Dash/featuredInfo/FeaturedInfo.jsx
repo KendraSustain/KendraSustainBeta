@@ -1,9 +1,9 @@
 import styles from "./FeaturedInfo.module.css";
 
 const data = [
-  { title: "Energy Price", price: "£2,415", icon: "fas fa-money-bill-wave" },
-  { title: "Energy Consumption", price: "200 kW/h", icon: "fas fa-lightbulb" },
-  { title: "Carbon Intenstity", price: "2500 gCO2/kWh", icon: "fas fa-shoe-prints" },
+  { title: "Balancing Energy Price for UK Flex Market ", price: "£2,415", },
+  { title: "Average Energy Consumption for UK", price: "200 kW/h", },
+  { title: "Average Carbon Intenstity for Swansea", price: "2500 gCO2/kWh", },
 ];
 const FeaturedInfo = () => {
 

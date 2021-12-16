@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+.monitor {
+    background-color: aliceblue;
+    position: relative;
+    left: 260px;
+    width: calc(100% - 260px);
+    transition: all 0.5s ease;
+    min-height: 100vh;
+    padding: 20px;
+    padding-top: 80px;
+}
+.monitor.close{
+    left: 78px;
+    width: calc(100% - 78px);
+}

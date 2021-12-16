@@ -98,7 +98,7 @@ const CarbonFootprintCalculator = () => {
     // ----------------------------------------- Test dataset---------------------------------------
 
     const context = useContext(Context);
-    const [line, setLine] = useState(< LineGraph data={data} options={options} />)
+    // const [line, setLine] = useState(< LineGraph data={data} options={options} />)
     const [line2, setLine2] = useState(<LineChart data={Data} />)
     const [line5, setLine5] = useState(<AreaChart data={Data5} />)
     const [line6, setLine6] = useState(<AreaChart data={Data6} />)
@@ -111,7 +111,7 @@ const CarbonFootprintCalculator = () => {
     useEffect(() => {
         let decoded = jwt_decode(Cookies.get("tok_sustain"));
         if (decoded.id !== 63) {
-            setLine()
+            // setLine()
             setLine2()
             setLine5()
             setLine6()
@@ -131,9 +131,9 @@ const CarbonFootprintCalculator = () => {
                     <Grid item xs={12} style={{ textAlign: "center", height: "50px", color: "black", fontSize: "30px", fontWeight: "bold" }}>
                         Carbon Footprint Calculator
                     </Grid>
-                    <Grid item xs={6}>
+                    {/* <Grid item xs={6}>
                         {line}
-                    </Grid>
+                    </Grid> */}
 
                     <Grid item xs={6}>
                         {line2}

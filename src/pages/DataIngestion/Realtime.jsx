@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { styled } from '@mui/material/styles';
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
@@ -11,6 +11,7 @@ import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import styles from './Realtime.module.css';
 import { Context } from "../../context/Contexts";
+import RealTime from "../AI Models/Prediction Model/RealTime";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -34,13 +35,19 @@ const columns = [
     },
 
 ];
+// const [component, setComponent] = useState();
 
 function createData(name, code, population) {
     return { name, code, population };
 }
 
+function clickComponent() {
+    console.log('Hello');
+
+}
+
 const rows = [
-    createData("Carbon Intensity", "Realtime (Regional)", "Carbon Intensity for Swansea Region"),
+    createData(<a href="/models/realtime_model"> Carbon Intensity</a>, "Realtime (Regional)", "Carbon Intensity for Swansea Region"),
     createData("Energy Frequency", "Realtime (National)", "Energy Frequency for UK from Elexon"),
     createData("Energy Demand", "Realtime (National)", "Energy Demand for UK from Elexon"),
     createData(
@@ -162,6 +169,7 @@ export default function Realtime() {
                     onRowsPerPageChange={handleChangeRowsPerPage}
                 />
             </Paper>
+            {/* <button>Click Me</button> */}
         </div>
     );
 }

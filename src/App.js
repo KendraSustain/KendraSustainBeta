@@ -17,6 +17,7 @@ import CarbonFootprintCalculator from "./pages/ManageReductionPlan/CarbonFootpri
 import Api from "./pages/API/Api";
 import ActiveFlow from "./pages/DataIngestion/ActiveFlow";
 import Realtime from "./pages/DataIngestion/Realtime";
+import RealTime from "./pages/AI Models/Prediction Model/RealTime";
 const routes = [
     ["/dashboard", < Dash />],
     ["/ingestion/flow", < KendraFlow />],
@@ -31,6 +32,7 @@ const routes = [
     ["/models/energy_consumption", < NewProduct />],
     ["/models/carbon_emission_prediction", < NewProduct />],
     ["/models/prediction_model", <PredictionModel />],
+    ["/models/realtime_model", <RealTime />],
     ["/offset", < NewProduct />],
 ]
 

@@ -138,7 +138,7 @@ const Register = () => {
                         {
                             icon: () => <AddCircleOutlineIcon />,
                             tooltip: 'Add Data',
-                            onClick: (event, rowData) => console.log(rowData),
+                            onClick: (event, rowData) => history.push(rowData.asset_name),
                         }
                     ]}
                     editable={{

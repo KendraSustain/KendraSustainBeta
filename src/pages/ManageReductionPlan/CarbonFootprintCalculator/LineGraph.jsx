@@ -85,15 +85,19 @@ const LineGraph = (props) => {
 
     return (
         <Card {...props} className={styles.chart} style={{ borderRadius: "15px" }}>
+
             <CardHeader
 
-                title="Total Energy Consumption(All Assets) *1000 kgCO2/kWh"
+                title="Carbon Intensity for Wales  (gCO2/kWH)"
+
             />
+
+
             <Divider />
             <CardContent>
                 <Box
                     sx={{
-                        height: 250,
+                        height: 350,
                         position: 'relative'
                     }}
                 >
@@ -104,15 +108,24 @@ const LineGraph = (props) => {
                 </Box>
 
             </CardContent>
+            <Box style={{ marginTop: "34px" }}
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    p: 2
+                }}>
+
+                Time
+            </Box>
             <Box
                 sx={{
                     display: 'flex',
                     justifyContent: 'center',
-                    p: 1
+                    p: 2
                 }}>
-                Months
+                {props.date}
             </Box>
-        </Card>
+        </Card >
     );
 };
 
