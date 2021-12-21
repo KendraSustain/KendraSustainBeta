@@ -38,18 +38,14 @@ export const Data3 = {
   datasets: [
     {
       "backgroundColor": ['#3F51B5'],
-      "data": [822, 820, 775, 587, 550, 562, 595, 571, 520, 623, 664, 662],
-      "label": ['Energy Consumption']
+      "data": [822, 820, 787, 762, 795, 771, 780, 793, 862],
+      "label": ['Energy Consumption Prediction - 2022']
     },
-    {
-      "backgroundColor": ['black'],
-      "data": [190, 182, 118, 115, 127, 189, 137, 131, 140, 144, 173, 122],
-      "label": ['Carbon Emission']
-    },
+
   ],
 
-  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-  titles: ['Energy Consumption vs Carbon Emissions(All Assets) *1000 kgCO2/kWh']
+  labels: ['1 Jan', '8 jan', '15 Jan', '22 Jan', '28 jan', '2 Feb', '9 Feb', '16 Feb', '23 Feb'],
+  titles: ['Energy Consumption Prediction for All Assets *1000 kgCO2/kWh']
 
 };
 
@@ -58,18 +54,14 @@ export const Data4 = {
   datasets: [
     {
       "backgroundColor": ['#3F51B5'],
-      "data": [856, 800, 800, 600, 589, 564, 543, 678, 654, 765, 665, 600],
-      "label": ['Predicted Energy']
+      "data": [856, 800, 800, 600, 589, 564, 543, 678, 654],
+      "label": ['Carbon Emission Prediction - 2022']
     },
-    {
-      "backgroundColor": ['black'],
-      "data": [185, 146, 102, 113, 125, 120, 130, 123, 125, 142, 80],
-      "label": ['Predicted Carbon']
-    },
+
   ],
 
-  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-  titles: ['Predicted Energy vs Predicted Carbon(All Assets) *1000 kgCO2/kWh']
+  labels: ['1 Jan', '8 jan', '15 Jan', '22 Jan', '28 jan', '2 Feb', '9 Feb', '16 Feb', '23 Feb'],
+  titles: ['Carbon Emission Prediction for All Assets *1000 kgCO2/kWh']
 
 };
 

@@ -26,29 +26,31 @@ const PieChart = (props) => {
         label: '2019',
         maxBarThickness: 10
       },
-      {
-        backgroundColor: [
-          'rgb(255, 99, 132)',
-          'rgb(54, 162, 235)',
-          'rgb(255, 205, 86)',
-          'rgb(213, 45, 183)',
-          'rgb(255, 107, 69)'
+      // {
+      //   backgroundColor: [
+      //     'rgb(255, 99, 132)',
+      //     'rgb(54, 162, 235)',
+      //     'rgb(255, 205, 86)',
+      //     'rgb(213, 45, 183)',
+      //     'rgb(255, 107, 69)'
 
-        ],
-        barPercentage: 0.5,
-        barThickness: 12,
-        borderRadius: 4,
-        categoryPercentage: 0.5,
-        data: [755, 262, 672, 373, 820, 567, 270, 653, 432],
-        label: '2021',
-        maxBarThickness: 10
-      }
+      //   ],
+      //   barPercentage: 0.5,
+      //   barThickness: 12,
+      //   borderRadius: 4,
+      //   categoryPercentage: 0.5,
+      //   data: [755, 262, 672, 373, 820, 567, 270, 653, 432],
+      //   label: '2021',
+      //   maxBarThickness: 10
+      // }
     ],
     labels: ['Student Union', 'The Core', 'Engineering Central', 'Engineering East', 'ESRI Building', 'Great Hall', 'Institute of Structure Materials', 'Campus Library', 'Campus School of Management']
   };
 
   const options = {
-    animation: false,
+    animation: true,
+    is3D: true,
+    pieHole: 0.4,
     cornerRadius: 20,
     layout: { padding: 0 },
     legend: { display: false },
@@ -61,7 +63,7 @@ const PieChart = (props) => {
         },
         gridLines: {
           display: false,
-          drawBorder: false
+          drawBorder: true
         }
       }
     ],
@@ -106,7 +108,7 @@ const PieChart = (props) => {
         //     Last 7 days
         //   </Button>
         // )}
-        title="Asset Distribution"
+        title="Asset wise Energy Consumption"
       />
       <Divider />
       <CardContent>
@@ -128,7 +130,7 @@ const PieChart = (props) => {
           justifyContent: 'center',
           p: 1
         }}>
-        Assets
+        Assets (2021)
       </Box>
     </Card>
   );

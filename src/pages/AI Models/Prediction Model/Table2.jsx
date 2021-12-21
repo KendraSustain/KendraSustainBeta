@@ -12,8 +12,8 @@ function createData(jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec) 
 }
 
 const rows = [
-    createData('Predicted Energy Consumption (kW/h)', 856, 800, 800, 600, 589, 564, 543, 678, 654, 765, 665, 600),
-    createData('Predicted Carbon Emission (kgCO2/kWh)', 185, 146, 102, 113, 125, 120, 130, 123, 125, 142, 80),
+    createData('Predicted Energy Consumption (kW/h)', 822, 820, 787, 762, 795, 771, 780, 793, 862),
+    createData('Predicted Carbon Emission (kgCO2/kWh)', 856, 800, 800, 600, 589, 564, 543, 678, 654),
 ];
 
 export default function BasicTable2() {
@@ -23,17 +23,17 @@ export default function BasicTable2() {
                 <TableHead>
                     <TableRow>
                         <TableCell align="right">Months</TableCell>
-                        <TableCell align="right">Jan</TableCell>
-                        <TableCell align="right">Feb</TableCell>
-                        <TableCell align="right">Mar</TableCell>
-                        <TableCell align="right">Apr</TableCell>
-                        <TableCell align="right">May</TableCell>
-                        <TableCell align="right">Jun</TableCell>
-                        <TableCell align="right">Jul</TableCell>
-                        <TableCell align="right">Aug</TableCell>
-                        <TableCell align="right">Sep</TableCell>
-                        <TableCell align="right">Oct</TableCell>
-                        <TableCell align="right">Nov</TableCell>
+                        <TableCell align="right">1 Jan</TableCell>
+                        <TableCell align="right">8 Jan</TableCell>
+                        <TableCell align="right">15 Jan</TableCell>
+                        <TableCell align="right">22 Jan</TableCell>
+                        <TableCell align="right">28 Jan</TableCell>
+                        <TableCell align="right">2 Feb</TableCell>
+                        <TableCell align="right">9 Feb</TableCell>
+                        <TableCell align="right">16 Feb</TableCell>
+                        <TableCell align="right">23 Feb</TableCell>
+                        {/* <TableCell align="right">Oct</TableCell>
+                        <TableCell align="right">Nov</TableCell> */}
                     </TableRow>
                 </TableHead>
                 <TableBody>

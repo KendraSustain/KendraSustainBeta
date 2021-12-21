@@ -8,7 +8,7 @@ const Api = () => {
     useEffect(() => {
         context.setShowNavTop(true);
         history.push("/dashboard");
-        window.open('https://api.kendrasustain.com/docs');
+        window.open('https://api.kendrasustain.com/redoc');
     }, [context, history]);
 
     return (

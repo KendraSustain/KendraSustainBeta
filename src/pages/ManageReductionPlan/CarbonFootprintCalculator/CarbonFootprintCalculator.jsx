@@ -129,7 +129,7 @@ const CarbonFootprintCalculator = () => {
             <Box sx={{ width: '100%' }}>
                 <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                     <Grid item xs={12} style={{ textAlign: "center", height: "50px", color: "black", fontSize: "30px", fontWeight: "bold" }}>
-                        Carbon Footprint Calculator
+                        Carbon Footprint Calculator for Swansea
                     </Grid>
                     {/* <Grid item xs={6}>
                         {line}
