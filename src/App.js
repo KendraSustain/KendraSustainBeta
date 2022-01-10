@@ -18,8 +18,10 @@ import Api from "./pages/API/Api";
 import ActiveFlow from "./pages/DataIngestion/ActiveFlow";
 import Realtime from "./pages/DataIngestion/Realtime";
 import RealTime from "./pages/AI Models/Prediction Model/RealTime";
+import CusDash from "./pages/Dashboard/CusDash";
 const routes = [
-    ["/dashboard", < Dash />],
+    // ["/dashboard", < Dash />],
+    ["/cusdashboard", <CusDash />],
     ["/ingestion/flow", < KendraFlow />],
     ["/ingestion/activeflow", < ActiveFlow />],
     ["/measure/register", < Register />],
@@ -72,7 +74,7 @@ const Routes = () => {
                 <Switch>
                     <Route path="/" component={Home} exact />
                     <ProtectedLogin path="/login" auth={context.isAuth} component={Login} />
-                    <ProtectedRoute path="/dashboard" auth={context.isAuth} component={Dash} />
+                    <ProtectedRoute path="/cusdashboard" auth={context.isAuth} component={CusDash} />
                     {routes.map((item, pos) => (
                         < ProtectedRoute auth={context.isAuth} key={pos} exact path={item[0]} > {item[1]} </ProtectedRoute>
                     ))}
@@ -102,7 +104,7 @@ const ProtectedLogin = ({ auth, component: Component, ...rest }) => {
             render={() => !auth ? (
                 <Component />
             ) : (
-                <Redirect to="/dashboard" />
+                <Redirect to="/cusdashboard" />
             )}
         />
     )

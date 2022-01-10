@@ -124,7 +124,7 @@ const Login = () => {
             <div className={styles.panelsContainer}>
                 <div className={[styles.panel, styles.leftPanel].join(" ")}>
                     <div className={styles.content}>
-                        <img style={{ width: '200px' }} src="/images/kendra-white-full.png" alt="Kendra" />
+                        <img style={{ width: '200px' }} src="/images/kendra-white-full.png" alt="Kendra" /><span style={{ marginLeft: "5px", color: "white", fontSize: "12px" }}>Beta</span>
                         <h3>New here ?</h3>
                         <p>
                             Welcome to   <span>Kendra Sustain!</span>
@@ -138,7 +138,7 @@ const Login = () => {
                 </div>
                 <div className={[styles.panel, styles.rightPanel].join(" ")}>
                     <div className={styles.content}>
-                        <img style={{ width: '200px' }} src="/images/kendra-white-full.png" alt="Kendra" />
+                        <img style={{ width: '200px' }} src="/images/kendra-white-full.png" alt="Kendra" /><span style={{ marginLeft: "5px", color: "white", fontSize: "12px" }}>Beta</span>
                         <h3>One of us ?</h3>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum

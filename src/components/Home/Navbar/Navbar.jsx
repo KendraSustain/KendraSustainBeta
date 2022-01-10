@@ -7,7 +7,7 @@ const Navbar = () => {
 
     return (
         <div className={styles.navTop}>
-            <img className={styles.brand} src={`/images/kendra-${window.innerWidth < 576 ? "blue" : "white"}-full.png`} alt="Kendra" />
+            <img className={styles.brand} src={`/images/kendra-${window.innerWidth < 576 ? "blue" : "white"}-full.png`} alt="Kendra" /><span style={{ color: "white", fontSize: "18px", marginRight: '180px' }}>Beta</span>
             <ul className={styles.navOptions}>
                 <li><a href="#!">Home</a></li>
                 <li><a href="#!">Solutions</a></li>

@@ -6,8 +6,11 @@ import Cookies from 'js-cookie';
 import jwt_decode from "jwt-decode";
 
 const menus = [
+    // {
+    //     "menu": "Dashboard", "icon": "bx bxs-dashboard", "list": "Dashboard", "to": "/dashboard"
+    // },
     {
-        "menu": "Dashboard", "icon": "bx bxs-dashboard", "list": "Dashboard", "to": "/dashboard"
+        "menu": "Dashboard", "icon": "bx bxs-dashboard", "list": "Dashboard", "to": "/cusdashboard"
     }, {
         "menu": "Data Ingestion", "icon": "bx bx-data", "list": "Ingestion", "subMenu": [
             { "to": "/ingestion/flow", "menu": "Flow Engine" },
@@ -73,6 +76,10 @@ const Sidebar = () => {
             setImage("/images/fintricityprofile.jpg");
             setProfileName("Fintricity");
             setJob("Admin");
+        } else if (decoded.id === 66) {
+            setImage("/images/Premier.png");
+            setProfileName("Premier Modular");
+            setJob("Admin");
         } else {
             setImage("/images/defaultprofile.jpg");
             setProfileName("Admin");
@@ -88,7 +95,7 @@ const Sidebar = () => {
                     <img src="/images/kendra.jpg" alt="Kendra" />
                 </div>
                 <div className={styles.fullLogo}>
-                    <img src="/images/kendra-white-full.png" alt="Kendra" />
+                    <img src="/images/kendra-white-full.png" alt="Kendra" /><span style={{ marginLeft: "5px", color: "white", fontSize: "12px" }}>Beta</span>
                 </div>
             </div>
             <ul className={styles.navLinks}>

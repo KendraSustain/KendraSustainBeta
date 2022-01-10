@@ -110,8 +110,8 @@ function createData(name, code, population) {
 }
 
 const rows = [
-    createData(<a href="https://flow.kendrasustain.com/workflow/3">Carbon Intensity Realtime Data Flow For Wales</a>, "19-11-2021", "Active"),
-    createData(<a href="https://flow.kendrasustain.com/workflow/22">Swansea Real Estate Energy Consumption Data Flow</a>, "19-11-2021", "Active"),
+    createData(<a href="https://flow.kendrasustain.com/workflow/3">Carbon Intensity Realtime Data Flow For UK</a>, "19-11-2021", "Active"),
+    createData(<a href="https://flow.kendrasustain.com/workflow/22">Premier Modular Real Estate Energy Consumption Data Flow</a>, "19-11-2021", "Active"),
     createData(<a href="https://flow.kendrasustain.com/workflow/14"> Current settlement BSUoS data Flow</a>, "18-11-2021", "Active"),
     createData(<a href="https://flow.kendrasustain.com/workflow/13">Daily Balancing Cost Data Flow </a>, "18-11-2021", "Active"),
     createData(

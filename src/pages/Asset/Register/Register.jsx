@@ -11,6 +11,7 @@ import Cookies from 'js-cookie';
 import jwt_decode from "jwt-decode";
 import { columns } from './columns';
 import { useHistory } from "react-router-dom";
+import Dash from "../../Dashboard/Dash";
 
 const Register = () => {
     const context = useContext(Context);
@@ -33,6 +34,7 @@ const Register = () => {
     });
 
     const [localData, setLocalData] = useState();
+    // const [assetdata, setAssetData] = useState();
     const [pageSizeOptions, setPageSizeOptions] = useState([]);
 
     const updatePageSize = (data) => {
@@ -55,13 +57,14 @@ const Register = () => {
             try {
                 const { data } = await apiGetAsset.get(`/api/asset/${decoded.id}`)
                 setLocalData(data);
+                // setAssetData(data);
                 console.log(data)
-                // updatePageSize(data);
                 if (data) {
                     for (let i = 5; i < data.length; i = i + 5)
                         setPageSizeOptions(p => [...p, i]);
                     setPageSizeOptions(p => [...p, data.length]);
                 }
+
             } catch (error) {
                 console.log(error);
                 console.log("Unable to get Asset");
@@ -173,9 +176,11 @@ const Register = () => {
                             backgroundColor: '#fff',
                         },
                     }}
-                />
-            )}
 
+                />
+
+            )
+            }
         </div>
     )
 }
