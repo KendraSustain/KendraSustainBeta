@@ -19,7 +19,10 @@ const menus = [
         "menu": "Measure", "icon": "bx bx-list-plus", "list": "Measure", "subMenu": [
             { "to": "/measure/register", "menu": "Asset Register" },
             { "to": "/measure/monitor", "menu": "Data Monitor" },
-            { "to": "/measure/realtime", "menu": "Real-Time Data Feeds" }
+            { "to": "/new", "menu": "Scope 1" },
+            { "to": "/measure/realtime", "menu": "Scope 2" },
+            { "to": "/new", "menu": "Scope 3" }
+
         ]
     }, {
         "menu": "Manage Reduction Plan", "icon": "bx bx-calculator", "list": "MDP", "subMenu": [

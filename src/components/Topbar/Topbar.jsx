@@ -32,9 +32,19 @@ export default function Topbar() {
           <span className="logo">Kendra Sustain</span> */}
         </div>
         <div className={styles.topRight}>
+          {/* <div className={[styles.topbarIconContainer2, styles.flowBtn2].join(" ")}>
+            <span className={styles.topIconText2} onClick={() => history.push("/new")}> Scope 1</span>
+          </div> */}
+          {/* <div className={[styles.topbarIconContainer2, styles.flowBtn2].join(" ")}>
+            <span className={styles.topIconText2} onClick={() => history.push("/cusdashboard")}> Scope 2</span>
+          </div> */}
+          {/* <div className={[styles.topbarIconContainer2, styles.flowBtn2].join(" ")}>
+            <span className={styles.topIconText2} onClick={() => history.push("/new")}> Scope 3</span>
+          </div> */}
           <div className={[styles.topbarIconContainer2, styles.flowBtn2].join(" ")}>
             <span className={styles.topIconText2} onClick={() => history.push("/ingestion/flow")}> Data Ingestion</span>
           </div>
+
           <div className={[styles.topbarIconContainer2, styles.flowBtn2].join(" ")}>
             <span className={styles.topIconText2} onClick={() => history.push("/measure/register")}>  Measure</span>
           </div>

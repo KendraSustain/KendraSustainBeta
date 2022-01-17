@@ -11,9 +11,10 @@ import Cookies from 'js-cookie';
 import jwt_decode from "jwt-decode";
 import { columns } from './columns';
 import { useHistory } from "react-router-dom";
+// import AssetDetail from './AssetDetail';
 import Dash from "../../Dashboard/Dash";
 
-const Register = () => {
+const Register = (props) => {
     const context = useContext(Context);
     const history = useHistory();
 
@@ -118,6 +119,10 @@ const Register = () => {
         }
     }
 
+    // const handleRowClick() {
+    //     console.log();
+    // }
+
     return (
         <div className={[styles.register, context.close ? styles.close : ""].join(" ")}>
             {localData && (
@@ -137,6 +142,10 @@ const Register = () => {
                     title="Register Your Asset"
                     data={localData}
                     columns={columns}
+                    onRowClick={(event, rowData) => history.push({
+                        pathname: '/asset',
+                        state: { detail: rowData }
+                    })}
                     actions={[
                         {
                             icon: () => <AddCircleOutlineIcon />,

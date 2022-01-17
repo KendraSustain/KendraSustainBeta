@@ -19,6 +19,7 @@ import ActiveFlow from "./pages/DataIngestion/ActiveFlow";
 import Realtime from "./pages/DataIngestion/Realtime";
 import RealTime from "./pages/AI Models/Prediction Model/RealTime";
 import CusDash from "./pages/Dashboard/CusDash";
+import AssetDetail from "./pages/Asset/Register/AssetDetail";
 const routes = [
     // ["/dashboard", < Dash />],
     ["/cusdashboard", <CusDash />],
@@ -36,6 +37,8 @@ const routes = [
     ["/models/prediction_model", <PredictionModel />],
     ["/models/realtime_model", <RealTime />],
     ["/offset", < NewProduct />],
+    ["/new", < NewProduct />],
+    ["/asset", < AssetDetail />],
 ]
 
 
