@@ -83,7 +83,7 @@ const PredictionModel = () => {
 
         let decoded = jwt_decode(Cookies.get("tok_sustain"));
 
-        if (decoded.id !== 63) {
+        if (decoded.id !== 63 && decoded.id !== 62) {
             setArea()
             setArea2()
             getData()

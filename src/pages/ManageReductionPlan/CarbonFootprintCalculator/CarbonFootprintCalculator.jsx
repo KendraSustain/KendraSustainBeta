@@ -19,6 +19,8 @@ import axios from 'axios';
 import LineCharts from '../../../components/Graphs/LineCharts';
 import BarCharts from '../../../components/Graphs/BarCharts';
 import Spinner from '../../../components/Spinner/Spinner';
+import AssetCard from '../../../components/Dash/KendraBlogCard/AssetCard';
+
 // import BarChart from '../../../components/chart/BarChart';
 
 const CarbonFootprintCalculator = () => {
@@ -165,7 +167,7 @@ const CarbonFootprintCalculator = () => {
 
         }
         let decoded = jwt_decode(Cookies.get("tok_sustain"));
-        if (decoded.id !== 63) {
+        if (decoded.id !== 63 && decoded.id !== 62) {
             // setLine()
             setLine2()
             setLine5()
@@ -181,16 +183,43 @@ const CarbonFootprintCalculator = () => {
         setSpinner(false);
     }, []);
 
+    const metadata = [
+        {
+            "name": "Maximum Carbon Emission(kgCO2/kWh)",
+            // "data": Math.max(...consumption[0])
+            "data": "19,081.22"
+
+        },
+        {
+            "name": "Minimum Carbon Emission(kgCO2/kWh)",
+            // "data": Math.min(...consumption[0])
+            "data": "16,083.65"
+
+        },
+        {
+            "name": "Total Carbon Emission(kgCO2/kWh)",
+            "data": "18,057.76"
+        },
+
+    ]
+
+
     return (
         <div className={[styles.monitor, context.close ? styles.close : ""].join(" ")}>
             <Box sx={{ width: '100%' }}>
                 <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                    <Grid item xs={12} style={{ textAlign: "center", height: "50px", color: "black", fontSize: "30px", fontWeight: "bold" }}>
+                    {/* <Grid item xs={12} style={{ textAlign: "center", height: "50px", color: "black", fontSize: "30px", fontWeight: "bold" }}>
                         Carbon Footprint Calculator
-                    </Grid>
+                    </Grid> */}
                     {/* <Grid item xs={6}>
                         {line}
                     </Grid> */}
+                    {metadata.map((item, pos) =>
+                        <Grid key={pos} item xs={4} >
+                            <AssetCard typo1={item.name} typo2={item.data} />
+                        </Grid>
+
+                    )}
 
                     <Grid item xs={6}>
                         {line2}

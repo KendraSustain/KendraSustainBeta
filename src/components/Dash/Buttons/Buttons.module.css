@@ -1,15 +1,18 @@
 .container {
-    width: 100%;
-    display: flex;
+    /* width: 10%; */
+    /* padding: 0 20px; */
+    /* display: flex; */
+    flex-direction:row;
     justify-content: space-between;
     margin-bottom: 25px;
 }
 .container .btn {
-    flex: 1;
+    /* flex: 1; */
     margin: 0px 20px;
-    padding: 20px auto;
+    padding: 20px 40px;
     background-color: #11101d;
     text-shadow: 0 0 10px #00b3ff;
+    color: white;
     border-radius: 30px;
     height: 50px;
     /* white-space: nowrap; */

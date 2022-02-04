@@ -5,17 +5,39 @@
     padding-top: 30px;
     background-color: aliceblue;
     position: relative;
-    left: 260px;
-    width: calc(100% - 260px);
+    left: 150px;
+    width: calc(100% - 150px);
     transition: all 0.5s ease;
     /* min-height: calc(100vh - 60px); */
     min-height: 100vh;
     padding-top: 80px;
 }
-.register.close{
-    left: 78px;
-    width: calc(100% - 78px);
+
+.register2 {
+    padding: 20px;
+    padding-top: 30px;
+    background-color: aliceblue;
+    position: relative;
+    left: 260px;
+    width: calc(100% - 260px);
+    transition: all 0.5s ease;
+    min-height: 100vh;
+    padding-top: 80px;
+
 }
+.register.close{
+    left: 30px;
+    width: calc(100% - 30px);
+    /* margin-right: 280px; */
+}
+
+.register2.close2{
+    left: 70px;
+    width: calc(100% - 70px);
+
+}
+
+
 .register h6 {
     font-family: 'Poppins', sans-serif;
     color: darkblue;
@@ -32,3 +54,4 @@
     height: 100%;
     border: none;
 }
+

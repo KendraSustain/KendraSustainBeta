@@ -76,7 +76,7 @@ const DataMonitor = () => {
 
         let decoded = jwt_decode(Cookies.get("tok_sustain"));
         console.log(decoded)
-        if (decoded.id !== 63) {
+        if (decoded.id !== 63 && decoded.id !== 62) {
             setBar()
             setLine()
             setPie()
@@ -87,9 +87,9 @@ const DataMonitor = () => {
 
     return (
         <div className={[styles.monitor, context.close ? styles.close : ""].join(" ")}>
-            <Grid item xs={12} style={{ textAlign: "center", height: "50px", color: "black", fontSize: "30px", fontWeight: "bold" }}>
+            {/* <Grid item xs={12} style={{ textAlign: "center", height: "50px", color: "black", fontSize: "30px", fontWeight: "bold" }}>
                 Data Monitor
-            </Grid>
+            </Grid> */}
             <Box sx={{ width: '100%' }}>
                 <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                     <Grid item xs={12}>
@@ -120,6 +120,7 @@ const DataMonitor = () => {
                         <Grid item xs={12} md={6}>
                             <BarCharts labels={date[pos]} data={consumption[pos]} title="Energy Consumption for Premier Modular (x1000 Kwh)" label="Energy Consumption" time="Date" assetName={assetname[pos]} />
                         </Grid>
+
 
                     )
                     }

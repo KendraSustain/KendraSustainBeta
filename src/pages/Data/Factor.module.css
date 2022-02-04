@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
-.monitor {
+.factor {
     background-color: aliceblue;
     position: relative;
     left: 260px;
@@ -10,7 +10,7 @@
     padding: 20px;
     padding-top: 80px;
 }
-.monitor.close{
-    left: 50px;
-    width: calc(100% - 50px);
+.factor.close{
+    left: 70px;
+    width: calc(100% - 70px);
 }

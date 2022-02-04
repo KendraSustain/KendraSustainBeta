@@ -20,6 +20,10 @@ import Realtime from "./pages/DataIngestion/Realtime";
 import RealTime from "./pages/AI Models/Prediction Model/RealTime";
 import CusDash from "./pages/Dashboard/CusDash";
 import AssetDetail from "./pages/Asset/Register/AssetDetail";
+import EmissionFactor from "./pages/Data/EmissionFactor";
+import Scope from "./pages/Asset/DataMonitor/Scope";
+import Asset from "./pages/Asset/Register/Asset";
+import CarbonCal from "./pages/ManageReductionPlan/CarbonFootprintCalculator/CarbonCal";
 const routes = [
     // ["/dashboard", < Dash />],
     ["/cusdashboard", <CusDash />],
@@ -30,8 +34,10 @@ const routes = [
     // ["/measure/register", < NewProduct />],
     ["/api", < Api />],
     ["/measure/monitor", < DataMonitor />],
+    ["/measure/asset", < Asset />],
     ["/reduction/models", < NewProduct />],
     ["/reduction/calculate", < CarbonFootprintCalculator />],
+    ["/reduction/cal", <CarbonCal />],
     ["/models/energy_consumption", < NewProduct />],
     ["/models/carbon_emission_prediction", < NewProduct />],
     ["/models/prediction_model", <PredictionModel />],
@@ -39,6 +45,9 @@ const routes = [
     ["/offset", < NewProduct />],
     ["/new", < NewProduct />],
     ["/asset", < AssetDetail />],
+    ["/factor", < EmissionFactor />],
+
+    ["/measure/scope", <Scope />]
 ]
 
 

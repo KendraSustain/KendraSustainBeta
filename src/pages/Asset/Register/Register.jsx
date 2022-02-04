@@ -139,7 +139,7 @@ const Register = (props) => {
                         paddingBottom: "0",
                         fontWeight: "600"
                     }}
-                    title="Register Your Asset"
+                    title="Scope 2"
                     data={localData}
                     columns={columns}
                     onRowClick={(event, rowData) => history.push({
@@ -175,15 +175,18 @@ const Register = (props) => {
 
                     }}
                     options={{
-                        titleStyle: { color: "red" },
-                        sorting: false,
-                        pageSizeOptions: pageSizeOptions,
-                        pageSize: localData ? localData.length < 5 ? localData.length : 5 : 0,
-                        actionsColumnIndex: -1, addRowPosition: "first",
-                        headerStyle: { fontSize: "1rem", fontWeight: "600", borderBottom: "none", whiteSpace: "nowrap" },
-                        rowStyle: {
-                            backgroundColor: '#fff',
-                        },
+                        sorting: true, search: true,
+                        searchFieldAlignment: "right", searchAutoFocus: true, searchFieldVariant: "standard",
+                        filtering: true, paging: true, pageSizeOptions: [2, 5, 10, 20, 25, 50, 100], pageSize: 5,
+                        paginationType: "stepped", showFirstLastPageButtons: false, paginationPosition: "both", exportButton: true,
+                        exportAllData: true, exportFileName: "TableData", addRowPosition: "first", actionsColumnIndex: -1,
+                        showSelectAllCheckbox: false, showTextRowsSelected: false, selectionProps: rowData => ({
+                            disabled: rowData.age == null,
+                            // color:"primary"
+                        }),
+                        grouping: true, columnsButton: true,
+                        rowStyle: (data, index) => index % 2 === 0 ? { background: "#f5f5f5" } : null,
+                        headerStyle: { background: "#00034f", color: "white" }
                     }}
 
                 />

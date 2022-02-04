@@ -17,17 +17,26 @@ const menus = [
             { "to": "/ingestion/activeflow", "menu": "Active Flows" }]
     }, {
         "menu": "Measure", "icon": "bx bx-list-plus", "list": "Measure", "subMenu": [
-            { "to": "/measure/register", "menu": "Asset Register" },
-            { "to": "/measure/monitor", "menu": "Data Monitor" },
-            { "to": "/new", "menu": "Scope 1" },
-            { "to": "/measure/realtime", "menu": "Scope 2" },
-            { "to": "/new", "menu": "Scope 3" }
+            // { "to": "/measure/register", "menu": "Asset Register" },
+            { "to": "/measure/asset", "menu": "Asset" },
+            // { "to": "/measure/monitor", "menu": "Data Monitor" },
+            { "to": "/measure/scope", "menu": "Data Monitor" },
+            // { "to": "/new", "menu": "Scope 1" },
+            // { "to": "/measure/realtime", "menu": "Scope 2" },
+            // { "to": "/new", "menu": "Scope 3" }
 
         ]
-    }, {
+    },
+    {
+        "menu": "Data Marketplace", "icon": "bx bx-list-ul", "list": "Data", "subMenu": [
+            // { "to": "/reduction/models", "menu": "Energy Prediction Models" },
+            { "to": "/factor", "menu": "Emission Factor Calculator" }]
+    },
+    {
         "menu": "Manage Reduction Plan", "icon": "bx bx-calculator", "list": "MDP", "subMenu": [
             // { "to": "/reduction/models", "menu": "Energy Prediction Models" },
-            { "to": "/reduction/calculate", "menu": "Carbon Footprint Calculator" }]
+            // { "to": "/reduction/calculate", "menu": "Carbon Footprint Calculator" },
+            { "to": "/reduction/cal", "menu": "Carbon Footprint Calculator" }]
     }, {
         "menu": "AI Models", "icon": "bx bx-trending-up", "list": "AI Models", "subMenu": [
             // { "to": "/models/energy_consumption", "menu": "Energy Consumption" },
