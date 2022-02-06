@@ -110,7 +110,8 @@ const PieCharts = (props) => {
                 <Box
                     sx={{
                         height: 250,
-                        position: 'relative'
+                        position: 'relative',
+                        ...props.barOption
                     }}
                 >
                     <Pie

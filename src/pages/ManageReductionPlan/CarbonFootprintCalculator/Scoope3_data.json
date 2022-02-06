@@ -1,0 +1,99 @@
+ {
+    "singleData": {
+        "data": [
+            640,
+            571,
+            630,
+            583,
+            615,
+            609,
+            666,
+            642
+        ],
+        "labels": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr"
+        ],
+        "title": "Lowest scope 3 (MtCO2e) "
+    },
+    "data": {
+        "datasets": [
+            {
+                "backgroundColor": "#272253",
+                "barPercentage": 0.5,
+                "barThickness": 40,
+                "borderRadius": 2,
+                "categoryPercentage": 0.5,
+                "data": [
+                    822,
+                    820,
+                    775,
+                    587,
+                    550,
+                    562,
+                    595,
+                    571
+                ],
+                "label": "Previous year",
+                "maxBarThickness": 35
+            },
+            {
+                "backgroundColor": "#4B5FAE",
+                "barPercentage": 0.5,
+                "barThickness": 40,
+                "borderRadius": 2,
+                "categoryPercentage": 0.5,
+                "data": [
+                    640,
+                    571,
+                    630,
+                    583,
+                    615,
+                    609,
+                    666,
+                    642
+                ],
+                "label": "Select Year",
+                "maxBarThickness": 35
+            }
+        ],
+        "labels": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr"
+        ]
+    },
+    "pieData": {
+        "label": "Scope 3 emission category (MtCo2e)",
+        "data": [
+            35,
+            60,
+            40
+        ],
+        "labels": [
+            "Combustion of fuel in staff vehicals 30% ",
+            "Extraction and production of steal 24%",
+            "Extraction and production of tinda 36%"
+        ]
+    },
+    "cardDATA": [
+        {
+            "titile": "scope 3 (MtCo2e) ",
+            "value": 2623.73,
+            "sub": " ⌃ incrancet/decrancet to previsuo year"
+        },
+        {
+            "titile": "scope 3 (MtCo2e) ",
+            "value": 2623.73,
+            "sub": "⌃ incrancet/decrancet to previsuo year"
+        },
+        {
+            "titile": "scope 3 (MtCo2e) ",
+            "value": 2623.73,
+            "sub": "⌃ incrancet/decrancet to previsuo year"
+        }
+    ]
+}

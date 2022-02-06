@@ -1,0 +1,27 @@
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textCard {
+    padding: 10px;
+    display: flex;
+    height: 200px;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 33%;
+    margin: 10px 0;
+    margin-right: 1.5%;
+    box-shadow: 0 5px 10px rgb(100, 95, 95);
+}
+
+.midText {
+    width: 100%;
+    text-align: center;
+}
+
+.bottomBar:hover {
+    width: 500px;
+    background-color: red;
+}
