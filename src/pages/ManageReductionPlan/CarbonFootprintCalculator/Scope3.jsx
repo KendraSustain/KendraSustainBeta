@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 
-import { Card, CardHeader, Divider } from "@material-ui/core";
+import { Card, CardHeader } from "@material-ui/core";
 import screen from "./CarbonFootprint.module.css";
 import { Context } from "../../../context/Contexts";
 import style from "./Scope3.module.css";
 import BarCharts from "../../../components/Graphs/BarCharts";
 import PieCharts from "../../../components/Graphs/PieCharts";
-import DATA from './Scoope3_data.json';
+import DATA from "./Scoope3_data.json";
 const barStyle = {
   backgroundColor: ["#272253", "#36A2DE", "#586785", "#4B5FAE"],
   barPercentage: 0.5,

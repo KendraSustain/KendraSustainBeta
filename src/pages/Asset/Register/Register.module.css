@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
 .register {
-    padding: 20px;
-    padding-top: 30px;
+    padding: 0 20px;
     background-color: aliceblue;
     position: relative;
     left: 150px;
@@ -10,28 +9,26 @@
     transition: all 0.5s ease;
     /* min-height: calc(100vh - 60px); */
     min-height: 100vh;
-    padding-top: 80px;
 }
 
 .register2 {
-    padding: 20px;
-    padding-top: 30px;
+    padding: 0 20px;
     background-color: aliceblue;
     position: relative;
     left: 260px;
     width: calc(100% - 260px);
     transition: all 0.5s ease;
     min-height: 100vh;
-    padding-top: 80px;
 
 }
-.register.close{
+
+.register.close {
     left: 30px;
     width: calc(100% - 30px);
     /* margin-right: 280px; */
 }
 
-.register2.close2{
+.register2.close2 {
     left: 70px;
     width: calc(100% - 70px);
 
@@ -49,9 +46,9 @@
     width: 80%;
     height: 600px;
 }
- .mapContainer iframe {
+
+.mapContainer iframe {
     width: 100%;
     height: 100%;
     border: none;
 }
-
