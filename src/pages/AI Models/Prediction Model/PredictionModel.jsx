@@ -82,17 +82,17 @@ const PredictionModel = () => {
             }
           )
           const newData = await response.json()
-          newData.min_EP = Math.max(
+          newData.min_EP = Math.min(
             ...newData.map((item, pos) => item['Energy Prediction'])
           )
 
-          newData.max_EP = Math.min(
+          newData.max_EP = Math.max(
             ...newData.map((item, pos) => item['Energy Prediction'])
           )
-          newData.min_CEP = Math.max(
+          newData.min_CEP = Math.min(
             ...newData.map((item, pos) => item['Carbon Emission Prediction'])
           )
-          newData.max_CEP = Math.min(
+          newData.max_CEP = Math.max(
             ...newData.map((item, pos) => item['Carbon Emission Prediction'])
           )
           data.push(newData)
@@ -111,12 +111,7 @@ const PredictionModel = () => {
     }
     getData()
   }, [])
-  const metadata = [
-    'Maximum Carbon Emission Prediction',
-    'Minimum Carbon Emission Prediction',
-    'Minimum Energy Prediction',
-    'Maximum Energy Prediction'
-  ]
+  
   return (
     <div
       className={[styles.monitor, context.close ? styles.close : ''].join(' ')}

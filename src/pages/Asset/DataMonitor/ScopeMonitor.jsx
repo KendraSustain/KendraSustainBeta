@@ -20,7 +20,7 @@ const ScopeMonitor = () => {
     "Buildings - Fuel Oil",
     "Transport-Company Fleet - Diesel",
     "Transport-Company Fleet - Petrol",
-    "Transport-Company Fleet - Diesel",
+    "Transport-Company Fleet - Kerosene",
   ]);
   const [value, setValue] = React.useState([]);
 
