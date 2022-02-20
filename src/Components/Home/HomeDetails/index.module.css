@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+.siteContentWrapper {
+    /* position: relative; */
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    transition: all 0.3s ease-in-out;
+}
+
+.siteContentWrapper.scaled {
+    transform: scale(0.9) translateX(-90%);
+    border-radius: 3px;
+    box-shadow: 0 3px 10px 0 #232B38;
+}
+
+.navTrigger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    padding: 15px;
+    transform: rotateY(180deg);
+    display: none;
+}
+
+.navTrigger svg {
+    width: 40px;
+    fill: #fff;
+}
+
+.mainContainer {
+    position: relative;
+    /* height: 500px; */
+    width: 100%;
+}
+
+.mainContainer img {
+    margin-top: -80px;
+    width: 100%;
+    filter: brightness(40%);
+}
+
+.containerTextWrapper {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    width: 100%;
+}
+
+.containerTextWrapper .textWrapper {
+    margin-top: 80px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerTextWrapper .heading {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    width: 80%;
+}
+
+.containerTextWrapper .buttonWrapper {
+    margin-top: 80px;
+}
+.containerTextWrapper .buttonWrapper a{
+    color: white;
+    text-decoration: none;
+}
+
+.containerTextWrapper button {
+    background: #2091F9;
+    color: #fff;
+    border-radius: 35px;
+    border: none;
+    padding: 8px 30px;
+    font-weight: 700;
+    transition: all 0.3s ease-in-out;
+    margin-right: 10px;
+    min-width: 160px;
+}
+
+.containerTextWrapper button:last-child {
+    margin-right: 0;
+}
+
+.containerTextWrapper button:hover {
+    background: #116dc4;
+}
+
+.mainContainerCurve {
+    position: relative;
+    height: 100px;
+    background: #fff;
+    margin-top: -50px;
+}
+
+.mainContainerCurve::before {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    left: 0;
+    top: -100px;
+    border-bottom: 100px solid #fff;
+    border-right: 50vw solid transparent;
+}
+
+.mainContainerCurve::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    right: 0;
+    top: -100px;
+    border-bottom: 100px solid #fff;
+    border-left: 50vw solid transparent;
+}
+
+@media (max-width: 876px) {
+    .containerTextWrapper .textWrapper {
+        margin-top: 100px;
+    }
+
+    .containerTextWrapper .buttonWrapper {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 795px) {
+    .containerTextWrapper .heading {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navTrigger {
+        display: block;
+    }
+
+    .mainContainer img {
+        margin-top: 0;
+    }
+
+    .containerTextWrapper {
+        width: 100%;
+    }
+
+    .containerTextWrapper .heading {
+        font-weight: 500;
+    }
+
+    .containerTextWrapper .textWrapper {
+        margin-top: -60px;
+    }
+
+    .mainContainerCurve {
+        margin-top: -80px;
+        height: 40px;
+    }
+
+    .mainContainerCurve::before {
+        top: -40px;
+        border-bottom: 40px solid #fff;
+    }
+
+    .mainContainerCurve::after {
+        top: -40px;
+        border-bottom: 40px solid #fff;
+    }
+}
+
+@media (max-width: 450px) {
+    .containerTextWrapper .heading {
+        font-size: 1.2rem;
+    }
+
+    .containerTextWrapper .textWrapper {
+        margin-top: 10px;
+    }
+
+    .containerTextWrapper button {
+        white-space: nowrap;
+        padding: 8px 20px;
+        font-weight: 500;
+        min-width: 140px;
+    }
+
+    .mainContainerCurve {
+        margin-top: -10px;
+    }
+}
