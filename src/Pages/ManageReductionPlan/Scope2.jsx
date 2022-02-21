@@ -1,11 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import axios from "axios";
-import { MediaCard } from "../../Components";
+import { CardChart, MediaCard } from "../../Components";
 
 const CarbonFootprintCalculator = () => {
   const authToken = `Bearer ${localStorage.getItem("authToken")}`;
+  const [data1, setData1] = useState([]);
+  let data = [
+    {
+      assetName: "MPAN-2300000709911",
+      type: "emission",
+    },
+    {
+      assetName: "MPAN- 2366560081212",
+      type: "emission",
+    },
+  ];
+  useEffect(() => {
+    console.log(data1);
+  }, [data1]);
+
   useEffect(() => {
     async function getData() {
       const apiGetData = axios.create({
@@ -16,28 +31,21 @@ const CarbonFootprintCalculator = () => {
         },
       });
 
-      let data = [
-        {
-          assetName: "MPAN-2300000709911",
-          type: "emission",
-        },
-        {
-          assetName: "MPAN- 2366560081212",
-          type: "emission",
-        },
-      ];
-
-      console.log(data);
-      data.map(
-        async (data) =>
-          await apiGetData
-            .post(`/api/getEmission?name=${data.assetName}&type=${data.type}`)
-            .then((res) => {
-              console.log(res.data);
-            })
-      );
+      // console.log(data);
+      let dum = [];
+      for (let i = 0; i < data.length; i++) {
+        await apiGetData
+          .post(
+            `/api/getEmission?name=${data[i].assetName}&type=${data[i].type}`
+          )
+          .then((res) => {
+            dum.push(res.data);
+          });
+      }
+      setData1(dum);
     }
     getData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authToken]);
 
   const metadata = [
@@ -65,11 +73,30 @@ const CarbonFootprintCalculator = () => {
             </Grid>
           ))}
 
-          <Grid item xs={12} md={12}></Grid>
+          <Grid item xs={12} md={12}>
+            {data1.map((item, pos) => (
+              <CardChart
+                title={data[pos].assetName}
+                key={pos}
+                x_items={item.map((e) => e.Date)}
+                type="line"
+                y_item={item.map((e) => e["Carbon Emission"])}
+              />
+              // console.log(item)
+            ))}
+          </Grid>
 
-          {/* {date.map((item, pos) => (
-            <Grid item xs={12} md={6}></Grid>
-          ))} */}
+          {data1.map((item, pos) => (
+            <Grid item md={6}>
+              <CardChart
+                title={data[pos].assetName}
+                key={pos}
+                x_items={item.map((e) => e.Date)}
+                type="bar"
+                y_item={item.map((e) => e["Carbon Emission"])}
+              />
+            </Grid>
+          ))}
         </Grid>
       </Box>
     </div>

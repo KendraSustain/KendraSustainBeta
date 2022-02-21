@@ -1,74 +1,29 @@
-import { CHART } from '../../src/Components'
-import { colors } from './Random'
+import { CHART } from "../../src/Components";
 export default {
-  title: 'Chart/Bar',
-  component: CHART
-}
+  title: "Chart/Bar",
+  component: CHART,
+};
 
-const Template = args => <CHART {...args} />
+const Template = (args) => <CHART {...args} />;
 
 const DemoData = {
-  series: [
-    {
-      data: [8, 2, 6, 1, 9, 5, 2, 6],
-      type: 'bar',
-      smooth: true
+  y_item: [4, 3, 5, 6, 4, 3, 5, 9],
+  type: "bar",
+  x_items: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+};
 
-    },
-    {
-      data: [5, 3, 5, 4, 6, 0, 3, 9],
-      backgroundColor: 'blue',
-      borderColor: 'blue',
-      label: 'Dataset2'
-    }
-  ],
-  x_items: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
-}
-
-const DemoDataPie = {
-  dataset: [
-    {
-      data: [8, 2, 6, 1, 9, 5],
-      backgroundColor: [...colors],
-      label: 'Dataset1'
-    }
-  ],
-  x_items: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-  type: 'pie'
-}
-
-export const BAR = Template.bind({})
+export const BAR = Template.bind({});
 BAR.args = {
-  ...DemoData
-}
+  ...DemoData,
+};
 
-export const Horizantal_BAR = Template.bind({})
+export const Horizantal_BAR = Template.bind({});
 Horizantal_BAR.args = {
-  ...DemoData
-}
-export const LINE = Template.bind({})
+  axis: "y",
+  ...DemoData,
+};
+export const LINE = Template.bind({});
 LINE.args = {
   ...DemoData,
-  type: 'line'
-}
-
-export const PIE = Template.bind({})
-PIE.args = {
-  ...DemoDataPie
-}
-export const DOUGHNUT = Template.bind({})
-DOUGHNUT.args = {
-  ...DemoDataPie,
-  type: 'doughnut'
-}
-
-export const POLAR = Template.bind({})
-POLAR.args = {
-  ...DemoDataPie,
-  type: 'polarArea'
-}
-export const RADAR = Template.bind({})
-RADAR.args = {
-  ...DemoDataPie,
-  type: 'radar'
-}
+  type: "line",
+};

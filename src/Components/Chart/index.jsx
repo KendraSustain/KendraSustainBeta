@@ -27,9 +27,6 @@ export default function BarChart({ series, x_items, type, y_item, axis }) {
       {
         type: "inside",
       },
-      {
-        type: "slider",
-      },
     ],
   };
   const options =
@@ -60,7 +57,7 @@ export default function BarChart({ series, x_items, type, y_item, axis }) {
           ...tool,
           xAxis: {
             type: "category",
-            axisLabel: {  rotate: 30 },
+            axisLabel: { rotate: 30 },
             data: x_items,
           },
           yAxis: {

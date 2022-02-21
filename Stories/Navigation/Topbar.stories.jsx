@@ -1,11 +1,11 @@
 import { Topbar } from "../../src/Components";
 export default {
-    Title : 'Navigation',
+    title: 'Navigation / BAR',
     component : Topbar
 }
 
 const Template = args => <Topbar {...args} />
-export const Default = Template.bind({})  
-Default.args = {
+export const Topsbars = Template.bind({})  
+Topsbars.args = {
     close : false
 }

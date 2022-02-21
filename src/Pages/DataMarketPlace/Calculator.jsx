@@ -6,17 +6,12 @@ import FormHelperText from "@mui/material/FormHelperText";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
-import CalculateIcon from "@mui/icons-material/Calculate";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import EditIcon from "@mui/icons-material/Edit";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import Paper from "@mui/material/Paper";
 import { makeStyles } from "@material-ui/core/styles";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
-import TextField from "@mui/material/TextField";
-import { BasicModal, MTable, Spinner } from "../../Components";
+import { BasicModal, MTable } from "../../Components";
 const useStyles = makeStyles({
   root: {
     border: 0,
@@ -26,19 +21,6 @@ const useStyles = makeStyles({
     padding: "0 30px",
   },
 });
-const style = {
-  position: "absolute",
-  display: "flex",
-  flexWrap: "wrap",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 700,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
 
 const columns = [
   {
@@ -69,7 +51,6 @@ const columns = [
 
 export default function EmissionFactor() {
   const classes = useStyles();
-  const [data, setData] = React.useState([]);
   const [tableData, setTableData] = React.useState();
 
   const [year, setYear] = React.useState("");
@@ -77,8 +58,6 @@ export default function EmissionFactor() {
   const [pollutant, setPollutant] = React.useState("");
 
   const [open, setOpen] = React.useState(false);
-
-  const handleClose = () => setOpen(false);
 
   const handleChange = (event) => {
     setYear(event.target.value);
@@ -124,24 +103,17 @@ export default function EmissionFactor() {
   ];
   const pollutants = ["Methane", "Nitrous Oxide", "Carbon Dioxide as Carbon"];
 
-  const handleOpen = (newdata) => {
-    setOpen(true);
-    console.log(newdata)
-  };
-
   return (
     <div
       style={{
         padding: "0 10px",
       }}
     >
-      <BasicModal open={open} setOpen={setOpen} />
+      {/* <BasicModal open={open} setOpen={setOpen} /> */}
       <Paper sx={{ width: "100%", overflow: "hidden" }}>
         <MTable
-          handleOpen={handleOpen}
           columns={columns}
           tableData={tableData}
-          onRowClick = {(e,newdata)=>handleOpen(newdata)}
           editable={{
             onRowAdd: (newRow) =>
               new Promise((resolve, reject) => {
@@ -182,7 +154,9 @@ export default function EmissionFactor() {
                   transform: "scale(0.9)",
                 }}
               >
-                <FormControl sx={{ m: 1, maxWidth: 120, height: 80 }}>
+                <FormControl
+                  sx={{ m: 1, maxWidth: 120, height: 80, marginRight: 1 }}
+                >
                   <InputLabel id="demo-simple-select-helper-label">
                     Year
                   </InputLabel>
@@ -202,7 +176,9 @@ export default function EmissionFactor() {
                   </Select>
                   <FormHelperText>Select Year</FormHelperText>
                 </FormControl>
-                <FormControl sx={{ m: 1, maxWidth: 120, height: 80 }}>
+                <FormControl
+                  sx={{ m: 1, maxWidth: 120, height: 80, marginRight: 1 }}
+                >
                   <InputLabel id="demo-simple-select-helper-label">
                     Sector
                   </InputLabel>
@@ -222,7 +198,9 @@ export default function EmissionFactor() {
                   </Select>
                   <FormHelperText>Select Sector</FormHelperText>
                 </FormControl>
-                <FormControl sx={{ m: 1, maxWidth: 160, height: 80 }}>
+                <FormControl
+                  sx={{ m: 1, maxWidth: 160, height: 80, marginRight: 1 }}
+                >
                   <InputLabel id="demo-simple-select-helper-label">
                     Pollutants
                   </InputLabel>

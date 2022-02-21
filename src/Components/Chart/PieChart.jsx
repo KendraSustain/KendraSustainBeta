@@ -1,20 +1,27 @@
-import React from 'react'
-import ReactECharts from 'echarts-for-react'
+import React from "react";
+import ReactECharts from "echarts-for-react";
 
-export default function PieChart ({ type = 'pie', data }) {
-    console.log(data)
+export default function PieChart({ type = "pie", data, subtype = "pie" }) {
+  console.log(data);
   const options = {
     series: [
       {
+        name: "Hello",
         data: data,
         type: type,
-        smooth: true
-      }
+        smooth: true,
+        radius: subtype === "doughnut" ? ["50%", "70%"] : ["0%","90%"],
+      },
     ],
     tooltip: {
-      trigger: 'axis'
-    }
-  }
+      trigger: "axis",
+    },
+    labelLine: {
+      show: false,
+    },
+
+    avoidLabelOverlap: false,
+  };
   return (
     <ReactECharts
       option={options}
@@ -25,5 +32,5 @@ export default function PieChart ({ type = 'pie', data }) {
       // onChartReady={this.onChartReadyCallback}
       // onEvents={EventsDict}
     />
-  )
+  );
 }

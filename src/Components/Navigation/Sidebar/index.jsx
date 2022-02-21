@@ -60,7 +60,7 @@ const menus = [
     menu: "API",
     icon: "bx bx-analyse",
     list: "Offset",
-    to: "/api",
+    to: "https://api.kendrasustain.com/redoc",
   },
  
   {

@@ -86,13 +86,9 @@
         "title": "Lowest scope 3 (MtCO2e) for 2020 "
     },
     "data": {
-        "datasets": [
+        "series": [
             {
-                "backgroundColor": "#272253",
-                "barPercentage": 0.5,
-                "barThickness": 40,
-                "borderRadius": 2,
-                "categoryPercentage": 0.5,
+                "color": "#272253",
                 "data": [
                     822,
                     820,
@@ -103,15 +99,11 @@
                     595,
                     571
                 ],
-                "label": "2019",
-                "maxBarThickness": 35
+                "name": "2019",
+                "type": "bar"
             },
             {
-                "backgroundColor": "#4B5FAE",
-                "barPercentage": 0.5,
-                "barThickness": 40,
-                "borderRadius": 2,
-                "categoryPercentage": 0.5,
+                "color": "#4B5FAE",
                 "data": [
                     640,
                     571,
@@ -122,8 +114,8 @@
                     666,
                     642
                 ],
-                "label": "2020",
-                "maxBarThickness": 35
+                "name": "2019",
+                "type": "bar"
             }
         ],
         "labels": [
