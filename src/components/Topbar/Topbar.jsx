@@ -21,6 +21,7 @@ export default function Topbar() {
     } catch (error) {
       console.log("Cookie expired");
     }
+    history.push('/login')
   }
 
   return (
@@ -72,7 +73,7 @@ export default function Topbar() {
             </Tooltip>
           </div>
           <div className={styles.topbarIconContainer}>
-            <Tooltip title="Sign Out">
+            <Tooltip title="Sign Out" >
               <LogoutIcon onClick={singOut} />
             </Tooltip>
           </div>

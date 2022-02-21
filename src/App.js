@@ -82,7 +82,7 @@ const Routes = () => {
         <>
             {context.showNavTop && <Topbar />}
             <div style={{ display: context.showNavTop ? "flex" : "block" }} >
-                {context.showNavTop && <Sidebar />}
+                {context.showNavTop && <Sidebar close_={context.close} />}
                 <Switch>
                     <Route path="/" component={Home} exact />
                     <ProtectedLogin path="/login" auth={context.isAuth} component={Login} />

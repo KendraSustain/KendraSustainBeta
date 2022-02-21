@@ -17,40 +17,59 @@ export const Data = [
     }
 
 ]
+export const Data_Scope1_Datamonitor = [
+
+    {
+        "source": "Business Fuel - Petrol",
+        "energy_consumntion": "business center",
+        "GHG": "UK"
+    },
+    {
+        "source": "Buildings",
+        "energy_consumntion": "building",
+        "GHG": "UK"
+    },
+    {
+        "source": "Transport-Company Fleet",
+        "energy_consumntion": "transport",
+        "GHG": "UK"
+    }
+
+]
 
 export const Scope1 = [
     {
-        "Scope 1": "Business Fuel - Petrol",
+        "Source": "Business Fuel - Petrol",
         "Energy Consumption(MWh)": 83407,
         "GHG Emissions(tCO2e)": 19.11,
         "year": 2020
     },
     {
-        "Scope 1": "Business Fuel - Diesel",
+        "Source": "Business Fuel - Diesel",
         "Energy Consumption(MWh)": 677300,
         "GHG Emissions(tCO2e)": 162.94,
         "year": 2020
     },
     {
-        "Scope 1": "Buildings - Fuel Oil",
+        "Source": "Buildings - Fuel Oil",
         "Energy Consumption(MWh)": 162042,
         "GHG Emissions(tCO2e)": 46.156,
         "year": 2020
     },
     {
-        "Scope 1": "Transport-Company Fleet - Diesel",
+        "Source": "Transport-Company Fleet - Kerosene",
         "Energy Consumption(MWh)": 55520,
         "GHG Emissions(tCO2e)": 14.156,
         "year": 2020
     },
     {
-        "Scope 1": "Transport-Company Fleet - Petrol",
+        "Source": "Transport-Company Fleet - Petrol",
         "Energy Consumption(MWh)": 2326,
         "GHG Emissions(tCO2e)": 0.563,
         "year": 2020
     },
     {
-        "Scope 1": "Transport-Company Fleet - Diesel",
+        "Source": "Transport-Company Fleet - Diesel",
         "Energy Consumption(MWh)": 479780,
         "GHG Emissions(tCO2e)": 129.017,
         "year": 2020

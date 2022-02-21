@@ -44,14 +44,14 @@
     cursor: pointer;
     white-space: nowrap;
 }
-.navTop ul.socialMediaIcons li:last-child {
+.navTop ul.socialMediaIcons li.btn__ {
     background: #2091F9;
     border-radius: 20px;
     padding: 5px 15px;
     color: #fff;
     transition: all 0.3s ease-in-out;
 }
-.navTop ul.socialMediaIcons li:last-child i {
+.navTop ul.socialMediaIcons li.btn__ i {
     font-size: 0.8em;
     margin-right: 5px;
 }
@@ -64,10 +64,10 @@
     font-size: 1.2em;
     color: #2091F9;
 }
-.navTop ul.socialMediaIcons li:last-child:hover {
+.navTop ul.socialMediaIcons li.btn__:hover {
     background-color: #116dc4;
 }
-.navTop ul.socialMediaIcons li:last-child:hover i {
+.navTop ul.socialMediaIcons li.btn__:hover i {
     font-size: 0.8em;
     color: #fff;
 }
@@ -150,10 +150,10 @@
         font-size: 1.2em;
         color: #252B42;
     }
-    .navTop ul.socialMediaIcons li:last-child i {
+    .navTop ul.socialMediaIcons li.btn__ i {
         color: #fff;
     }
-    .navTop ul.socialMediaIcons li:last-child:hover i {
+    .navTop ul.socialMediaIcons li.btn__:hover i {
         font-size: unset;
         color: #252B42;
     }
@@ -163,4 +163,10 @@
         margin-left: -30px;
         left: 25%;
     }
+}
+
+.navItems{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

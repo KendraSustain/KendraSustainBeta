@@ -13,6 +13,15 @@
     z-index: 100;
     transition: all 0.5s ease;
 }
+.topLeft i {
+    color: #fcfbff;
+    font-size: 2rem;
+    /* margin: 0 15px; */
+    cursor: pointer;
+    background-attachment: fixed;
+    text-shadow: 0 0 2px #023146;
+  }
+  
 
 .sidebar.close {
     width: 78px;
@@ -88,7 +97,7 @@
     /* background: #1d1b31; */
     background: #5d62fb;
     /* filter: blur(2px); */
-    box-shadow: 0 10px 20px #5d62fb99;
+    box-shadow: 0 0 8px #5d62fb99;
 }
 
 .sidebar .navLinks li .iconLink {
