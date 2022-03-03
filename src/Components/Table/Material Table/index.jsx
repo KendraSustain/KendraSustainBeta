@@ -15,13 +15,15 @@ import Remove from "@material-ui/icons/Remove";
 import SaveAlt from "@material-ui/icons/SaveAlt";
 import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
-import MaterialTable from "material-table";
-import CalculateIcon from "@mui/icons-material/Calculate";
-
+import MaterialTable from "@material-table/core";
 
 export default function MTable(props) {
-  console.log(props.tableData);
-  const [pageSize, setPageSize] = useState(7);
+  React.useEffect(() => {
+    console.log(props.columns, props.tableData);
+    setTableData(props.tableData);
+  }, [props]);
+  const [tableData, setTableData] = useState(props.tableData);
+  const [pageSize, setPageSize] = useState(props.pageSize);
   const [isRun, setIsRun] = useState(false);
   function run() {
     if (isRun) return;
@@ -30,20 +32,16 @@ export default function MTable(props) {
         setPageSize(props.tableData.length);
     setIsRun(true);
   }
-  console.log(props.actions);
   run();
   const options = {
     sorting: true,
     search: true,
-    searchFieldAlignment: "right",
     searchAutoFocus: true,
     searchFieldVariant: "standard",
-    filtering: true,
     paging: true,
     pageSize: pageSize,
     paginationType: "stepped",
     showFirstLastPageButtons: false,
-    paginationPosition: "both",
     exportButton: true,
     exportAllData: true,
     exportFileName: "TableData",
@@ -58,7 +56,7 @@ export default function MTable(props) {
     columnsButton: true,
     rowStyle: (data, index) =>
       index % 2 === 0 ? { background: "#f5f5f5" } : null,
-    headerStyle: { background: "#00034F", color: "white" },
+    headerStyle: { background: "var(--dark-blue)", color: "white" },
   };
   const tableIcons = {
     Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
@@ -90,26 +88,14 @@ export default function MTable(props) {
   return (
     <div>
       <MaterialTable
-        onChangePage={() => console.log()}
-        onPageChange={() => console.log()}
-        onChangeRowsPerPage={() => console.log()}
+        style={{
+          boxShadow: "none",
+        }}
         columns={props.columns}
-        data={props.tableData}
+        data={tableData}
         editable={{ ...props.editable }}
         onRowClick={props.onRowClick}
-        actions={
-          props.actions
-            ? props.actions
-            : props.calculate
-            ? [
-                {
-                  icon: () => <CalculateIcon />,
-                  tooltip: "Calculate",
-                  onClick: (e, data) => props.handleOpen(data),
-                },
-              ]
-            : null
-        }
+        actions={props.actions}
         onSelectionChange={props.onSelect}
         options={{
           ...options,

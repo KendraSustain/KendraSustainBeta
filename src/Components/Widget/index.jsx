@@ -26,17 +26,16 @@ const useStyles = makeStyles({
 });
 
 export default function Widget({ id, onRemoveItem, Item , style }) {
-  const classes = useStyles();
-  console.log(style)
+  // const classes = useStyles();
   return (
-    <Card className={classes.root} style={style} >
-      <div className={classes.header}>
-        <div className={classes.spacer} />
+    <Card  style={style} >
+      <div >
+        <div  />
         <IconButton aria-label="delete" onClick={() => onRemoveItem(id)}>
           <CloseIcon fontSize="small" />
         </IconButton>
       </div>
-      <div className={classes.body}>{Item}</div>
+      <div >{Item}</div>
     </Card>
   );
 }

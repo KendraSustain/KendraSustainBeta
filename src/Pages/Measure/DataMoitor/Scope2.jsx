@@ -5,14 +5,14 @@ import axios from "axios";
 import { CardChart, MTable } from "../../../Components";
 
 const Scope2Com = () => {
+  const user = JSON.parse(localStorage.getItem("user"));
   const authToken = `Bearer ${localStorage.getItem("authToken")}`;
   const [row, setRow] = useState([]);
-  const [consumption, setConsumption] = React.useState([]);
-  const [assetname, setAssetName] = React.useState([]);
-  const [date, setDate] = React.useState([]);
+
   useEffect(() => {
-    async function getData() {
-      const apiGetData = axios.create({
+    const getData = async () => {
+      setRow([])
+      const apiGetAsset = axios.create({
         baseURL: process.env.REACT_APP_API_URL,
         headers: {
           Accept: "application/json",
@@ -20,40 +20,31 @@ const Scope2Com = () => {
         },
       });
 
-      let data = [
-        {
-          assetName: "MPAN-2300000709911",
-          type: "emission",
+      const apiGetData = axios.create({
+        baseURL: process.env.REACT_APP_API_URL,
+        headers: {
+          Accept: "application/json",
+          Authorization: authToken,
         },
-        {
-          assetName: "MPAN- 2366560081212",
-          type: "emission",
-        },
-      ];
-
-      data.map(
-        async (data) =>
-          await apiGetData
-            .post(`/api/getEmission?name=${data.assetName}&type=${data.type}`)
-            .then((res) => {
-              setRow(res.data);
-              let varDate = [];
-              let varEnergy = [];
-              let emission = [];
-              res.data.forEach((element) => {
-                varDate.push(element.Date);
-                varEnergy.push(element["Energy Consumption"]);
-                emission.push(element["Carbon Emission"]);
-              });
-
-              setDate((d) => [...d, varDate]);
-              setConsumption((p) => [...p, varEnergy]);
-              setAssetName((p) => [...p, data.assetName]);
-            })
-      );
-    }
+      });
+      const { data } = await apiGetAsset.get(`/api/asset/${user.id}`);
+      console.log("New  : " , data )
+      for (let i = 0; i < data.length; i++) {
+        await apiGetData
+          .post(
+            `/api/getEmission?name=${data[i].asset_name}&type=${"emission"}`
+          )
+          .then((res) => {
+            let temp = row;
+            temp.push([...res.data]);
+            setRow(temp);
+            console.log(row);
+          });
+      }
+    };
     getData();
-  }, [authToken]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const columns = [
     { field: "Date", title: "Date" },
     {
@@ -65,40 +56,63 @@ const Scope2Com = () => {
       title: "Carbon Emission (kgCO2/kWh)",
     },
   ];
+
   return (
     <div>
       <Box sx={{ width: "100%" }}>
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 6 }}>
+        <Grid container spacing={2}>
+          {row.map((item, pos) => (
+            <Grid item xs={12} key={pos}>
+              <MTable
+                columns={columns}
+                tableData={item}
+                title={"MPAN : " + (pos + 1)}
+              />
+            </Grid>
+          ))}
+
           <Grid item xs={12} md={12}>
-            <MTable columns={columns} tableData={row} />
-          </Grid>
-          <Grid item xs={12} md={12}>
-            {date.map((item, pos) => {
+            {row.map((item, pos) => {
               return (
                 <CardChart
                   key={pos}
-                  x_items={date[pos]}
-                  y_item={consumption[pos]}
+                  x_items={item.map((data) => data.Date)}
                   title={"Energy Consumption for Premier Modular (x1000 Kwh)"}
                   label="Energy Consumption"
                   time="Date"
-                  assetname={assetname[pos]}
                   type="bar"
+                  series={[
+                    {
+                      data: item.map((data) => data["Energy Consumption"]),
+                      type: "bar",
+                    },
+                    {
+                      data: item.map((data) => data["Carbon Emission"]),
+                      type: "bar",
+                    },
+                  ]}
                 />
               );
             })}
           </Grid>
-          {date.map((item, pos) => (
+          {row.map((item, pos) => (
             <Grid item xs={12} md={6}>
               <CardChart
                 key={pos}
-                x_items={date[pos]}
-                y_item={consumption[pos]}
-                title={"Energy Consumption for Premier Modular (x1000 Kwh)"}
+                x_items={item.map((data) => data.Date)}
                 label="Energy Consumption"
                 time="Date"
-                assetname={assetname[pos]}
                 type="line"
+                series={[
+                  {
+                    data: item.map((data) => data["Energy Consumption"]),
+                    type: "line",
+                  },
+                  {
+                    data: item.map((data) => data["Carbon Emission"]),
+                    type: "line",
+                  },
+                ]}
               />
             </Grid>
           ))}

@@ -1,135 +1,46 @@
-import { useEffect } from 'react'
-import * as React from 'react'
-import PropTypes from 'prop-types'
-import SwipeableViews from 'react-swipeable-views'
-import { useTheme } from '@mui/material/styles'
-import AppBar from '@mui/material/AppBar'
-import Tabs from '@mui/material/Tabs'
-import Tab from '@mui/material/Tab'
-import Typography from '@mui/material/Typography'
-import Box from '@mui/material/Box'
-import Grid from '@mui/material/Grid'
-import Scope1 from './Scope1'
-import Scope2 from './Scope2'
-import Scope3 from './Scope3'
-import Summry from './Summry'
-function TabPanel (props) {
-  const { children, value, index, ...other } = props
+import { useEffect } from "react";
+import * as React from "react";
+import Grid from "@mui/material/Grid";
+import { Appbar } from "../../Components";
+import Scope1Com from "./Scope1";
+import Scope2Com from "./Scope2";
+import Scope3Com from "./Scope3";
+import Summary from "./Summry";
+export default function DataMonitor() {
+  useEffect(() => {}, []);
+  const user = JSON.parse(localStorage.getItem("user"));
 
-  return (
-    <Typography
-      component='div'
-      role='tabpanel'
-      hidden={value !== index}
-      id={`action-tabpanel-${index}`}
-      aria-labelledby={`action-tab-${index}`}
-      {...other}
-    >
-      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
-    </Typography>
-  )
-}
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired
-}
-
-function a11yProps (index) {
-  return {
-    id: `action-tab-${index}`,
-    'aria-controls': `action-tabpanel-${index}`
-  }
-}
-
-export default function Asset () {
-  const theme = useTheme()
-  const [value, setValue] = React.useState(0)
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue)
-  }
-
-  const handleChangeIndex = index => {
-    setValue(index)
-  }
-
-  // const transitionDuration = {
-  //     enter: theme.transitions.duration.enteringScreen,
-  //     exit: theme.transitions.duration.leavingScreen,
-  // };
-
-  // const fabs = [
-  //     {
-  //         color: 'primary',
-  //         sx: fabStyle,
-  //         icon: <AddIcon />,
-  //         label: 'Add',
-  //     },
-  //     {
-  //         color: 'secondary',
-  //         sx: fabStyle,
-  //         icon: <EditIcon />,
-  //         label: 'Edit',
-  //     },
-  //     {
-  //         color: 'inherit',
-  //         sx: { ...fabStyle, ...fabGreenStyle },
-  //         icon: <UpIcon />,
-  //         label: 'Expand',
-  //     },
-  // ];
-
-  useEffect(() => {}, [])
   return (
     <div>
       <Grid
         item
         xs={12}
         style={{
-          textAlign: 'center',
-          height: '50px',
-          color: 'black',
-          fontSize: '30px',
-          fontWeight: 'bold'
+          textAlign: "center",
+          height: "50px",
+          color: "black",
+          fontSize: "30px",
+          fontWeight: "bold",
         }}
       >
-       Carbon Footprint Calculator
+        Data Monitor
       </Grid>
-      <AppBar position='static' color='transparent'>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          indicatorColor='primary'
-          textColor='primary'
-          variant='fullWidth'
-          aria-label='action tabs example'
-        >
-          <Tab label='Summry' {...a11yProps(0)} />
-          <Tab label='Scope 1' {...a11yProps(0)} />
-          <Tab label='Scope 2' {...a11yProps(1)} />
-          <Tab label='Scope 3' {...a11yProps(2)} />
-        </Tabs>
-      </AppBar>
-      <SwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-        index={value}
-        onChangeIndex={handleChangeIndex}
-      >
-        <TabPanel value={value} index={0} dir={theme.direction}>
-          <Summry />
-        </TabPanel>
-        <TabPanel value={value} index={1} dir={theme.direction}>
-          <Scope1 />
-        </TabPanel>
-        <TabPanel value={value} index={2} dir={theme.direction}>
-          <Scope2 />
-        </TabPanel>
-        <TabPanel value={value} index={3} dir={theme.direction}>
-          <Scope3 />
-        </TabPanel>
-      </SwipeableViews>
+      <Appbar
+        components={
+          user.id === 66
+            ? [<Summary />, <Scope1Com />, <Scope2Com />, <Scope3Com />]
+            : user.id === 71
+            ? [<Scope2Com />]
+            : []
+        }
+        labels={
+          user.id === 66
+            ? [<>Summary</>, <>Scope 1</>, <>Scope 2</>, <>Scope 3</>]
+            : user.id === 71
+            ? [<>Scope 2</>]
+            : []
+        }
+      />
     </div>
-  )
+  );
 }

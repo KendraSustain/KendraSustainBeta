@@ -60,9 +60,9 @@ const menus = [
     menu: "API",
     icon: "bx bx-analyse",
     list: "Offset",
-    to: "https://api.kendrasustain.com/redoc",
+    to: "/api",
   },
- 
+
   {
     menu: "Admin",
     icon: "bx bx-user-pin",
@@ -86,7 +86,7 @@ const Sidebar = ({ user, close = true }) => {
   };
 
   useEffect(() => {
-    user ? setUser_(user) : console.log(1);
+    if (user) setUser_(user);
   }, [user]);
 
   return (
@@ -169,8 +169,10 @@ const Sidebar = ({ user, close = true }) => {
               </label>
             </div>
             <div className={styles.nameJob}>
-              <div className={styles.profileName}>{user_.name}</div>
-              <div className={styles.job}>{user_.job}</div>
+              <div className={styles.profileName}>
+                {user_.firstname + " " + user_.lastname}
+              </div>
+              <div className={styles.job}>{user_.company}</div>
             </div>
             <i className="bx bx-log-out" onClick={signout}></i>
           </div>

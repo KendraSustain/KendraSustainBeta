@@ -57,7 +57,6 @@ function Scope1() {
         return null;
       });
       setTableData(data);
-      console.log(tableData);
     };
     getData();
   }, []);

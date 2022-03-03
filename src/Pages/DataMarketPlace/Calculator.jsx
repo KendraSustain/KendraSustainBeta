@@ -10,17 +10,7 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import EditIcon from "@mui/icons-material/Edit";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import Paper from "@mui/material/Paper";
-import { makeStyles } from "@material-ui/core/styles";
-import { BasicModal, MTable } from "../../Components";
-const useStyles = makeStyles({
-  root: {
-    border: 0,
-    borderRadius: 3,
-    color: "white",
-    height: 48,
-    padding: "0 30px",
-  },
-});
+import { MTable } from "../../Components";
 
 const columns = [
   {
@@ -50,14 +40,11 @@ const columns = [
 ];
 
 export default function EmissionFactor() {
-  const classes = useStyles();
   const [tableData, setTableData] = React.useState();
 
   const [year, setYear] = React.useState("");
   const [sector, setSector] = React.useState("");
   const [pollutant, setPollutant] = React.useState("");
-
-  const [open, setOpen] = React.useState(false);
 
   const handleChange = (event) => {
     setYear(event.target.value);
@@ -88,7 +75,6 @@ export default function EmissionFactor() {
         `/api/emissionfactor?year=${data2.year}&sector=${data2.sector}&pollutant=${data2.pollutant}`
       )
       .then((res) => {
-        console.log(res.data);
         setTableData(res.data);
       });
   };
@@ -145,27 +131,21 @@ export default function EmissionFactor() {
                 justifyContent: "center",
               }}
             >
-              {" "}
               <span>Emission Factors</span>
               <div
                 style={{
+                  width: "500px",
+                  height: "100px",
+                  // padding : '10px 0',
                   display: "flex",
+                  // background:'red',
+                  justifyContent: "space-evenly",
                   alignItems: "center",
-                  transform: "scale(0.9)",
                 }}
               >
-                <FormControl
-                  sx={{ m: 1, maxWidth: 120, height: 80, marginRight: 1 }}
-                >
-                  <InputLabel id="demo-simple-select-helper-label">
-                    Year
-                  </InputLabel>
-                  <Select
-                    sx={{ height: 100 }}
-                    value={year}
-                    label="Year"
-                    onChange={handleChange}
-                  >
+                <FormControl>
+                  <InputLabel>Year</InputLabel>
+                  <Select value={year} label="Year" onChange={handleChange}>
                     {years.map((years, pos) => {
                       return (
                         <MenuItem key={pos} value={years}>
@@ -176,14 +156,9 @@ export default function EmissionFactor() {
                   </Select>
                   <FormHelperText>Select Year</FormHelperText>
                 </FormControl>
-                <FormControl
-                  sx={{ m: 1, maxWidth: 120, height: 80, marginRight: 1 }}
-                >
-                  <InputLabel id="demo-simple-select-helper-label">
-                    Sector
-                  </InputLabel>
+                <FormControl>
+                  <InputLabel>Sector</InputLabel>
                   <Select
-                    sx={{ height: 100 }}
                     value={sector}
                     label="Sector"
                     onChange={handleChange1}
@@ -198,14 +173,9 @@ export default function EmissionFactor() {
                   </Select>
                   <FormHelperText>Select Sector</FormHelperText>
                 </FormControl>
-                <FormControl
-                  sx={{ m: 1, maxWidth: 160, height: 80, marginRight: 1 }}
-                >
-                  <InputLabel id="demo-simple-select-helper-label">
-                    Pollutants
-                  </InputLabel>
+                <FormControl>
+                  <InputLabel>Pollutants</InputLabel>
                   <Select
-                    sx={{ height: 100 }}
                     value={pollutant}
                     label="Pollutant"
                     onChange={handleChange2}
@@ -221,13 +191,12 @@ export default function EmissionFactor() {
                   <FormHelperText>Select Pollutants</FormHelperText>
                 </FormControl>
                 <Button
-                  className={classes.root}
                   variant="outlined"
-                  onClick={handleSubmit}
-                  style={{
+                  sx={{
                     position: "relative",
                     top: "-10px",
                   }}
+                  onClick={handleSubmit}
                 >
                   Submit
                 </Button>

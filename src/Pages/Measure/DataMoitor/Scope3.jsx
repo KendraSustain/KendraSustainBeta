@@ -42,7 +42,6 @@ const Scope3Com = () => {
   ]
 
   useEffect(() => {
-    console.log(Scope3_Data)
     async function getData () {
       const value = [83407, 677300, 162042, 55520, 2326, 479780]
       setLabels(labels)

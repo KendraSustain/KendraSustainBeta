@@ -34,7 +34,7 @@
 }
 
 .topLeft i {
-  color: #11101d;
+  color: var(--sidebar-primary);
   font-size: 2rem;
 
   cursor: pointer;
@@ -62,14 +62,14 @@
 .topbarIconContainer2 {
   position: relative;
   cursor: pointer;
-  color: #11101d;
+  color: var(--sidebar-primary);
   display: flex;
   align-items: center;
 }
 
 .topbarIconContainer2.flowBtn2 {
   position: relative;
-  color: #11101d;
+  color: var(--sidebar-primary);
   font-weight: 400;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
@@ -86,7 +86,7 @@
   transition: transform 0.5s;
   transform: scaleX(0);
   transform-origin: left;
-  background: #11101d;
+  background: var(--sidebar-primary);
 }
 
 .topbarIconContainer2.flowBtn2:hover::after {
@@ -95,7 +95,7 @@
 
 .topIconText2 {
   padding-right: 50px;
-  color: #11101d;
+  color: var(--sidebar-primary);
   font-weight: 800;
 }
 

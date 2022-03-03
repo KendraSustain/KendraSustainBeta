@@ -4,7 +4,6 @@ import { Data2 } from '../../../Helper/Data'
 
 function Scope3Com () {
   const [tableData, setTableData] = useState(Data2)
-  console.log(Data2)
   const columns = [
     {
       title: 'Name of Asset',

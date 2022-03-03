@@ -26,3 +26,10 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+:root {
+    --sidebar-primary: #11101d;
+    --sidebar-secondary: #1d1b31;
+    --white: #ffffff;
+    --dark-blue: #00034F;
+}

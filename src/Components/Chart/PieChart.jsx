@@ -2,7 +2,6 @@ import React from "react";
 import ReactECharts from "echarts-for-react";
 
 export default function PieChart({ type = "pie", data, subtype = "pie" }) {
-  console.log(data);
   const options = {
     series: [
       {

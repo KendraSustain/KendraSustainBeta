@@ -7,7 +7,6 @@ import React from "react";
 import PieChart from "./PieChart";
 
 export default function CardChart(props) {
-  console.log(props)
   return (
     <div style={{
       marginTop : '8px'

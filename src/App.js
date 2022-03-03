@@ -15,6 +15,19 @@ import {
   Offset,
   User,
   Admin,
+  Api,
+  ChangePassword,
+  UpdateInfo,
+  UserApi,
+  Organization,
+  ManageUsers,
+  ManageOrg,
+  ManageTeam,
+  Billing,
+  RoleApi,
+  UserCalls,
+  BillingAccount,
+  Payment,
 } from "./Pages";
 import MainContext, { Context } from "./Context";
 import { Sidebar, Topbar } from "./Components";
@@ -29,6 +42,10 @@ const routes = [
   {
     route: "/ingestion/activeflow",
     component: <ActiveFlow />,
+  },
+  {
+    route: "/ingestion/flow",
+    component: <Api />,
   },
   {
     route: "/measure/asset",
@@ -71,6 +88,58 @@ const routes = [
     route: "/admin",
     component: <Admin />,
   },
+  {
+    route: "/api",
+    component: <Api />,
+  },
+  {
+    route: "/user/password",
+    component: <ChangePassword />,
+  },
+  {
+    route: "/user/update",
+    component: <UpdateInfo />,
+  },
+  {
+    route: "/user/api",
+    component: <UserApi />,
+  },
+  {
+    route: "/user/org",
+    component: <Organization />,
+  },
+  {
+    route: "/admin/users",
+    component: <ManageUsers />,
+  },
+  {
+    route: "/admin/org",
+    component: <ManageOrg />,
+  },
+  {
+    route: "/admin/team",
+    component: <ManageTeam />,
+  },
+  {
+    route: "/admin/billing",
+    component: <Billing />,
+  },
+  {
+    route: "/admin/api",
+    component: <RoleApi />,
+  },
+  {
+    route: "/admin/calls",
+    component: <UserCalls />,
+  },
+  {
+    route: "/admin/billing/account",
+    component: <BillingAccount />,
+  },
+  {
+    route: "/admin/billing/payment",
+    component: <Payment />,
+  },
 ];
 
 const Main = (props) => {
@@ -80,26 +149,39 @@ const Main = (props) => {
   useEffect(() => {
     const run = async () => {
       const user_ = await getUser();
-      
+
       if (!user_.success) return navigate("/login");
-       setIsAuth(true);
-      setUser({ name : user_.company , job : user_.email , photo : "https://www.kindpng.com/picc/m/451-4517876_default-profile-hd-png-download.png"  })
+      setIsAuth(true);
+      setUser({
+        ...user_,
+        photo:
+          "https://www.kindpng.com/picc/m/451-4517876_default-profile-hd-png-download.png",
+      });
     };
     run();
   }, [navigate, setIsAuth]);
   return (
     isAuth && (
-      <>
+      <div
+        style={{
+          backgroundColor: "aliceblue",
+        }}
+      >
         <Topbar close={close} onClose={setClose} />
         <Sidebar close={close} user={user} />
-        <div className={[styles.home, close ? styles.close : ""].join(" ")}>
+        <div
+          style={{
+            padding: "10px",
+          }}
+          className={[styles.home, close ? styles.close : ""].join(" ")}
+        >
           <Routes>
             {routes.map((item, pos) => (
               <Route key={pos} path={item.route} element={item.component} />
             ))}
           </Routes>
         </div>
-      </>
+      </div>
     )
   );
 };

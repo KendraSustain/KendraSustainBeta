@@ -7,20 +7,8 @@ import { CardChart, MediaCard } from "../../Components";
 const CarbonFootprintCalculator = () => {
   const authToken = `Bearer ${localStorage.getItem("authToken")}`;
   const [data1, setData1] = useState([]);
-  let data = [
-    {
-      assetName: "MPAN-2300000709911",
-      type: "emission",
-    },
-    {
-      assetName: "MPAN- 2366560081212",
-      type: "emission",
-    },
-  ];
-  useEffect(() => {
-    console.log(data1);
-  }, [data1]);
-
+  const user = JSON.parse(localStorage.getItem("user"));
+  const [newData, setNewData] = useState([])
   useEffect(() => {
     async function getData() {
       const apiGetData = axios.create({
@@ -30,13 +18,14 @@ const CarbonFootprintCalculator = () => {
           Authorization: authToken,
         },
       });
-
-      // console.log(data);
+      const { data } = await apiGetData.get(`/api/asset/${user.id}`);
+      setNewData(data)
+      console.log(data)
       let dum = [];
       for (let i = 0; i < data.length; i++) {
         await apiGetData
           .post(
-            `/api/getEmission?name=${data[i].assetName}&type=${data[i].type}`
+            `/api/getEmission?name=${data[i].asset_name}&type=${"emission"}`
           )
           .then((res) => {
             dum.push(res.data);
@@ -76,21 +65,19 @@ const CarbonFootprintCalculator = () => {
           <Grid item xs={12} md={12}>
             {data1.map((item, pos) => (
               <CardChart
-                title={data[pos].assetName}
+                title={newData[pos].assetName}
                 key={pos}
                 x_items={item.map((e) => e.Date)}
                 type="line"
                 y_item={item.map((e) => e["Carbon Emission"])}
               />
-              // console.log(item)
             ))}
           </Grid>
 
           {data1.map((item, pos) => (
-            <Grid item md={6}>
+            <Grid item md={6} key={pos}>
               <CardChart
-                title={data[pos].assetName}
-                key={pos}
+                title={newData[pos].assetName}
                 x_items={item.map((e) => e.Date)}
                 type="bar"
                 y_item={item.map((e) => e["Carbon Emission"])}

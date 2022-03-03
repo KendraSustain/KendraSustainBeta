@@ -5,10 +5,11 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { Divider } from "@material-ui/core";
 
 export default function MediaCard({ img, title, content, buttons, style }) {
   return (
-    <Card style={{ minHeight: "140px", textAlign : 'center' , ...style }}>
+    <Card style={{ minHeight: "140px", textAlign: "center", ...style  }}>
       {img ? (
         <CardMedia
           component="img"
@@ -22,6 +23,7 @@ export default function MediaCard({ img, title, content, buttons, style }) {
           <Typography gutterBottom variant="h5" component="div">
             {title}
           </Typography>
+          <Divider/>
           <Typography variant="body2" color="text.secondary">
             {content}
           </Typography>

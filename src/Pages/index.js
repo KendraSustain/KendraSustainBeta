@@ -9,9 +9,36 @@ import CarbonCal from "./ManageReductionPlan";
 import Prediction from "./AI Modal/Prediction";
 import AssetDetail from "./Measure/Assets/AssetDetails";
 import Offset from "./Offset";
-import Admin from "../User Managment/Admin";
-import User from "../User Managment/User";
+import Admin from "./User Managment/Admin";
+import User from "./User Managment/User";
+import Api from "./DataInsertion/Api";
+import Organization from "./User Managment/Organization";
+import ChangePassword from "./User Managment/ChangePass";
+import UpdateInfo from "./User Managment/UpdateInfo";
+import UserApi from "./User Managment/Api";
+
+import ManageUsers from "./User Managment/Admin/ManageUsers";
+import ManageOrg from "./User Managment/Admin/ManageOrg";
+import ManageTeam from "./User Managment/Admin/ManageTeam";
+import Billing from "./User Managment/Admin/Billing";
+import RoleApi from "./User Managment/Admin/RoleApi";
+import UserCalls from "./User Managment/Admin/UserCalls";
+import BillingAccount from "./User Managment/Admin/Billing/BillingAccount";
+import Payment from "./User Managment/Admin/Billing/Payment";
 export {
+  Payment,
+  BillingAccount,
+  ManageOrg,
+  ManageTeam,
+  ManageUsers,
+  Billing,
+  RoleApi,
+  UserCalls,
+  UserApi,
+  ChangePassword,
+  UpdateInfo,
+  Organization,
+  Api,
   Offset,
   Admin,
   User,

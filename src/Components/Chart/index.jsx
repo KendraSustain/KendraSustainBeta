@@ -1,7 +1,14 @@
 import React, { useEffect } from "react";
 import ReactECharts from "echarts-for-react";
 
-export default function BarChart({ series, x_items, type, y_item, axis }) {
+export default function BarChart({
+  series,
+  x_items,
+  type,
+  y_item,
+  axis,
+  label,
+}) {
   useEffect(() => {}, [x_items, y_item]);
   const tool = {
     toolbox: {
@@ -52,6 +59,12 @@ export default function BarChart({ series, x_items, type, y_item, axis }) {
           tooltip: {
             trigger: "axis",
           },
+
+          title: {
+            text: label,
+            left: 'center',
+            top : '10px'
+          },
         }
       : {
           ...tool,
@@ -74,6 +87,11 @@ export default function BarChart({ series, x_items, type, y_item, axis }) {
               ],
           tooltip: {
             trigger: "axis",
+          },
+          title: {
+            text: label,
+            left: 'center',
+            top : '10px'
           },
         };
   return (

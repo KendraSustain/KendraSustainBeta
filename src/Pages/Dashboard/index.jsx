@@ -7,11 +7,13 @@ import {
   Intensity,
   IntensityLine,
   MediaCard,
+  Table,
+  Table2,
   Weather,
   Widget,
 } from "../../Components";
 import FeaturedInfo from "../../Components/FeaturedInfo";
-const originalItems = ["a", "b", "c", "d", "e"];
+const originalItems = ["a", "b", "c", "d", "e", "f", "g"];
 
 const initialLayouts = {
   lg: [
@@ -20,10 +22,14 @@ const initialLayouts = {
     { i: "c", x: 0, y: 3, w: 3, h: 8 },
     { i: "d", x: 0, y: 11, w: 5, h: 8 },
     { i: "e", x: 5, y: 11, w: 5, h: 8 },
+    { i: "f", x: 0, y: 11, w: 5, h: 8 },
+    { i: "g", x: 5, y: 11, w: 5, h: 8 },
   ],
 };
 
 export function Dashboard() {
+  const user = JSON.parse(localStorage.getItem("user"));
+  // alert(user.id)
   function getFromLS(key) {
     let ls = {};
     if (global.localStorage) {
@@ -52,9 +58,7 @@ export function Dashboard() {
       <MediaCard
         title={"Kendra Sustain"}
         content="Kendra Sustain enables enterprises to embed data-driven Sustainability Decision-Making across business operations by providing enterprises with the tools to build a Circular Economy model through Data and Artificial Intelligence."
-        img={
-          require('../../Assets/Images/backgroundimg6.jpg')
-        }
+        img={require("../../Assets/Images/backgroundimg6.jpg")}
         style={{
           boxShadow: "none",
         }}
@@ -62,6 +66,8 @@ export function Dashboard() {
     ),
     d: <Intensity />,
     e: <IntensityLine />,
+    f: user.id === 71 ? <Table /> : null,
+    g: user.id === 71 ? <Table2 /> : null,
   };
 
   const [items, setItems] = useState(originalItems);
@@ -87,20 +93,25 @@ export function Dashboard() {
         layouts={layouts}
         breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
         cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
-        rowHeight={50}
+        rowHeight={52}
         width={1600}
         onLayoutChange={onLayoutChange}
       >
-        {items.map((key) => (
-          <div key={key} data-grid={{ w: 3, h: 2, x: 0, y: Infinity }}>
-            <Widget
-              id={key}
-              onRemoveItem={onRemoveItem}
-              backgroundColor="#867ae9"
-              Item={componentList[key]}
-            />
-          </div>
-        ))}
+        {items.map((key) =>
+          componentList[key] ? (
+            <div key={key} data-grid={{ w: 3, x: 0, y: Infinity }}>
+              <Widget
+                id={key}
+                style={{
+                  minHeight: "100%",
+                }}
+                onRemoveItem={onRemoveItem}
+                backgroundColor="#867ae9"
+                Item={componentList[key]}
+              />
+            </div>
+          ) : null
+        )}
       </ResponsiveGridLayout>
     </div>
   );
