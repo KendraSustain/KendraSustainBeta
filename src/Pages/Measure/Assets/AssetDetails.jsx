@@ -69,6 +69,7 @@ export default function AssetDetail(props) {
       );
     }
     getData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authToken, location]);
 
   const metadata = [
@@ -143,9 +144,9 @@ export default function AssetDetail(props) {
               tableData={rows.map((item) => {
                 console.log(item);
                 return {
-                  Date: item.Date,
-                  "Energy Consumption": item["Energy Consumption"],
-                  "Carbon Emission": item["Carbon Emission"],
+                  Date: "item.Date",
+                  "Energy Consumption": 'item["Energy Consumption"]',
+                  "Carbon Emission": 'item["Carbon Emission"]',
                 };
               })}
             />

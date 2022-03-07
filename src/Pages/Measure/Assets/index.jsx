@@ -5,6 +5,7 @@ import Scope1Com from "./Scope1";
 import Scope2Com from "./Scope2";
 import Scope3Com from "./Scope3";
 import { Appbar } from "../../../Components";
+import NIUK from "./NIUK";
 
 export default function Asset() {
   useEffect(() => {}, []);
@@ -30,14 +31,14 @@ export default function Asset() {
           user.id === 66
             ? [<Scope1Com />, <Scope2Com />, <Scope3Com />]
             : user.id === 71
-            ? [<Scope2Com />]
+            ? [<NIUK />, <Scope2Com />]
             : []
         }
         labels={
           user.id === 66
             ? [<>Scope 1</>, <>Scope 2</>, <>Scope 3</>]
             : user.id === 71
-            ? [<>Scope 2</>]
+            ? [<>Scope 1</>, <>Scope 2</>]
             : []
         }
       />

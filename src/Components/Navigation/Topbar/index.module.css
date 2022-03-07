@@ -1,4 +1,4 @@
-.topbar {
+.topbar{
   width: 100%;
   height: 60px;
   display: flex;
@@ -15,7 +15,7 @@
   transition: all 0.5s ease;
 }
 
-.topbar a {
+a {
   text-decoration: none;
 }
 

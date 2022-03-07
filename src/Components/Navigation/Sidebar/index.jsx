@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import styles from "./index.module.css";
 import { Link } from "react-router-dom";
 import { signout } from "../../../Auth";
 
@@ -90,15 +89,15 @@ const Sidebar = ({ user, close = true }) => {
   }, [user]);
 
   return (
-    <div className={[styles.sidebar, close ? styles.close : ""].join(" ")}>
-      <div className={styles.logoDetails}>
-        <div className={styles.logo}>
+    <div className={["sidebar", close ? "close" : ""].join(" ")}>
+      <div className={"logoDetails"}>
+        <div className={"logo"}>
           <img
             src="https://app.kendrasustain.com/images/kendra.jpg"
             alt="Kendra"
           />
         </div>
-        <div className={styles.fullLogo}>
+        <div className={"fullLogo"}>
           <img
             src="https://app.kendrasustain.com/images/kendra-white-full.png"
             alt="Kendra"
@@ -106,14 +105,11 @@ const Sidebar = ({ user, close = true }) => {
           <sup style={{ color: "white" }}>Beta</sup>
         </div>
       </div>
-      <ul className={styles.navLinks}>
+      <ul className={"navLinks"}>
         {menus.map((item, pos) => (
-          <li
-            key={pos}
-            className={list === item.list ? styles.showMenu : item.list}
-          >
+          <li key={pos} className={list === item.list ? "showMenu" : item.list}>
             <div
-              className={styles.iconLink}
+              className={"iconLink"}
               onClick={() =>
                 item.subMenu
                   ? close
@@ -124,20 +120,18 @@ const Sidebar = ({ user, close = true }) => {
             >
               <Link to={item.to ? item.to : "#!"}>
                 <i className={item.icon}></i>
-                <span className={styles.linkName}>{item.menu}</span>
+                <span className={"linkName"}>{item.menu}</span>
               </Link>
               {item.subMenu ? (
-                <i
-                  className={["bx bxs-chevron-down", styles.arrow].join(" ")}
-                ></i>
+                <i className={["bx bxs-chevron-down", "arrow"].join(" ")}></i>
               ) : null}
             </div>
 
-            <ul className={styles.subMenu}>
-              <div className={styles.listWrapper}>
-                <li className={styles.listHead}>
+            <ul className={"subMenu"}>
+              <div className={"listWrapper"}>
+                <li className={"listHead"}>
                   <a
-                    className={styles.linkName}
+                    className={"linkName"}
                     href="#!"
                     onClick={(e) => e.preventDefault()}
                   >
@@ -156,8 +150,8 @@ const Sidebar = ({ user, close = true }) => {
           </li>
         ))}
         <li>
-          <div className={styles.profileDetails}>
-            <div className={styles.profileContent}>
+          <div className={"profileDetails"}>
+            <div className={"profileContent"}>
               <input
                 onChange={captureImage}
                 id="avatarInput"
@@ -168,11 +162,11 @@ const Sidebar = ({ user, close = true }) => {
                 <img src={user_.photo} alt="profileImg" />
               </label>
             </div>
-            <div className={styles.nameJob}>
-              <div className={styles.profileName}>
+            <div className={"nameJob"}>
+              <div className={"profileName"}>
                 {user_.firstname + " " + user_.lastname}
               </div>
-              <div className={styles.job}>{user_.company}</div>
+              <div className={"job"}>{user_.company}</div>
             </div>
             <i className="bx bx-log-out" onClick={signout}></i>
           </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./index.module.css";
 import { Link } from "react-router-dom";
 
 const menus = [
@@ -64,14 +63,12 @@ export default function Topbar({
   onClose,
 }) {
   return (
-    <div
-      style={{
-        height: "60px",
-      }}
-    >
-      <div className={[styles.topbar, close ? styles.close : null].join(" ")}>
-        <div className={styles.topbarWrapper}>
-          <div className={styles.topLeft}>
+    <div style={{
+      height : '70px'
+    }} >
+      <div className={["topbar", close ? "close" : null].join(" ")}>
+        <div className={"topbarWrapper"}>
+          <div className={"topLeft"}>
             <i
               className="bx bx-menu"
               onClick={() => {
@@ -79,17 +76,15 @@ export default function Topbar({
               }}
             ></i>
           </div>
-          <div className={styles.topRight}>
+          <div className={"topRight"}>
             {menu.map((item, pos) => (
               <div
                 key={pos}
-                className={[styles.topbarIconContainer2, styles.flowBtn2].join(
-                  " "
-                )}
+                className={["topbarIconContainer2", "flowBtn2"].join(" ")}
               >
                 <Link
                   to={item.to}
-                  className={styles.topIconText2}
+                  className={"topIconText2"}
                   onClick={() => item.onClick}
                 >
                   {" "}
@@ -99,7 +94,7 @@ export default function Topbar({
             ))}
 
             {icon.map((element, pos) => (
-              <div className={styles.topbarIconContainer} key={pos}>
+              <div className={"topbarIconContainer"} key={pos}>
                 <div to={element.link}>
                   <Link to={element.to}>
                     <i className={element.icon} onClick={element.onClick}></i>

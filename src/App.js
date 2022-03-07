@@ -28,6 +28,7 @@ import {
   UserCalls,
   BillingAccount,
   Payment,
+  AssetScopeOneDetails
 } from "./Pages";
 import MainContext, { Context } from "./Context";
 import { Sidebar, Topbar } from "./Components";
@@ -54,6 +55,10 @@ const routes = [
   {
     route: "/asset",
     component: <AssetDetail />,
+  },
+  {
+    route: "/asset/one",
+    component: <AssetScopeOneDetails />,
   },
   {
     route: "/measure/scope",

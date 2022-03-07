@@ -2,11 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { columns } from "./columns";
 import { MTable } from "../../../Components";
-import { getUser } from "../../../Auth";
 import { useNavigate } from "react-router-dom";
 const Register = (props) => {
   const user = JSON.parse(localStorage.getItem("user"));
-
   const authToken = `Bearer ${localStorage.getItem("authToken")}`;
   const navigate = useNavigate();
   const apiAsset = axios.create({

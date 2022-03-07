@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
 
-.container {
+.loginPage {
     position: relative;
     width: 100%;
     background-color: #fff;
@@ -166,7 +166,7 @@
     font-family: "Poppins", sans-serif;
 }
 
-.container:before {
+.loginPage:before {
     content: "";
     position: absolute;
     height: 2000px;
@@ -262,40 +262,40 @@
 
 /* ANIMATION */
 
-.container.signUpMode:before {
+.loginPage.signUpMode:before {
     transform: translate(100%, -50%);
     right: 52%;
 }
 
-.container.signUpMode .leftPanel .image,
-.container.signUpMode .leftPanel .content {
+.loginPage.signUpMode .leftPanel .image,
+.loginPage.signUpMode .leftPanel .content {
     transform: translateX(-800px);
 }
 
-.container.signUpMode .signinSignup {
+.loginPage.signUpMode .signinSignup {
     left: 25%;
 }
 
-.container.signUpMode form.signUpForm {
+.loginPage.signUpMode form.signUpForm {
     opacity: 1;
     z-index: 2;
 }
 
-.container.signUpMode form.signInForm {
+.loginPage.signUpMode form.signInForm {
     opacity: 0;
     z-index: 1;
 }
 
-.container.signUpMode .rightPanel .image,
-.container.signUpMode .rightPanel .content {
+.loginPage.signUpMode .rightPanel .image,
+.loginPage.signUpMode .rightPanel .content {
     transform: translateX(0%);
 }
 
-.container.signUpMode .leftPanel {
+.loginPage.signUpMode .leftPanel {
     pointer-events: none;
 }
 
-.container.signUpMode .rightPanel {
+.loginPage.signUpMode .rightPanel {
     pointer-events: all;
 }
 

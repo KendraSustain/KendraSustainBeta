@@ -1,87 +1,85 @@
-import React from 'react'
-import styles from './index.module.css'
-import '../../../index.css'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = ({
   nav_item_text = [
     {
-      to: '/login',
-      text: 'Home',
-      onClick: e => console.log('Clicked' + e.target)
+      to: "/login",
+      text: "Home",
+      onClick: (e) => console.log("Clicked" + e.target),
     },
     {
-      to: '/login',
-      text: 'Solutions',
-      onClick: e => console.log('Clicked' + e.target)
+      to: "/login",
+      text: "Solutions",
+      onClick: (e) => console.log("Clicked" + e.target),
     },
     {
-      to: '/login',
-      text: 'Pricing',
-      onClick: e => console.log('Clicked' + e.target)
+      to: "/login",
+      text: "Pricing",
+      onClick: (e) => console.log("Clicked" + e.target),
     },
     {
-      to: '/login',
-      text: 'About',
-      onClick: e => console.log('Clicked' + e.target)
+      to: "/login",
+      text: "About",
+      onClick: (e) => console.log("Clicked" + e.target),
     },
-    { to: '/login', text: 'Contact' },
+    { to: "/login", text: "Contact" },
     {
-      icon: 'bx bxl-facebook-square',
-      to: '/login',
-      onClick: e => console.log('Clicked' + e.target)
-    },
-    {
-      icon: 'bx bxl-twitter',
-      to: '/login',
-      onClick: e => console.log('Clicked' + e.target)
+      icon: "bx bxl-facebook-square",
+      to: "/login",
+      onClick: (e) => console.log("Clicked" + e.target),
     },
     {
-      icon: 'bx bxl-linkedin',
-      to: '/login',
-      onClick: e => console.log('Clicked' + e.target)
+      icon: "bx bxl-twitter",
+      to: "/login",
+      onClick: (e) => console.log("Clicked" + e.target),
     },
     {
-      text: 'Login',
-      icon: 'bx bx-log-in',
-      to: '/login',
-      type: 'btn',
-      onClick: e => console.log('Clicked' + e.target)
-    }
+      icon: "bx bxl-linkedin",
+      to: "/login",
+      onClick: (e) => console.log("Clicked" + e.target),
+    },
+    {
+      text: "Login",
+      icon: "bx bx-log-in",
+      to: "/login",
+      type: "btn",
+      onClick: (e) => console.log("Clicked" + e.target),
+    },
   ],
 
   backgroundColor,
-  position
+  position,
 }) => {
   return (
     <div
-      className={styles.navTop}
+      className={"navTop"}
       style={{
-        backgroundColor: backgroundColor
+        backgroundColor: backgroundColor,
       }}
     >
-      <div className={styles.navBrand}>
+      <div className={"navBrand"}>
         <img
-          className={styles.brand}
+          className={"brand"}
           src={`https://app.kendrasustain.com/images/kendra-${
-            window.innerWidth < 576 ? 'blue' : 'white'
+            window.innerWidth < 576 ? "blue" : "white"
           }-full.png`}
-          alt='Kendra'
+          alt="Kendra"
         />
         <sup>Beta</sup>
       </div>
-      <div className={styles.navItems}>
-        <ul className={styles.navOptions}>
+      <div className={"navItems"}>
+        <ul className={"navOptions"}>
           {nav_item_text.map((element, pos) => (
             <li
               key={pos}
               onClick={element.onClick}
               className={
                 !element.icon
-                  ? styles.navText
+                  ? "navText"
                   : !element.text
-                  ? styles.navIcon
-                  : styles.navItem
+                  ? "navIcon"
+                  : "navItem"
               }
             >
               <Link to={element.to}>
@@ -93,7 +91,7 @@ const Navbar = ({
         </ul>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

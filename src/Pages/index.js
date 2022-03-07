@@ -25,7 +25,9 @@ import RoleApi from "./User Managment/Admin/RoleApi";
 import UserCalls from "./User Managment/Admin/UserCalls";
 import BillingAccount from "./User Managment/Admin/Billing/BillingAccount";
 import Payment from "./User Managment/Admin/Billing/Payment";
+import AssetScopeOneDetails from "./Measure/Assets/ScopeOneDetails";
 export {
+  AssetScopeOneDetails,
   Payment,
   BillingAccount,
   ManageOrg,
