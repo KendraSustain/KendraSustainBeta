@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { CardChart, MediaCard, MTable } from "../../../Components";
-
+import Data from "./NIUKData.json";
 function Scope2() {
-  const [tableData, setTableData] = useState([[]]);
+  const [tableData, setTableData] = useState([]);
+  const user = JSON.parse(localStorage.getItem("user"));
+  const [show, setShow] = useState(true);
 
   useEffect(() => {
     const authToken = `Bearer ${localStorage.getItem("authToken")}`;
@@ -57,9 +59,15 @@ function Scope2() {
         return null;
       });
       setTableData(data);
+
+      if (user.id === 71) {
+        setTableData([]);
+      } else if (user.id === 66) {
+        setShow(false);
+      }
     };
     getData();
-  }, []);
+  }, [user]);
 
   return (
     <div>
@@ -68,7 +76,7 @@ function Scope2() {
           {tableData.map((item, pos) => (
             <Grid md={6} item key={pos}>
               <MediaCard
-                title={`MPAN ${pos+1} - Feb,2022`}
+                title={`MPAN ${pos + 1} - Feb,2022`}
                 content={
                   <>
                     <div>
@@ -89,31 +97,53 @@ function Scope2() {
             </Grid>
           ))}
 
-            {tableData.map((item, pos) => (
-              <Grid item md={6} key={pos}>
-                <MTable
-                  title="Fuel Prediction"
-                  tableData={item}
-                  columns={[
-                    {
-                      title: "Date",
-                      field: "Date",
-                    },
-                    {
-                      title: "Petrol Consumption Prediction ",
-                      field: "Energy Prediction",
-                    },
-                    {
-                      title: "Diesel Consumption Prediction",
-                      field: "Carbon Emission Prediction",
-                    },
-                  ]}
-                />
-              </Grid>
-            ))}
-
-          <Grid item md={6}>
-            {tableData.map((item, pos) => (
+          {tableData.map((item, pos) => (
+            <Grid item md={6} key={pos}>
+              <MTable
+                title="Fuel Prediction"
+                tableData={item}
+                columns={[
+                  {
+                    title: "Date",
+                    field: "Date",
+                  },
+                  {
+                    title: "Petrol Consumption Prediction ",
+                    field: "Energy Prediction",
+                  },
+                  {
+                    title: "Diesel Consumption Prediction",
+                    field: "Carbon Emission Prediction",
+                  },
+                ]}
+              />
+            </Grid>
+          ))}
+          {show && (
+            <Grid item xs={12}>
+              {" "}
+              <MTable
+                title="AI Prediction : Scope 2"
+                tableData={Data["Scope 2"]}
+                columns={[
+                  {
+                    title: "Date",
+                    field: "Date",
+                  },
+                  {
+                    title: "Energy Prediction",
+                    field: "Energy Prediction",
+                  },
+                  {
+                    title: "Carbon Emission Prediction",
+                    field: "Carbon Emission Prediction",
+                  },
+                ]}
+              />
+            </Grid>
+          )}
+          {tableData.map((item, pos) => (
+            <Grid item md={6}>
               <CardChart
                 x_items={item.map((ele) => ele.Date.slice(0, 10))}
                 y_item={item.map((ele) => ele["Energy Prediction"])}
@@ -121,19 +151,45 @@ function Scope2() {
                 time="Date"
                 type="line"
               />
-            ))}
-          </Grid>
-          <Grid item md={6}>
-            {tableData.map((item) => (
+            </Grid>
+          ))}
+          {tableData.map((item) => (
+            <Grid item md={6}>
               <CardChart
                 x_items={item.map((ele) => ele.Date.slice(0, 10))}
                 y_item={item.map((ele) => ele["Carbon Emission Prediction"])}
                 title="Diesel Consumption Prediction *1000 kgCO2/kWh"
                 time="Date"
-                type='line'
+                type="line"
               />
-            ))}
-          </Grid>
+            </Grid>
+          ))}
+          {show && (
+            <Grid item xs={6}>
+              <CardChart
+                x_items={Data["Scope 2"].map((item) => item.Date)}
+                y_item={Data["Scope 2"].map(
+                  (item) => item["Energy Prediction"]
+                )}
+                title={`Energy Prediction Prediction `}
+                time="Date"
+                type="line"
+              />
+            </Grid>
+          )}
+          {show && (
+            <Grid item xs={6}>
+              <CardChart
+                x_items={Data["Scope 2"].map((item) => item.Date)}
+                y_item={Data["Scope 2"].map(
+                  (item) => item["Carbon Emission Prediction"]
+                )}
+                title={`Carbon Emission Prediction`}
+                time="Date"
+                type="line"
+              />
+            </Grid>
+          )}
         </Grid>
       </Box>
     </div>

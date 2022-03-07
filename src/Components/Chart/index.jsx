@@ -54,6 +54,7 @@ export default function BarChart({
                   data: y_item,
                   type: type,
                   smooth: true,
+                  color: "#4B5FAE",
                 },
               ],
           tooltip: {
@@ -62,8 +63,8 @@ export default function BarChart({
 
           title: {
             text: label,
-            left: 'center',
-            top : '10px'
+            left: "center",
+            top: "10px",
           },
         }
       : {
@@ -83,6 +84,7 @@ export default function BarChart({
                   data: y_item,
                   type: type,
                   smooth: true,
+                  color: "#4B5FAE",
                 },
               ],
           tooltip: {
@@ -90,8 +92,8 @@ export default function BarChart({
           },
           title: {
             text: label,
-            left: 'center',
-            top : '10px'
+            left: "center",
+            top: "10px",
           },
         };
   return (

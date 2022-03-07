@@ -5,7 +5,7 @@ const Api = () => {
   const navigate = useNavigate();
   useEffect(() => {
     navigate("/dashboard");
-    window.open("https://api.kendrasustain.com/redoc");
+    window.open("https://flow.kendrasustain.com");
   }, [navigate]);
 
   return <></>;

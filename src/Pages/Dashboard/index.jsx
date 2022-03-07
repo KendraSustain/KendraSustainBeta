@@ -52,18 +52,18 @@ export function Dashboard() {
   //   }
 
   const componentList = {
-    a: <FeaturedInfo />,
-    b: <Weather />,
-    c: (
-      <MediaCard
-        title={"Kendra Sustain"}
-        content="Kendra Sustain enables enterprises to embed data-driven Sustainability Decision-Making across business operations by providing enterprises with the tools to build a Circular Economy model through Data and Artificial Intelligence."
-        img={require("../../Assets/Images/backgroundimg6.jpg")}
-        style={{
-          boxShadow: "none",
-        }}
-      />
-    ),
+    // a: <FeaturedInfo />,
+    // b: <Weather />,
+    // c: (
+    //   <MediaCard
+    //     title={"Kendra Sustain"}
+    //     content="Kendra Sustain enables enterprises to embed data-driven Sustainability Decision-Making across business operations by providing enterprises with the tools to build a Circular Economy model through Data and Artificial Intelligence."
+    //     img={require("../../Assets/Images/backgroundimg6.jpg")}
+    //     style={{
+    //       boxShadow: "none",
+    //     }}
+    //   />
+    // ),
     d: <Intensity />,
     e: <IntensityLine />,
     f: user.id === 71 ? <Table /> : null,

@@ -10,7 +10,7 @@
         "Net": 58.33,
         "VAT": 11.67,
         "Expense": 70,
-        "Price Litre": 1.184,
+        "Price / Litre": 1.184,
         "CO2 Emission": 158.21
     },
     {
@@ -24,7 +24,7 @@
         "Net": 49.79,
         "VAT": 9.96,
         "Expense": 59.75,
-        "Price Litre": 1.068,
+        "Price / Litre": 1.068,
         "CO2 Emission": 149.76
     },
     {
@@ -38,7 +38,7 @@
         "Net": 67.98,
         "VAT": 13.6,
         "Expense": 81.58,
-        "Price Litre": 1.187,
+        "Price / Litre": 1.187,
         "CO2 Emission": 183.86
     },
     {
@@ -52,7 +52,7 @@
         "Net": 49.75,
         "VAT": 9.95,
         "Expense": 59.7,
-        "Price Litre": 1.173,
+        "Price / Litre": 1.173,
         "CO2 Emission": 136.15
     },
     {
@@ -66,7 +66,7 @@
         "Net": 36.55,
         "VAT": 7.31,
         "Expense": 43.86,
-        "Price Litre": 0.899,
+        "Price / Litre": 0.899,
         "CO2 Emission": 130.62
     },
     {
@@ -80,7 +80,7 @@
         "Net": 69.42,
         "VAT": 13.88,
         "Expense": 83.3,
-        "Price Litre": 1.149,
+        "Price / Litre": 1.149,
         "CO2 Emission": 193.98
     }
 ]

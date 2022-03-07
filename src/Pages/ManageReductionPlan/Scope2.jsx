@@ -8,7 +8,7 @@ const CarbonFootprintCalculator = () => {
   const authToken = `Bearer ${localStorage.getItem("authToken")}`;
   const [data1, setData1] = useState([]);
   const user = JSON.parse(localStorage.getItem("user"));
-  const [newData, setNewData] = useState([])
+  const [newData, setNewData] = useState([]);
   useEffect(() => {
     async function getData() {
       const apiGetData = axios.create({
@@ -19,8 +19,8 @@ const CarbonFootprintCalculator = () => {
         },
       });
       const { data } = await apiGetData.get(`/api/asset/${user.id}`);
-      setNewData(data)
-      console.log(data)
+      setNewData(data);
+      console.log(data);
       let dum = [];
       for (let i = 0; i < data.length; i++) {
         await apiGetData
@@ -62,17 +62,18 @@ const CarbonFootprintCalculator = () => {
             </Grid>
           ))}
 
-          <Grid item xs={12} md={12}>
-            {data1.map((item, pos) => (
+          {data1.map((item, pos) => (
+            <Grid item xs={12} md={12}>
               <CardChart
                 title={newData[pos].assetName}
                 key={pos}
                 x_items={item.map((e) => e.Date)}
                 type="line"
                 y_item={item.map((e) => e["Carbon Emission"])}
+                label='Carbon Emission'
               />
-            ))}
-          </Grid>
+            </Grid>
+          ))}
 
           {data1.map((item, pos) => (
             <Grid item md={6} key={pos}>
@@ -81,6 +82,7 @@ const CarbonFootprintCalculator = () => {
                 x_items={item.map((e) => e.Date)}
                 type="bar"
                 y_item={item.map((e) => e["Carbon Emission"])}
+                label='Carbon Emission'
               />
             </Grid>
           ))}

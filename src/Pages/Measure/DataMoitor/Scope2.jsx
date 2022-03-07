@@ -11,7 +11,7 @@ const Scope2Com = () => {
 
   useEffect(() => {
     const getData = async () => {
-      setRow([])
+      setRow([]);
       const apiGetAsset = axios.create({
         baseURL: process.env.REACT_APP_API_URL,
         headers: {
@@ -28,19 +28,18 @@ const Scope2Com = () => {
         },
       });
       const { data } = await apiGetAsset.get(`/api/asset/${user.id}`);
-      console.log("New  : " , data )
-      for (let i = 0; i < data.length; i++) {
-        await apiGetData
-          .post(
-            `/api/getEmission?name=${data[i].asset_name}&type=${"emission"}`
-          )
-          .then((res) => {
-            let temp = row;
-            temp.push([...res.data]);
-            setRow(temp);
-            console.log(row);
-          });
+      const asset = data;
+
+      let temp = [];
+      for (let i = 0; i < asset.length; i++) {
+        const { data } = await apiGetData.post(
+          `/api/getEmission?name=${asset[i].asset_name}&type=${"emission"}`
+        );
+        console.log(data);
+        temp.push(data);
       }
+      console.log(temp);
+      setRow(temp);
     };
     getData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -71,13 +70,12 @@ const Scope2Com = () => {
             </Grid>
           ))}
 
-          <Grid item xs={12} md={12}>
-            {row.map((item, pos) => {
-              return (
+          {row.map((item, pos) => {
+            return (
+              <Grid item xs={12} md={12} key={pos}>
                 <CardChart
-                  key={pos}
                   x_items={item.map((data) => data.Date)}
-                  title={"Energy Consumption for Premier Modular (x1000 Kwh)"}
+                  title={`Energy Consumption for ${user.company} (x1000 Kwh)`}
                   label="Energy Consumption"
                   time="Date"
                   type="bar"
@@ -85,20 +83,22 @@ const Scope2Com = () => {
                     {
                       data: item.map((data) => data["Energy Consumption"]),
                       type: "bar",
+
+                      color: "#4B5FAE",
                     },
                     {
                       data: item.map((data) => data["Carbon Emission"]),
                       type: "bar",
+                      color: "#272253",
                     },
                   ]}
                 />
-              );
-            })}
-          </Grid>
+              </Grid>
+            );
+          })}
           {row.map((item, pos) => (
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} key={pos}>
               <CardChart
-                key={pos}
                 x_items={item.map((data) => data.Date)}
                 label="Energy Consumption"
                 time="Date"

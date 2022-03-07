@@ -8,9 +8,7 @@ import PieChart from "./PieChart";
 
 export default function CardChart(props) {
   return (
-    <div style={{
-      marginTop : '8px'
-    }} >
+   
       <Card>
         <CardHeader title={props.title} />
         <CardContent>
@@ -21,6 +19,5 @@ export default function CardChart(props) {
           )}
         </CardContent>
       </Card>
-    </div>
   );
 }

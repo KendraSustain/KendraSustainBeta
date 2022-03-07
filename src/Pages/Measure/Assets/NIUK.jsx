@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { MTable } from "../../../Components";
+import { CardChart, MTable } from "../../../Components";
 import Data from "./NIUK_data.json";
 export default function NIUK() {
   const columns = [
@@ -16,6 +16,10 @@ export default function NIUK() {
       title: "Vehicle Reg Driver",
       field: "Vehicle Reg Driver",
     },
+    {
+      title: "Mileage",
+      field: "mileage",
+    },
 
     {
       title: "Location",
@@ -30,7 +34,8 @@ export default function NIUK() {
         tableData={Data.map((item, pos) => {
           return {
             ...item,
-            sn: pos+1,
+            mileage: item["Distance Traveled"] / item["Litres"],
+            sn: pos + 1,
           };
         })}
         onRowClick={(event, rowData) =>
@@ -39,6 +44,11 @@ export default function NIUK() {
           })
         }
         title="Scope 1"
+      />
+      <CardChart
+        x_items={Data.map((item) => item["Vehicle Reg"])}
+        y_item={Data.map((item) => item["Distance Traveled"] / item["Litres"])}
+        type="bar"
       />
     </div>
   );

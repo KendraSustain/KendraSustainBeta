@@ -12,22 +12,7 @@ export default function AssetDetail(props) {
   const user = JSON.parse(localStorage.getItem("user"));
 
   const location = useLocation();
-  const [consumption, setConsumption] = React.useState([]);
-  const [emission, setEmission] = React.useState([]);
   const [rows, setRows] = React.useState([]);
-  const [date, setDate] = React.useState([]);
-
-  const columns = [
-    { field: "Date", title: "Date" },
-    {
-      field: "Energy Consumption",
-      title: "Energy Consumption (KwH)",
-    },
-    {
-      field: "Carbon Emission",
-      title: "Carbon Emission (kgCO2/kWh)",
-    },
-  ];
 
   useEffect(() => {
     async function getData() {
@@ -38,38 +23,16 @@ export default function AssetDetail(props) {
           Authorization: authToken,
         },
       });
-
-      let data = [
-        {
-          assetName: location.state.detail.asset_name,
-          type: "emission",
-        },
-      ];
-
-      data.map(
-        async (data) =>
-          await apiGetData
-            .post(`/api/getEmission?name=${data.assetName}&type=${data.type}`)
-            .then((res) => {
-              setRows(res.data);
-              console.log(rows);
-              let varDate = [];
-              let varEnergy = [];
-              let emission = [];
-              res.data.forEach((element) => {
-                varDate.push(element.Date);
-                varEnergy.push(element["Energy Consumption"]);
-                emission.push(element["Carbon Emission"]);
-              });
-
-              setDate((d) => [...d, varDate]);
-              setConsumption((p) => [...p, varEnergy]);
-              setEmission((e) => [...e, emission]);
-            })
+      let meta = {
+        assetName: location.state.detail.asset_name,
+        type: "emission",
+      };
+      const { data } = await apiGetData.post(
+        `/api/getEmission?name=${meta.assetName}&type=${meta.type}`
       );
+      setRows(data);
     }
     getData();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authToken, location]);
 
   const metadata = [
@@ -102,6 +65,22 @@ export default function AssetDetail(props) {
       data: "18 kgCO2/kWh",
     },
   ];
+  const columns = [
+    { field: "Date", title: "Date" },
+    {
+      field: "Energy Consumption",
+      title: "Energy Consumption (KwH)",
+    },
+    {
+      field: "Carbon Emission",
+      title: "Carbon Emission (kgCO2/kWh)",
+    },
+  ];
+  const data = [
+    {
+      Date: "hello",
+    },
+  ];
 
   return (
     <div>
@@ -129,56 +108,61 @@ export default function AssetDetail(props) {
           ))}
           <Grid item xs={12} md={12}>
             <MTable
-              columns={[
-                { field: "Date", title: "Date" },
-                {
-                  field: "Energy Consumption",
-                  title: "Energy Consumption (KwH)",
-                },
-                {
-                  field: "Carbon Emission",
-                  title: "Carbon Emission (kgCO2/kWh)",
-                },
-              ]}
+              columns={columns}
               title="Energy Consumtion"
-              tableData={rows.map((item) => {
-                console.log(item);
-                return {
-                  Date: "item.Date",
-                  "Energy Consumption": 'item["Energy Consumption"]',
-                  "Carbon Emission": 'item["Carbon Emission"]',
-                };
-              })}
+              tableData={[{ Date: "" }, ...rows]}
+              options={{
+                pageSize: 7,
+              }}
             />
           </Grid>
 
-          {date.map((item, pos) => (
-            <Grid item xs={12} md={12}>
-              <CardChart
-                x_items={date[pos]}
-                y_item={consumption[pos]}
-                title={`Energy Consumption for ${user.company}`}
-                label="Energy Consumption"
-                time="Date"
-                assetName={location.state.detail.asset_name}
-                type="line"
-              />
-            </Grid>
-          ))}
+          <Grid item xs={12} md={12}>
+            <CardChart
+              x_items={rows.map((item) => item["Date"])}
+              y_item={rows.map((item) => item["Energy Consumption"])}
+              title={`Energy Consumption for ${user.company}`}
+              label="Energy Consumption"
+              time="Date"
+              assetName={location.state.detail.asset_name}
+              type="line"
+            />
+          </Grid>
 
-          {date.map((item, pos) => (
-            <Grid item xs={12} md={12}>
-              <CardChart
-                x_items={date[pos]}
-                y_item={emission[pos]}
-                title={`Energy Consumption for ${user.company} (x1000 kgCO2/kWh)`}
-                label="Carbon Emission"
-                time="Date"
-                type="bar"
-                assetName={location.state.detail.asset_name}
-              />
-            </Grid>
-          ))}
+          <Grid item xs={12} md={12}>
+            <CardChart
+              x_items={rows.map((item) => item["Date"])}
+              y_item={rows.map((item) => item["Carbon Emission"])}
+              title={`Energy Consumption for ${user.company} (x1000 kgCO2/kWh)`}
+              label="Carbon Emission"
+              time="Date"
+              type="line"
+              assetName={location.state.detail.asset_name}
+            />
+          </Grid>
+          <Grid item xs={12} md={12}>
+            <CardChart
+              x_items={rows.map((item) => item["Date"])}
+              y_item={rows.map((item) => item["Energy Consumption"])}
+              title={`Energy Consumption for ${user.company}`}
+              label="Energy Consumption"
+              time="Date"
+              assetName={location.state.detail.asset_name}
+              type="bar"
+            />
+          </Grid>
+
+          <Grid item xs={12} md={12}>
+            <CardChart
+              x_items={rows.map((item) => item["Date"])}
+              y_item={rows.map((item) => item["Carbon Emission"])}
+              title={`Energy Consumption for ${user.company} (x1000 kgCO2/kWh)`}
+              label="Carbon Emission"
+              time="Date"
+              type="bar"
+              assetName={location.state.detail.asset_name}
+            />
+          </Grid>
           <Grid item xs={12}>
             <iframe
               title="Map"

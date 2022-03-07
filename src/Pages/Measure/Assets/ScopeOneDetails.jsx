@@ -22,7 +22,7 @@ export default function ScopeOneDetails() {
     "Net",
     "VAT",
     "Expense",
-    "Price Litre",
+    "Price / Litre",
     "CO2 Emission",
   ];
 

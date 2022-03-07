@@ -39,7 +39,7 @@ export default function MTable(props) {
     searchAutoFocus: true,
     searchFieldVariant: "standard",
     paging: true,
-    pageSize: pageSize,
+    pageSize: pageSize ? pageSize : 7,
     paginationType: "stepped",
     showFirstLastPageButtons: false,
     exportButton: true,
@@ -91,6 +91,7 @@ export default function MTable(props) {
         style={{
           boxShadow: "none",
         }}
+        rowsPerPage={4}
         columns={props.columns}
         data={tableData}
         editable={{ ...props.editable }}
