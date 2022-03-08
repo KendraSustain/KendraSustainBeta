@@ -22,6 +22,7 @@ function Scope1() {
           type: "prediction",
         },
       ];
+      dataF = [];
       for (let i = 0; i < dataF.length; i++) {
         const response = await fetch(
           `${baseURL}/api/getPrediction?name=${dataF[i].assetName}&type=${dataF[i].type}`,
