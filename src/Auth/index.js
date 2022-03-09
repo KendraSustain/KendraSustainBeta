@@ -25,28 +25,25 @@ export const getToken = async ({ username, password }) => {
   }
 };
 export const getUser = async () => {
-  // try {
-  //   const authToken = localStorage.getItem("authToken");
-  //   const user_json = await fetch(baseURL + "/api/users/me", {
-  //     method: "GET",
-  //     headers: {
-  //       Authorization: "Bearer " + authToken,
-  //     },
-  //   });
-  //   const user = await user_json.json();
-  //   console.log(user);
-  //   if (user.firstname) {
-  //     localStorage.setItem("user", JSON.stringify(user));
-  //     return { ...user, success: true };
-  //   }
-  //   return { success: false };
-  // } catch (error) {
-  //   console.log(error);
-  //   return { success: false };
-  // }
-  return {
-    success: true,
-  };
+  try {
+    const authToken = localStorage.getItem("authToken");
+    const user_json = await fetch(baseURL + "/api/users/me", {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + authToken,
+      },
+    });
+    const user = await user_json.json();
+    console.log(user);
+    if (user.firstname) {
+      localStorage.setItem("user", JSON.stringify(user));
+      return { ...user, success: true };
+    }
+    return { success: false };
+  } catch (error) {
+    console.log(error);
+    return { success: false };
+  }
 };
 
 export const createUser = async (user) => {
