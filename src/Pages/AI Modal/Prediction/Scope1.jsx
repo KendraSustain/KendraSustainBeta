@@ -59,13 +59,11 @@ function Scope1() {
         return null;
       });
       setTableData(data);
-      if (user.id === 71) {
-        setTableData([]);
-      } else if (user.id === 66) {
-        setShow(false);
-      }
+      setShow(false);
     };
-    getData();
+    if (user.id === 66) {
+      getData();
+    }
   }, [user]);
 
   return (

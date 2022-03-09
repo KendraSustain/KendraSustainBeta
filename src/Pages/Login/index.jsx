@@ -18,8 +18,8 @@ const Login = () => {
 
   useEffect(() => {
     const run = async () => {
-      const user = await getUser();
-      if (user.success) navigate("/dashboard");
+      // const user = await getUser();
+      // if (user.success) navigate("/dashboard");
     };
     run();
   }, [navigate]);

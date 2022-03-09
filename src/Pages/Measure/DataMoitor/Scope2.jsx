@@ -65,7 +65,7 @@ const Scope2Com = () => {
               <MTable
                 columns={columns}
                 tableData={item}
-                title={"MPAN : " + (pos + 1)}
+                title={"Energy Consumption: " + (pos + 1)}
               />
             </Grid>
           ))}
@@ -83,7 +83,6 @@ const Scope2Com = () => {
                     {
                       data: item.map((data) => data["Energy Consumption"]),
                       type: "bar",
-
                       color: "#4B5FAE",
                     },
                     {

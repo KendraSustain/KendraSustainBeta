@@ -13,6 +13,10 @@ import {
   Widget,
 } from "../../Components";
 import FeaturedInfo from "../../Components/FeaturedInfo";
+import CarbonGraph from "./CarbonGraph";
+import CarboTable from "./CarboTable";
+import EnergyGraph from "./EnergyGraph";
+import EnergyTable from "./EnergyTable";
 const originalItems = ["a", "b", "c", "d", "e", "f", "g"];
 
 const initialLayouts = {
@@ -22,8 +26,14 @@ const initialLayouts = {
     { i: "c", x: 0, y: 3, w: 3, h: 8 },
     { i: "d", x: 0, y: 11, w: 5, h: 8 },
     { i: "e", x: 5, y: 11, w: 5, h: 8 },
-    { i: "f", x: 0, y: 11, w: 5, h: 8 },
-    { i: "g", x: 5, y: 11, w: 5, h: 8 },
+    { i: "f", x: 0, y: 18, w: 5, h: 8 },
+    { i: "g", x: 5, y: 18, w: 5, h: 8 },
+    { i: "h", x: 0, y: 27, w: 5, h: 8 },
+    { i: "i", x: 5, y: 27, w: 5, h: 8 },
+    { i: "j", x: 0, y: 35, w: 5, h: 8 },
+    { i: "k", x: 5, y: 35, w: 5, h: 8 },
+    { i: "l", x: 0, y: 43, w: 5, h: 8 },
+    { i: "m", x: 5, y: 43, w: 5, h: 8 },
   ],
 };
 
@@ -50,9 +60,11 @@ export function Dashboard() {
   //       )
   //     }
   //   }
-
+  const NiukWigh = {
+    
+  };
   const componentList = {
-    // a: <FeaturedInfo />,
+    a: <FeaturedInfo />,
     // b: <Weather />,
     // c: (
     //   <MediaCard
@@ -68,6 +80,10 @@ export function Dashboard() {
     e: <IntensityLine />,
     f: user.id === 71 ? <Table /> : null,
     g: user.id === 71 ? <Table2 /> : null,
+    h: <CarbonGraph />,
+    i: <CarboTable />,
+    j: <EnergyGraph />,
+    k: <EnergyTable />,
   };
 
   const [items, setItems] = useState(originalItems);

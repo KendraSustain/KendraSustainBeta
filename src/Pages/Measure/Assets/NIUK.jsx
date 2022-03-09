@@ -1,7 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { CardChart, MTable } from "../../../Components";
-import Data from "./NIUK_data.json";
+// import Data from "./NIUK_data.json";
+import Data from "./NiukData.json";
 export default function NIUK() {
   const columns = [
     {
@@ -33,9 +34,9 @@ export default function NIUK() {
         columns={columns}
         tableData={Data.map((item, pos) => {
           return {
-            ...item,
-            mileage: item["Distance Traveled"] / item["Litres"],
             sn: pos + 1,
+            "Vehicle Reg": item["Vehicle Reg"],
+            "Vehicle Reg Driver": item["Vehicle Reg/Driver"],
           };
         })}
         onRowClick={(event, rowData) =>
@@ -45,11 +46,11 @@ export default function NIUK() {
         }
         title="Scope 1"
       />
-      <CardChart
+      {/* <CardChart
         x_items={Data.map((item) => item["Vehicle Reg"])}
         y_item={Data.map((item) => item["Distance Traveled"] / item["Litres"])}
         type="bar"
-      />
+      /> */}
     </div>
   );
 }

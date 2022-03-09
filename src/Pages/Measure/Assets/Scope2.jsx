@@ -82,6 +82,7 @@ const Register = (props) => {
     <div>
       {localData && (
         <MTable
+          title="Energy Consuption"
           tableData={localData}
           columns={columns}
           onRowClick={(event, rowData) =>

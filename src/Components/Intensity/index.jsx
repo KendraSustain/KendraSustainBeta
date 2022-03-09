@@ -55,10 +55,11 @@ function Intensity(props) {
                   (item) => item["Energy Consumption"]
                 ),
                 type: "bar",
-                backgroundColor: "red",
+                color: "#4B5FAE",
               },
               {
                 name: "K0",
+                color: "#272253",
 
                 data: NIUKData.electricity.K0.map(
                   (item) => item["Energy Consumption"]

@@ -7,7 +7,6 @@ export const columns = [
       fontSize: '0.8rem',
       whiteSpace: 'nowrap',
       textAlign: 'left',
-      fontFamily: "'Poppins', sans-serif"
     },
     headerStyle: {
       fontSize: '1rem',
@@ -37,7 +36,6 @@ export const columns = [
       fontSize: '0.8rem',
       whiteSpace: 'nowrap',
       textAlign: 'center',
-      fontFamily: "'Poppins', sans-serif"
     },
     headerStyle: {
       fontSize: '1rem',
@@ -68,7 +66,6 @@ export const columns = [
       fontSize: '0.8rem',
       whiteSpace: 'nowrap',
       textAlign: 'center',
-      fontFamily: "'Poppins', sans-serif"
     },
     headerStyle: {
       fontSize: '1rem',

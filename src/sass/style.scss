@@ -1,13 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  font-family: "Poppins", sans-serif;
-}
+  font-family: "Nunito Sans", sans-serif;
 
+}
+ 
 :root {
   --sidebar-primary: #11101d;
   --sidebar-secondary: #1d1b31;
@@ -33,6 +34,10 @@
 }
 
 .navTop {
+  * {
+    font-family: "Nunito Sans", sans-serif;
+  }
+  top: 20px;
   z-index: 5;
   display: flex;
   justify-content: space-between;
@@ -48,6 +53,7 @@
 
   .navBrand img {
     width: 300px;
+    margin-left: 90px;
   }
   .navItems {
     ul {
@@ -62,12 +68,13 @@
           color: white;
           text-decoration: none;
         }
-        .navText {
+        &.navText {
           margin: 0 10px;
           a {
             padding: 10px 15px;
             border-radius: 2px;
             transition: all 0.3s ease-in-out;
+            font-size: 0.8rem;
             border: 1px solid transparent;
           }
           &:hover a {
@@ -81,11 +88,13 @@
           text-align: center;
           i {
             color: white;
-            transition: font-size 0.3s ease-in-out;
-            font-size: 1.5rem;
+            transition-property: font-size, color;
+            transition-duration: 0.3s;
+            font-size: 1.8rem;
           }
           &:hover i {
             font-size: 1.2rem;
+            color: #2091f9;
           }
         }
         &.navItem {
@@ -101,9 +110,11 @@
             border-radius: 20px;
             padding: 5px 15px;
             background-color: #2091f9;
+            transition-property: background-color, color;
+            transition-duration: 0.3s;
           }
           &:hover a {
-            background-color: #104f8a;
+            background-color: #2091f9;
           }
         }
       }
@@ -536,7 +547,6 @@
     overflow: hidden;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    font-family: "Poppins", sans-serif;
     &.signUpForm {
       opacity: 0;
       z-index: 1;
@@ -557,7 +567,6 @@
     font-size: 2.2rem;
     color: #444;
     margin-bottom: 10px;
-    font-family: "Poppins", sans-serif;
     font-weight: bold;
   }
 
@@ -572,7 +581,6 @@
     grid-template-columns: 15% 85%;
     padding: 0 0.4rem;
     position: relative;
-    font-family: "Poppins", sans-serif;
     border: 1.5px solid transparent;
     &:focus-within {
       border: 1.5px solid #116dc4;
@@ -592,11 +600,9 @@
       font-weight: 600;
       font-size: 1rem;
       color: #333;
-      font-family: "Poppins", sans-serif;
       &::placeholder {
         color: #aaa;
         font-weight: 500;
-        font-family: "Poppins", sans-serif;
       }
     }
   }
@@ -609,7 +615,6 @@
   .socialMedia {
     display: flex;
     justify-content: center;
-    font-family: "Poppins", sans-serif;
   }
 
   .socialIcon {
@@ -644,7 +649,6 @@
     margin: 10px 0;
     cursor: pointer;
     transition: 0.5s;
-    font-family: "Poppins", sans-serif;
     &:hover {
       background-color: #38507a;
     }
@@ -670,7 +674,6 @@
     left: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    font-family: "Poppins", sans-serif;
   }
 
   &:before {
@@ -718,7 +721,6 @@
       color: #fff;
       transition: transform 0.9s ease-in-out;
       transition-delay: 0.6s;
-      font-family: "Poppins", sans-serif;
     }
     h3 {
       font-weight: 600;

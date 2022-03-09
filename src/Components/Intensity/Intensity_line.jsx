@@ -53,9 +53,12 @@ function Intensity(props) {
                 name: "G4",
                 data: NIUKData.price.G4.map((item) => item.Price),
                 type: "bar",
+                color: "#4B5FAE",
+
               },
               {
                 name: "K0",
+                color: "#272253",
 
                 data: NIUKData.price.K0.map((item) => item.Price),
                 type: "bar",

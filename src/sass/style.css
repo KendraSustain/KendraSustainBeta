@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400&display=swap");
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  font-family: "Poppins", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 :root {
@@ -34,6 +34,7 @@
 }
 
 .navTop {
+  top: 20px;
   z-index: 5;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -54,12 +55,17 @@
   position: absolute;
 }
 
+.navTop * {
+  font-family: "Nunito Sans", sans-serif;
+}
+
 .navTop sup {
   color: white;
 }
 
 .navTop .navBrand img {
   width: 300px;
+  margin-left: 90px;
 }
 
 .navTop .navItems ul {
@@ -84,19 +90,20 @@
   text-decoration: none;
 }
 
-.navTop .navItems ul li .navText {
+.navTop .navItems ul li.navText {
   margin: 0 10px;
 }
 
-.navTop .navItems ul li .navText a {
+.navTop .navItems ul li.navText a {
   padding: 10px 15px;
   border-radius: 2px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  font-size: 0.8rem;
   border: 1px solid transparent;
 }
 
-.navTop .navItems ul li .navText:hover a {
+.navTop .navItems ul li.navText:hover a {
   border: 1px solid #116dc4;
   background: #2091f9;
 }
@@ -109,13 +116,16 @@
 
 .navTop .navItems ul li.navIcon i {
   color: white;
-  -webkit-transition: font-size 0.3s ease-in-out;
-  transition: font-size 0.3s ease-in-out;
-  font-size: 1.5rem;
+  -webkit-transition-property: font-size, color;
+  transition-property: font-size, color;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  font-size: 1.8rem;
 }
 
 .navTop .navItems ul li.navIcon:hover i {
   font-size: 1.2rem;
+  color: #2091f9;
 }
 
 .navTop .navItems ul li.navItem i {
@@ -137,10 +147,14 @@
   border-radius: 20px;
   padding: 5px 15px;
   background-color: #2091f9;
+  -webkit-transition-property: background-color, color;
+  transition-property: background-color, color;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
 }
 
 .navTop .navItems ul li.navItem:hover a {
-  background-color: #104f8a;
+  background-color: #2091f9;
 }
 
 .sidebar {
@@ -697,7 +711,6 @@
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 / 2;
-  font-family: "Poppins", sans-serif;
 }
 
 .loginPage .form.signUpForm {
@@ -727,7 +740,6 @@
   font-size: 2.2rem;
   color: #444;
   margin-bottom: 10px;
-  font-family: "Poppins", sans-serif;
   font-weight: bold;
 }
 
@@ -744,7 +756,6 @@
       grid-template-columns: 15% 85%;
   padding: 0 0.4rem;
   position: relative;
-  font-family: "Poppins", sans-serif;
   border: 1.5px solid transparent;
 }
 
@@ -769,31 +780,26 @@
   font-weight: 600;
   font-size: 1rem;
   color: #333;
-  font-family: "Poppins", sans-serif;
 }
 
 .loginPage .inputField input::-webkit-input-placeholder {
   color: #aaa;
   font-weight: 500;
-  font-family: "Poppins", sans-serif;
 }
 
 .loginPage .inputField input:-ms-input-placeholder {
   color: #aaa;
   font-weight: 500;
-  font-family: "Poppins", sans-serif;
 }
 
 .loginPage .inputField input::-ms-input-placeholder {
   color: #aaa;
   font-weight: 500;
-  font-family: "Poppins", sans-serif;
 }
 
 .loginPage .inputField input::placeholder {
   color: #aaa;
   font-weight: 500;
-  font-family: "Poppins", sans-serif;
 }
 
 .loginPage .socialText {
@@ -808,7 +814,6 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-family: "Poppins", sans-serif;
 }
 
 .loginPage .socialIcon {
@@ -852,7 +857,6 @@
   cursor: pointer;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  font-family: "Poppins", sans-serif;
 }
 
 .loginPage .btn:hover {
@@ -883,7 +887,6 @@
   display: grid;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
-  font-family: "Poppins", sans-serif;
 }
 
 .loginPage:before {
@@ -953,7 +956,6 @@
   transition: transform 0.9s ease-in-out, -webkit-transform 0.9s ease-in-out;
   -webkit-transition-delay: 0.6s;
           transition-delay: 0.6s;
-  font-family: "Poppins", sans-serif;
 }
 
 .loginPage .panel h3 {
