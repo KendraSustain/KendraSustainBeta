@@ -6,10 +6,10 @@ export default function Scope1CE() {
     <div>
       <Gauge
         label={"Carbon Emission for Scope 1"}
-        value={20}
+        value={1255}
         name={"Scope 1"}
         title={'Emission'}
-        max={90}
+        max={3000}
         unit={'kwHr'}
 
       />

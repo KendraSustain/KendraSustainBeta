@@ -24,23 +24,21 @@ export default function Gauge({ label, min, max, value, name, option, unit }) {
           },
         },
         axisTick: {
-          distance: -30,
-          length: 8,
           lineStyle: {
             color: "#fff",
             width: 2,
           },
         },
         splitLine: {
-          distance: -44,
+          distance: -55,
           lineStyle: {
             color: "#fff",
-            width: 40,
+            // width: ,
           },
         },
         axisLabel: {
           color: "auto",
-          fontSize: 16,
+          fontSize: 12,
         },
         detail: {
           valueAnimation: true,

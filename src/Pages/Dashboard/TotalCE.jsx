@@ -6,10 +6,10 @@ export default function Total() {
     <div>
       <Gauge
         label={"Total Caron Emission"}
-        value={70}
+        value={2580}
         name={"Scope 1"}
         title={'Emission'}
-        max={90}
+        max={3000}
         unit={'kwHr'}
         
       />

@@ -98,8 +98,8 @@ export function Dashboard() {
   };
   const l = {
     lg: [
-      { i: "a", x: 0, y: 0, w: 2.5, h: 7 },
-      { i: "b", x: 2.5, y: 0, w: 8, h: 7 },
+      { i: "a", x: 0, y: 0, w: 2, h: 7 },
+      { i: "b", x: 2, y: 0, w: 8.5, h: 7 },
       { i: "c", x: 0, y: 7, w: 10.5, h: 3 },
       { i: "d", x: 0, y: 0, w: 5, h: 6 },
     ],
