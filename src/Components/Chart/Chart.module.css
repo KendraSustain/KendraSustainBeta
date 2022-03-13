@@ -10,3 +10,7 @@
 .gause > div {
   margin: auto !important ;
 }
+
+.gause {
+  width: 300px !important;
+}
