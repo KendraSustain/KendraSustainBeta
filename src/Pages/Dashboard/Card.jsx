@@ -17,10 +17,7 @@ export default function Card() {
           <p>2,580</p>
         </div>
 
-        <div className={style.card}>
-          <span>Carbon Emission : MPAN-G4w00541251826</span>
-          <p>2,012</p>
-        </div>
+
       </div>
     </>
   );
