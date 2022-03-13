@@ -13,11 +13,21 @@ import {
   Widget,
 } from "../../Components";
 import FeaturedInfo from "../../Components/FeaturedInfo";
-import CarbonGraph from "./CarbonGraph";
-import CarboTable from "./CarboTable";
-import EnergyGraph from "./EnergyGraph";
-import EnergyTable from "./EnergyTable";
-const originalItems = ["a", "b", "c", "d", "e", "f", "g"];
+import Scope11Graph from "./Scope11Graph";
+import Scope12Graph from "./Scope12Graph";
+import Scope11Table from "./Scope11Table";
+import Scope12Table from "./Scope12Table";
+import Scope21Graph from "./Scope21Graph";
+import Scope22Graph from "./Scope22Graph";
+import Scope21Table from "./Scope21Table";
+import Scope22Table from "./Scope22Table";
+import Card from "./Card";
+import Card1 from "./Card1";
+import Profile from "./Profile";
+import Scope2CE from "./Scope2CE";
+import Scope1CE from "./Scope1CE";
+import TotalCE from "./TotalCE";
+const originalItems = ["a", "b", "c"];
 
 const initialLayouts = {
   lg: [
@@ -34,6 +44,8 @@ const initialLayouts = {
     { i: "k", x: 5, y: 35, w: 5, h: 8 },
     { i: "l", x: 0, y: 43, w: 5, h: 8 },
     { i: "m", x: 5, y: 43, w: 5, h: 8 },
+    { i: "n", x: 0, y: 51, w: 5, h: 8 },
+    { i: "o", x: 5, y: 51, w: 5, h: 8 },
   ],
 };
 
@@ -61,10 +73,41 @@ export function Dashboard() {
   //     }
   //   }
   const NiukWigh = {
-    
+    h: <Scope11Graph />,
+    i: <Scope12Graph />,
+    j: <Scope11Table />,
+    k: <Scope12Table />,
+    l: <Scope21Graph />,
+    m: <Scope22Graph />,
+    n: <Scope21Table />,
+    o: <Scope22Table />,
   };
+  const NIUKNew = {
+    a: (
+      <MediaCard
+        title={"Kendra Sustain"}
+        content="Kendra Sustain enables enterprises to embed data-driven Sustainability Decision-Making across business operations by providing enterprises with the tools to build a Circular Economy model through Data and Artificial Intelligence."
+        img={require("../../Assets/Images/backgroundimg6.jpg")}
+        style={{
+          boxShadow: "none",
+        }}
+      />
+    ),
+    b: <Card1 />,
+    c: <Card />,
+  };
+  const l = {
+    lg: [
+      { i: "a", x: 0, y: 0, w: 2.5, h: 7 },
+      { i: "b", x: 2.5, y: 0, w: 8, h: 7 },
+      { i: "c", x: 0, y: 7, w: 10.5, h: 3 },
+      { i: "d", x: 0, y: 0, w: 5, h: 6 },
+    ],
+  };
+
   const componentList = {
-    a: <FeaturedInfo />,
+    a: <Card />,
+    // a: <FeaturedInfo />,
     // b: <Weather />,
     // c: (
     //   <MediaCard
@@ -80,16 +123,13 @@ export function Dashboard() {
     e: <IntensityLine />,
     f: user.id === 71 ? <Table /> : null,
     g: user.id === 71 ? <Table2 /> : null,
-    h: <CarbonGraph />,
-    i: <CarboTable />,
-    j: <EnergyGraph />,
-    k: <EnergyTable />,
+    ...NiukWigh,
+    ...NIUKNew,
   };
 
   const [items, setItems] = useState(originalItems);
-  const [layouts, setLayouts] = useState(
-    getFromLS("layouts") || initialLayouts
-  );
+  // const [layouts, setLayouts] = useState(initialLayouts);
+  const [layouts, setLayouts] = useState(l);
   const onLayoutChange = (_, allLayouts) => {
     setLayouts(allLayouts);
   };
@@ -115,7 +155,7 @@ export function Dashboard() {
       >
         {items.map((key) =>
           componentList[key] ? (
-            <div key={key} data-grid={{ w: 3, x: 0, y: Infinity }}>
+            <div key={key}>
               <Widget
                 id={key}
                 style={{

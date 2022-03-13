@@ -3,6 +3,7 @@ import React from "react";
 import Data from "../Measure/Assets/NiukData.json";
 import { CardChart } from "../../Components";
 import style from "./index.module.css";
+import Scope2 from "./Scope2";
 export default function NIUK_sum() {
   let temp = [];
   temp = Data.map((item) => item.Data.map((i) => i["CO2 Emission"]));
@@ -60,6 +61,7 @@ export default function NIUK_sum() {
           />
         </Grid>
       </Grid>
+        <Scope2 />
     </div>
   );
 }

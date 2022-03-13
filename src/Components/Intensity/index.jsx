@@ -68,7 +68,7 @@ function Intensity(props) {
               },
             ]}
             title="Carbon Intensity for UK (gC02/Kwh)"
-            label={"Electricity"}
+            label={"Electricity fr"}
             type="bar"
           />
         </>

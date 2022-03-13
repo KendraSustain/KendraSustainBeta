@@ -76,11 +76,7 @@ export default function AssetDetail(props) {
       title: "Carbon Emission (kgCO2/kWh)",
     },
   ];
-  const data = [
-    {
-      Date: "hello",
-    },
-  ];
+  
 
   return (
     <div>

@@ -23,26 +23,26 @@ export default function NIUK() {
         </div>
       </div>
       <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <CardChart
-            x_items={Data.map((item) =>
-              item.Data.map((d) => d["Transaction Date/Time"])
-            ).flat()}
-            y_item={temp}
-            type="line"
-            label="Carbon Emission"
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <CardChart
-            x_items={Data.map((item) =>
-              item.Data.map((d) => d["Transaction Date/Time"])
-            ).flat()}
-            y_item={temp}
-            type="bar"
-            label="Carbon Emission"
-          />
-        </Grid>
+        {Data.map((item) => (
+          <>
+            <Grid item xs={12}>
+              <CardChart
+                x_items={item.Data.map((d) => d["Transaction Date/Time"])}
+                y_item={temp}
+                type="line"
+                label={"Carbon Emission : " + item["Vehicle Reg"]}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <CardChart
+                x_items={item.Data.map((d) => d["Transaction Date/Time"])}
+                y_item={temp}
+                type="bar"
+                label={"Carbon Emission : " + item["Vehicle Reg"]}
+              />
+            </Grid>
+          </>
+        ))}
       </Grid>
     </div>
   );

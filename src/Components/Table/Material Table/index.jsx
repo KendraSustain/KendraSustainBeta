@@ -19,7 +19,6 @@ import MaterialTable from "@material-table/core";
 
 export default function MTable(props) {
   React.useEffect(() => {
-    console.log(props.columns, props.tableData);
     setTableData(props.tableData);
   }, [props]);
   const [tableData, setTableData] = useState(props.tableData);

@@ -23,7 +23,7 @@ export default function Table() {
   return (
     <>
       <MTable
-        title="Price"
+        title="Price for Scope 1"
         columns={columns}
         tableData={NIUK.price.G4.map((item, pos) => {
           return {

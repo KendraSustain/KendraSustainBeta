@@ -25,6 +25,7 @@ export const getToken = async ({ username, password }) => {
   }
 };
 export const getUser = async () => {
+  
   try {
     const authToken = localStorage.getItem("authToken");
     const user_json = await fetch(baseURL + "/api/users/me", {

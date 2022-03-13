@@ -23,7 +23,7 @@ export default function Table() {
   return (
     <>
       <MTable
-        title="Eletricity"
+        title="Eletricity for Scope 1"
         columns={columns}
         tableData={NIUK.electricity.G4.map((item, pos) => {
           return {
