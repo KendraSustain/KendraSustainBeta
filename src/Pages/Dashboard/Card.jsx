@@ -5,19 +5,17 @@ export default function Card() {
     <>
       <div className={style.container}>
         <div className={style.card}>
-          <span>Carbon Emission : DK13WPW</span>
+          <span>Cumulative Carbon Emissions for All vehicle</span>
           <p>1,255</p>
         </div>
         <div className={style.card}>
-          <span>Carbon Emission : DC17PXA</span>
+          <span>Cumulative Carbon Emissions for Stearn Building </span>
           <p>1,050</p>
         </div>
         <div className={style.card}>
-          <span> Total Carbon Emission : MAPN-K05G00388</span>
+          <span>Combined Cumulative Caron Emissions for Scope 1 & Scope 2</span>
           <p>2,580</p>
         </div>
-
-
       </div>
     </>
   );

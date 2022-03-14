@@ -5,13 +5,13 @@ export default function Total() {
   return (
     <div>
       <Gauge
-        label={"Total Caron Emission"}
+        label={"Combined Cumulative Caron Emissions for Scope 1 & Scope 2"}
         value={2580}
         name={"Scope 1"}
-        title={'Emission'}
+        title={"Emission"}
         max={3000}
-        unit={'kwHr'}
-        
+        unit={"kwHr"}
+        buttom={"Year 2021"}
       />
     </div>
   );

@@ -1,7 +1,16 @@
 import React from "react";
 import ReactECharts from "echarts-for-react";
 import style from "./Chart.module.css";
-export default function Gauge({ label, min, max, value, name, option, unit }) {
+export default function Gauge({
+  label,
+  min,
+  max,
+  value,
+  name,
+  option,
+  unit,
+  buttom,
+}) {
   const options = {
     series: [
       {
@@ -45,7 +54,6 @@ export default function Gauge({ label, min, max, value, name, option, unit }) {
           formatter: "{value}",
           color: "auto",
           offsetCenter: [0, "70%"],
-          
         },
         data: [
           {
@@ -68,7 +76,7 @@ export default function Gauge({ label, min, max, value, name, option, unit }) {
         className={style.gause}
         option={options}
       />
-      ;
+      <h1 style={{ fontSize: "16px", textAlign: "center" }}>{buttom}</h1>
     </>
   );
 }

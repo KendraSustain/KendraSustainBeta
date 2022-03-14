@@ -27,13 +27,29 @@ import Profile from "./Profile";
 import Scope2CE from "./Scope2CE";
 import Scope1CE from "./Scope1CE";
 import TotalCE from "./TotalCE";
-const originalItems = ["a", "b", "c"];
+const originalItems = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+];
 
 const initialLayouts = {
   lg: [
     { i: "a", x: 0, y: 0, w: 10, h: 3 },
-    { i: "b", x: 3, y: 3, w: 7, h: 8 },
-    { i: "c", x: 0, y: 3, w: 3, h: 8 },
+    { i: "b", x: 0, y: 3, w: 10, h: 8 },
+    { i: "c", x: 5, y: 3, w: 10, h: 8 },
     { i: "d", x: 0, y: 11, w: 5, h: 8 },
     { i: "e", x: 5, y: 11, w: 5, h: 8 },
     { i: "f", x: 0, y: 18, w: 5, h: 8 },
@@ -83,7 +99,20 @@ export function Dashboard() {
     o: <Scope22Table />,
   };
   const NIUKNew = {
-    a: (
+    b: <Card1 />,
+  };
+  const l = {
+    lg: [
+      { i: "a", x: 0, y: 0, w: 2, h: 7 },
+      { i: "b", x: 2, y: 0, w: 10.5, h: 7 },
+      { i: "c", x: 0, y: 7, w: 10.5, h: 3 },
+      { i: "d", x: 0, y: 0, w: 5, h: 6 },
+    ],
+  };
+
+  const componentList = {
+    a: <Card />,
+    b: (
       <MediaCard
         title={"Kendra Sustain"}
         content="Kendra Sustain enables enterprises to embed data-driven Sustainability Decision-Making across business operations by providing enterprises with the tools to build a Circular Economy model through Data and Artificial Intelligence."
@@ -93,32 +122,7 @@ export function Dashboard() {
         }}
       />
     ),
-    b: <Card1 />,
-    c: <Card />,
-  };
-  const l = {
-    lg: [
-      { i: "a", x: 0, y: 0, w: 2, h: 7 },
-      { i: "b", x: 2, y: 0, w: 8.5, h: 7 },
-      { i: "c", x: 0, y: 7, w: 10.5, h: 3 },
-      { i: "d", x: 0, y: 0, w: 5, h: 6 },
-    ],
-  };
-
-  const componentList = {
-    a: <Card />,
-    // a: <FeaturedInfo />,
-    // b: <Weather />,
-    // c: (
-    //   <MediaCard
-    //     title={"Kendra Sustain"}
-    //     content="Kendra Sustain enables enterprises to embed data-driven Sustainability Decision-Making across business operations by providing enterprises with the tools to build a Circular Economy model through Data and Artificial Intelligence."
-    //     img={require("../../Assets/Images/backgroundimg6.jpg")}
-    //     style={{
-    //       boxShadow: "none",
-    //     }}
-    //   />
-    // ),
+    // c: <Weather />,
     d: <Intensity />,
     e: <IntensityLine />,
     f: user.id === 71 ? <Table /> : null,
@@ -129,7 +133,7 @@ export function Dashboard() {
 
   const [items, setItems] = useState(originalItems);
   // const [layouts, setLayouts] = useState(initialLayouts);
-  const [layouts, setLayouts] = useState(l);
+  const [layouts, setLayouts] = useState(initialLayouts);
   const onLayoutChange = (_, allLayouts) => {
     setLayouts(allLayouts);
   };
