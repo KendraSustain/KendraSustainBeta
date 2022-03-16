@@ -6,6 +6,7 @@ export default function Total() {
     <div>
       <Gauge
         label={"Combined Cumulative Caron Emissions for Scope 1 & Scope 2"}
+        des="This is description for gause"
         value={2580}
         name={"Scope 1"}
         title={"Emission"}

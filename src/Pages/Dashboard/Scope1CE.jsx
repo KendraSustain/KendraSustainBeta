@@ -5,6 +5,7 @@ export default function Scope1CE() {
   return (
     <div>
       <Gauge
+        des="This is description for gause"
         label={"Cumulative Carbon Emissions for All vehicle"}
         value={1255}
         name={"Scope 1"}

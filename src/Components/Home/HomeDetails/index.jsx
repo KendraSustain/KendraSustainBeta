@@ -31,7 +31,7 @@ const HomeDetails = () => {
         </div>
         <div className={styles.mainContainer}>
           <img
-            src='https://app.kendrasustain.com/images/backgroundimg7.jpg'
+            src='/images/backgroundimg7.jpg'
             alt='Navbar background'
           />
           <div className={styles.containerTextWrapper}>

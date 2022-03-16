@@ -61,7 +61,7 @@ const Navbar = ({
       <div className={"navBrand"}>
         <img
           className={"brand"}
-          src={`https://app.kendrasustain.com/images/kendra-${
+          src={`/images/kendra-${
             window.innerWidth < 576 ? "blue" : "white"
           }-full.png`}
           alt="Kendra"

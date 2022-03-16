@@ -85,6 +85,8 @@ export default function BarChart({
                   type: type,
                   smooth: true,
                   color: "#4B5FAE",
+
+                  barMaxWidth: 30,
                 },
               ],
           tooltip: {

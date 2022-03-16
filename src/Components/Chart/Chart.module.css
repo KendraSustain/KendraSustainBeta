@@ -7,10 +7,14 @@
   margin-bottom: 30px;
 }
 
-.gause > div {
-  margin: auto !important ;
+.gause>div {
+  margin: auto !important;
 }
 
 .gause {
   width: 300px !important;
+}
+
+.mmm {
+  transform: translateY(19px);
 }

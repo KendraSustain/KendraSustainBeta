@@ -3,12 +3,15 @@ import React from "react";
 import { CardChart, MTable } from "../../../Components";
 import Data from "../Assets/NiukData.json";
 export default function NIUK() {
+  const graphLabel = {
+    Litres: "Fuel Consumption",
+    Odometer: "Odometer Reading",
+    Gross: "Total Cost",
+  };
+
   const cardDetails = [
     "Litres",
     "Odometer",
-    "Distance Traveled",
-    "Net",
-    "VAT",
     "Gross",
     "Price/Litre",
     "CO2 Emission",
@@ -61,7 +64,7 @@ export default function NIUK() {
         <>
           <Grid item xs={12}>
             <MTable
-            title="Scope 1"
+              title="Scope 1"
               columns={columns}
               tableData={Data.map((d, p) => {
                 return {
@@ -84,11 +87,11 @@ export default function NIUK() {
                     ) / v.Data.length
                 )}
                 type="bar"
-                label={data}
+                label={graphLabel[data] ? graphLabel[data] : data}
               />
             </Grid>
           ))}
-          {cardDetails.map((data, pos) => (
+          {/* {cardDetails.map((data, pos) => (
             <Grid item xs={6} key={pos}>
               <CardChart
                 x_items={Data.map((item) => item["Vehicle Reg"])}
@@ -103,8 +106,7 @@ export default function NIUK() {
                 label={data}
               />
             </Grid>
-          ))}
-
+          ))} */}
         </>
       </Grid>
     </div>

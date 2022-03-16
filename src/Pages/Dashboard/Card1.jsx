@@ -7,13 +7,13 @@ export default function Card() {
     <div
       style={{
         display: "flex",
-        justifyContent : 'space-evenly',
-        height:'100%'
+        justifyContent: "space-evenly",
+        height: "100%",
       }}
     >
-      <Scope1CE />,
-      <Scope2CE />,
-      <TotalCE />,
+      <Scope1CE />
+      <Scope2CE />
+      <TotalCE />
     </div>
   );
 }

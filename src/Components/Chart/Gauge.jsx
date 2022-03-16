@@ -10,6 +10,7 @@ export default function Gauge({
   option,
   unit,
   buttom,
+  des,
 }) {
   const options = {
     series: [
@@ -65,10 +66,32 @@ export default function Gauge({
     ],
     ...option,
   };
+  const [show, setShow] = React.useState(false);
 
   return (
-    <>
-      <h1 style={{ fontSize: "20px", textAlign: "center" }}>{label}</h1>
+    <div
+      onMouseEnter={() => setShow(true)}
+      onMouseLeave={() => setShow(false)}
+      style={{
+        // background: "red",
+      }}
+    >
+      <h1
+        style={{
+          fontSize: "18px",
+          textAlign: "center",
+        }}
+      >
+        {label}
+        <br />
+        <span
+          style={{
+            fontSize: "15px",
+            opacity: show ? "100%" : "0",
+            transition: "opacity 200ms ease-in-out",
+          }}
+        ></span>
+      </h1>
       <ReactECharts
         style={{
           margin: "auto",
@@ -77,6 +100,14 @@ export default function Gauge({
         option={options}
       />
       <h1 style={{ fontSize: "16px", textAlign: "center" }}>{buttom}</h1>
-    </>
+      <p
+        // style={{
+        //   textAlign: "center",
+        // }}
+        className={style.mmm}
+      >
+        {des}
+      </p>
+    </div>
   );
 }
