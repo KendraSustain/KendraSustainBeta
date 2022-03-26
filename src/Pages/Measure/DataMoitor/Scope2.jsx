@@ -85,11 +85,13 @@ const Scope2Com = () => {
                       data: item.map((data) => data["Energy Consumption"]),
                       type: "bar",
                       color: "#4B5FAE",
+                      barMaxWidth: 30,
                     },
                     {
                       data: item.map((data) => data["Carbon Emission"]),
                       type: "bar",
                       color: "#272253",
+                      barMaxWidth: 30,
                     },
                   ]}
                   y_item={item.map((data) => data["Carbon Emission"])}
