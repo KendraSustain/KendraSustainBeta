@@ -74,6 +74,7 @@ const Scope2Com = () => {
             return (
               <Grid item xs={12} md={12} key={pos}>
                 <CardChart
+                  showYear={true}
                   x_items={item.map((data) => data.Date)}
                   title={`Energy Consumption for ${user.company} (x1000 Kwh)`}
                   label="Energy Consumption"
@@ -91,6 +92,7 @@ const Scope2Com = () => {
                       color: "#272253",
                     },
                   ]}
+                  y_item={item.map((data) => data["Carbon Emission"])}
                 />
               </Grid>
             );
@@ -98,6 +100,7 @@ const Scope2Com = () => {
           {row.map((item, pos) => (
             <Grid item xs={12} md={6} key={pos}>
               <CardChart
+                showYear={true}
                 x_items={item.map((data) => data.Date)}
                 label="Energy Consumption"
                 time="Date"
@@ -112,6 +115,7 @@ const Scope2Com = () => {
                     type: "line",
                   },
                 ]}
+                y_item={item.map((data) => data["Carbon Emission"])}
               />
             </Grid>
           ))}
