@@ -5,6 +5,7 @@ export default function Scope11Graph() {
   return (
     <>
       <CardChart
+        showYear={true}
         label="Carbon Emission for Scope 1 : DC17PXA"
         x_items={Data[0].Data.map((item) => item["Transaction Date/Time"])}
         y_item={Data[0].Data.map((item) => item["CO2 Emission"])}

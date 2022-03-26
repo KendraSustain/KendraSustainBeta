@@ -33,7 +33,8 @@ export default function AssetDetail(props) {
       setRows(data);
     }
     getData();
-  }, [authToken, location]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const metadata = [
     {
@@ -76,7 +77,6 @@ export default function AssetDetail(props) {
       title: "Carbon Emission (kgCO2/kWh)",
     },
   ];
-  
 
   return (
     <div>
@@ -115,6 +115,7 @@ export default function AssetDetail(props) {
 
           <Grid item xs={12} md={12}>
             <CardChart
+              showYear={true}
               x_items={rows.map((item) => item["Date"])}
               y_item={rows.map((item) => item["Energy Consumption"])}
               title={`Energy Consumption for ${user.company}`}
@@ -133,11 +134,13 @@ export default function AssetDetail(props) {
               label="Carbon Emission"
               time="Date"
               type="line"
+              showYear={true}
               assetName={location.state.detail.asset_name}
             />
           </Grid>
           <Grid item xs={12} md={12}>
             <CardChart
+              showYear={true}
               x_items={rows.map((item) => item["Date"])}
               y_item={rows.map((item) => item["Energy Consumption"])}
               title={`Energy Consumption for ${user.company}`}
@@ -150,6 +153,7 @@ export default function AssetDetail(props) {
 
           <Grid item xs={12} md={12}>
             <CardChart
+              showYear={true}
               x_items={rows.map((item) => item["Date"])}
               y_item={rows.map((item) => item["Carbon Emission"])}
               title={`Energy Consumption for ${user.company} (x1000 kgCO2/kWh)`}

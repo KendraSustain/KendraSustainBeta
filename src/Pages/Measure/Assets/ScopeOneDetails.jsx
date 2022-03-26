@@ -132,6 +132,7 @@ export default function ScopeOneDetails() {
           </Grid>
           <Grid item xs={12}>
             <CardChart
+              showYear={true}
               x_items={Data[item].Data.map((data) =>
                 item === 2 ? data["Vehicle Reg"] : data["Transaction Date/Time"]
               )}
@@ -142,6 +143,7 @@ export default function ScopeOneDetails() {
           </Grid>
           <Grid item xs={12}>
             <CardChart
+              showYear={true}
               x_items={Data[item].Data.map((data) =>
                 item === 2 ? data["Vehicle Reg"] : data["Transaction Date/Time"]
               )}

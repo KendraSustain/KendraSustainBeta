@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { CHART } from "../../Components";
+import { CardChart } from "../../Components";
 export default function Scope21Graph() {
   const authToken = `Bearer ${localStorage.getItem("authToken")}`;
 
@@ -31,7 +31,8 @@ export default function Scope21Graph() {
 
   return (
     <>
-      <CHART
+      <CardChart
+        showYear={true}
         x_items={row.map((item) => item["Date"])}
         type="line"
         y_item={row.map((item) => item["Carbon Emission"])}

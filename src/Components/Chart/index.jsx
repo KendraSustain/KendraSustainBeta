@@ -69,6 +69,7 @@ export default function BarChart({
         }
       : {
           ...tool,
+          
           xAxis: {
             type: "category",
             axisLabel: { rotate: 30 },

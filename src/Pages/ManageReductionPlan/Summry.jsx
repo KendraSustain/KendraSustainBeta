@@ -47,6 +47,7 @@ const Summary = () => {
           ))}
           <Grid item xs={6}>
             <CardChart
+            
               y_item={DATA.singleData.data2}
               type="bar"
               x_items={DATA.singleData.labels4}
@@ -55,6 +56,7 @@ const Summary = () => {
           </Grid>
           <Grid item xs={6}>
             <CardChart
+            
               y_item={DATA.singleData.data3}
               type="bar"
               x_items={DATA.singleData.labels3}
@@ -63,6 +65,7 @@ const Summary = () => {
           </Grid>
           <Grid item xs={6}>
             <CardChart
+            
               y_item={DATA.singleData.data}
               type="bar"
               x_items={DATA.singleData.labels6}
@@ -71,6 +74,7 @@ const Summary = () => {
           </Grid>
           <Grid item xs={6}>
             <CardChart
+            
               axis="y"
               y_item={DATA.singleData.data}
               type="bar"

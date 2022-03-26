@@ -112,28 +112,30 @@ function Scope2() {
               </Grid>
             ))}
 
-          <Grid item md={6}>
             {tableData.map((item, pos) => (
+          <Grid item md={6}>
               <CardChart
+              showYear={true}
                 x_items={item.map((ele) => ele.Date.slice(0, 10))}
                 y_item={item.map((ele) => ele["Energy Prediction"])}
                 title={`Petrol Consumption Prediction  *1000 Kwh `}
                 time="Date"
                 type="line"
               />
-            ))}
           </Grid>
-          <Grid item md={6}>
+            ))}
             {tableData.map((item) => (
+          <Grid item md={6}>
               <CardChart
+              showYear={true}
                 x_items={item.map((ele) => ele.Date.slice(0, 10))}
                 y_item={item.map((ele) => ele["Carbon Emission Prediction"])}
                 title="Diesel Consumption Prediction *1000 kgCO2/kWh"
                 time="Date"
                 type='line'
               />
-            ))}
           </Grid>
+            ))}
         </Grid>
       </Box>
     </div>

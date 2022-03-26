@@ -590,7 +590,7 @@
           align-items: center;
 }
 
-.topbar .topbarIconContainer2 .flowBtn2 {
+.topbar .flowBtn2 {
   position: relative;
   color: var(--sidebar-primary);
   font-weight: 400;
@@ -600,7 +600,7 @@
   text-align: center;
 }
 
-.topbar .topbarIconContainer2 .flowBtn2::after {
+.topbar .flowBtn2::after {
   position: absolute;
   content: "";
   width: 50%;
@@ -617,7 +617,7 @@
   background: var(--sidebar-primary);
 }
 
-.topbar .topbarIconContainer2 .flowBtn2:hover::after {
+.topbar .flowBtn2:hover::after {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
 }

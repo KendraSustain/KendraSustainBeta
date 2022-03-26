@@ -42,6 +42,8 @@ export default function NIUK_sum() {
       <Grid container spacing={1}>
         <Grid item xs={12}>
           <CardChart
+            showYear={true}
+            filterYear={[2020, 2021]}
             x_items={Data.map((item) =>
               item.Data.map((d) => d["Transaction Date/Time"])
             ).flat()}
@@ -52,6 +54,8 @@ export default function NIUK_sum() {
         </Grid>
         <Grid item xs={12}>
           <CardChart
+            showYear={true}
+            filterYear={[2020, 2021]}
             x_items={Data.map((item) =>
               item.Data.map((d) => d["Transaction Date/Time"])
             ).flat()}
@@ -61,7 +65,7 @@ export default function NIUK_sum() {
           />
         </Grid>
       </Grid>
-        <Scope2 />
+      <Scope2 />
     </div>
   );
 }

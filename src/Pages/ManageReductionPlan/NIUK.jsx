@@ -27,6 +27,7 @@ export default function NIUK() {
           <>
             <Grid item xs={12}>
               <CardChart
+                showYear={true}
                 x_items={item.Data.map((d) => d["Transaction Date/Time"])}
                 y_item={temp}
                 type="line"
@@ -35,6 +36,7 @@ export default function NIUK() {
             </Grid>
             <Grid item xs={12}>
               <CardChart
+                showYear={true}
                 x_items={item.Data.map((d) => d["Transaction Date/Time"])}
                 y_item={temp}
                 type="bar"

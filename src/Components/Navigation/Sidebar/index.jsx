@@ -118,7 +118,7 @@ const Sidebar = ({ user, close = true }) => {
                   : null
               }
             >
-              <Link to={item.to ? item.to : "#!"}>
+              <Link to={item.to ? item.to : "#!"} onClick={(e) => item.to || e.preventDefault()}>
                 <i className={item.icon}></i>
                 <span className={"linkName"}>{item.menu}</span>
               </Link>

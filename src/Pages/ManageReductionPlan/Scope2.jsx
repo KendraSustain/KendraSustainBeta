@@ -65,12 +65,13 @@ const CarbonFootprintCalculator = () => {
           {data1.map((item, pos) => (
             <Grid item xs={12} md={12}>
               <CardChart
+                showYear={true}
                 title={newData[pos].assetName}
                 key={pos}
                 x_items={item.map((e) => e.Date)}
                 type="line"
                 y_item={item.map((e) => e["Carbon Emission"])}
-                label='Carbon Emission'
+                label="Carbon Emission"
               />
             </Grid>
           ))}
@@ -78,11 +79,12 @@ const CarbonFootprintCalculator = () => {
           {data1.map((item, pos) => (
             <Grid item md={6} key={pos}>
               <CardChart
+                showYear={true}
                 title={newData[pos].assetName}
                 x_items={item.map((e) => e.Date)}
                 type="bar"
                 y_item={item.map((e) => e["Carbon Emission"])}
-                label='Carbon Emission'
+                label="Carbon Emission"
               />
             </Grid>
           ))}

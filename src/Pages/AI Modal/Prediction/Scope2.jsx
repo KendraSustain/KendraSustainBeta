@@ -143,6 +143,7 @@ function Scope2() {
           {tableData.map((item, pos) => (
             <Grid item md={6}>
               <CardChart
+              showYear={true}
                 x_items={item.map((ele) => ele.Date.slice(0, 10))}
                 y_item={item.map((ele) => ele["Energy Prediction"])}
                 title={`Petrol Consumption Prediction  *1000 Kwh `}
@@ -154,6 +155,7 @@ function Scope2() {
           {tableData.map((item) => (
             <Grid item md={6}>
               <CardChart
+              showYear={true}
                 x_items={item.map((ele) => ele.Date.slice(0, 10))}
                 y_item={item.map((ele) => ele["Carbon Emission Prediction"])}
                 title="Diesel Consumption Prediction *1000 kgCO2/kWh"
@@ -165,6 +167,7 @@ function Scope2() {
           {show && (
             <Grid item xs={6}>
               <CardChart
+              showYear={true}
                 x_items={Data["Scope 2"].map((item) => item.Date)}
                 y_item={Data["Scope 2"].map(
                   (item) => item["Energy Prediction"]
@@ -178,6 +181,7 @@ function Scope2() {
           {show && (
             <Grid item xs={6}>
               <CardChart
+              showYear={true}
                 x_items={Data["Scope 2"].map((item) => item.Date)}
                 y_item={Data["Scope 2"].map(
                   (item) => item["Carbon Emission Prediction"]

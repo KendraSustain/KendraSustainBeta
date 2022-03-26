@@ -6,9 +6,8 @@
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   font-family: "Nunito Sans", sans-serif;
-
 }
- 
+
 :root {
   --sidebar-primary: #11101d;
   --sidebar-secondary: #1d1b31;
@@ -455,9 +454,8 @@
     color: var(--sidebar-primary);
     display: flex;
     align-items: center;
-  }
-
-  .topbarIconContainer2 {
+    
+    }
     .flowBtn2 {
       position: relative;
       color: var(--sidebar-primary);
@@ -479,7 +477,6 @@
       &:hover::after {
         transform: scaleX(1);
       }
-    }
   }
 
   .topIconText2 {
