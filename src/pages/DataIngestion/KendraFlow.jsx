@@ -1,5 +1,5 @@
 import { useEffect, useContext } from "react";
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import { Context } from "../../context/Contexts";
 
 const KendraFlow = () => {

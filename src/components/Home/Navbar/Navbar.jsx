@@ -1,53 +1,53 @@
 import React from "react";
 import styles from "./Navbar.module.css";
+import { useHistory } from "react-router-dom";
 const Navbar = () => {
+  const history = useHistory()
   const nav_item_text = [
-    { onClick: () => console.log("/"), text: "Home" },
-    { onClick: () => console.log("/"), text: "Solutions" },
-    { onClick: () => console.log("/"), text: "Pricing" },
-    { onClick: () => console.log("/"), text: "About" },
-    { onClick: () => console.log("/"), text: "Contact" },
+    { onClick: () => console.log("Hello"), text: "Home" },
+    { onClick: () => console.log("Hello"), text: "Solutions" },
+    { onClick: () => console.log("Hello"), text: "Pricing" },
+    { onClick: () => console.log("Hello"), text: "About" },
+    { onClick: () => console.log("Hello"), text: "Contact" },
   ];
   const nav_item_icon = [
     {
-      icon: "fab fa-facebook-square",
-      link: "/login",
+      icon: "bx bxl-facebook-square",
       onClick: () => console.log("Hello"),
     },
     {
       icon: "fab fa-twitter",
-      link: "/login",
       onClick: () => console.log("Hello"),
     },
     {
       icon: "fab fa-linkedin",
-      link: "/login",
       onClick: () => console.log("Hello"),
     },
     {
       text: "Login",
-      link: "/login",
       icon: "fas fa-sign-out-alt",
-      onClick: () => console.log("/login"),
+      onClick: () => history.push('/login'),
       type: "btn",
     },
   ];
   return (
     <div className={styles.navTop}>
+      
+  
       <div className={styles.navBrand}>
         <img
           className={styles.brand}
-          src={`/images/kendra-${
+          src={`https://app.kendrasustain.com/images/kendra-${
             window.innerWidth < 576 ? "blue" : "white"
           }-full.png`}
           alt="Kendra"
         />
-        <sup>Beta</sup>
+        <sup style={{ color: "white" }}>Beta</sup>
       </div>
       <div className={styles.navItems}>
         <ul className={styles.navOptions}>
-          {nav_item_text.map((element) => (
-            <li style={{ color: "white" }} onClick={element.onClick}>
+          {nav_item_text.map((element, pos) => (
+            <li style={{ color: "white" }} key={pos} onClick={element.onClick}>
               {element.text}
             </li>
           ))}
@@ -59,10 +59,8 @@ const Navbar = () => {
               onClick={element.onClick}
               className={element.type === "btn" ? styles.btn__ : "fake"}
             >
-              <a href={element.link} style={{ color: "white" }}>
-                <i className={element.icon}></i>
-                {element.text}
-              </a>
+              <i className={element.icon}></i>
+              {element.text}
             </li>
           ))}
         </ul>
@@ -111,7 +109,7 @@ export default Navbar;
 //     <li>
 //       <i className="fab fa-linkedin"></i>
 //     </li>
-//     <li onClick={() => console.log("/login")}>
+//     <li onClick={() => history.push("/login")}>
 //       <i className="fas fa-sign-out-alt"></i>Login
 //     </li>
 //   </ul>
