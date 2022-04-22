@@ -1,0 +1,59 @@
+[
+    {
+        "name": "Mobile Combustion",
+        "children": [
+            {
+                "name": "On-Road Vehicles",
+                "children": [
+                    {
+                        "name": "Compary Vehicles"
+                    },
+                    {
+                        "name": "Combination Truck"
+                    }
+                ]
+            },
+            {
+                "name": "Non-Road Vehicles",
+                "children": [
+                    "Forklifts & Non-road Equipments",
+                    "Construction Equipments"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Fugitive Emissions",
+        "children": [
+            {
+                "name": "Refrigerated transport"
+            },
+            {
+                "name": "Industrial process refrigeration"
+            },
+            {
+                "name": "Cloud storage warehouse"
+            },
+            {
+                "name": "Moble ait conditiong"
+            }
+        ]
+    },
+    {
+        "name": "Stationary Combustion Emission",
+        "children": [
+            {
+                "name": "Boilers"
+            },
+            {
+                "name": "Combustion Turbines"
+            },
+            {
+                "name": "Process Heaters"
+            },
+            {
+                "name": "Incineators"
+            }
+        ]
+    }
+]

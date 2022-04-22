@@ -1,0 +1,155 @@
+{
+    "singleData": {
+        "data": [
+            640,
+            571,
+            630,
+            583,
+            615,
+            609,
+            666,
+            642
+        ],
+        "data2": [
+            640,
+            571,
+            630,
+            583,
+            615,
+            609,
+            666,
+            642
+        ],
+        "data3": [
+            3000,
+            7000,
+            9000,
+            15000
+        ],
+        "data4": [
+            320,
+            265,
+            320,
+            290
+        ],
+        "labels": [
+            "Steel",
+            "Timber",
+            "Plasterboard",
+            "Waste"
+        ],
+        "labels2": [
+            "Steel",
+            "Timber",
+            "Plasterboard",
+            "Waste"
+        ],
+        "labels3": [
+            "2018",
+            "2019",
+            "2020",
+            "2021"
+        ],
+        "labels4": [
+            "Fugitive Emissions",
+            "Industrial Process",
+            "Capital Foods",
+            "Purdo Heat",
+            "Stationary Combustion"
+        ],
+        "labels5": [
+            "Building 1",
+            "Building 2",
+            "Building 3"
+        ],
+        "labels6": [
+            "Motor Gasoline",
+            "Coal",
+            "Diesel Fuel",
+            "Natural Gas"
+        ],
+        "labels7": [
+            "Fugitive Emissions",
+            "Industrial Process",
+            "Mobile Combustion",
+            "Stationary Combustion"
+        ],
+        "labels8": [
+            "Light-duty Trucks",
+            "Gasoline heavy-duty vechiles",
+            "Passenger-car Diesel"
+        ],
+        "labels9": [
+            "Concret Production",
+            "Wood Production"
+        ],
+        "title": "Lowest scope 3 (MtCO2e) for 2020 "
+    },
+    "data": {
+        "series": [
+            {
+                "color": "#272253",
+                "data": [
+                    822,
+                    820,
+                    775,
+                    587,
+                    550,
+                    562,
+                    595,
+                    571
+                ],
+                "name": "2019",
+                "type": "bar"
+            },
+            {
+                "color": "#4B5FAE",
+                "data": [
+                    640,
+                    571,
+                    630,
+                    583,
+                    615,
+                    609,
+                    666,
+                    642
+                ],
+                "name": "2019",
+                "type": "bar"
+            }
+        ],
+        "labels": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr"
+        ]
+    },
+    "pieData": {
+        "label": "Scope 3 emission category (MtCo2e) for 2020",
+        "data": [
+            35,
+            60,
+            40
+        ],
+        "labels": [
+            "Combustion of fuel in staff vechiles 30% ",
+            "Extraction and production of steel 24%",
+            "Extraction and production of timber 36%"
+        ]
+    },
+    "cardDATA": [
+        {
+            "titile": "Scope 3 (MtCo2e) for 2020 ",
+            "value": 2623.73
+        },
+        {
+            "titile": "Scope 3 (MtCo2e) for 2020 ",
+            "value": 2633.73
+        },
+        {
+            "titile": "Scope 3 (MtCo2e) for 2020",
+            "value": 2323.73
+        }
+    ]
+}

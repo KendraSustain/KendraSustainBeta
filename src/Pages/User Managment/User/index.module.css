@@ -1,0 +1,78 @@
+
+.home {
+    padding: 20px;
+    padding-top: 30px;
+    position: relative;
+    transition: all 0.5s ease;
+    min-height: 100vh;
+    /* padding-top: 80px; */
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: #3D5061;
+}
+
+.Adminslec {
+    padding-left: 20px;
+    background: #FFFFFF;
+    /* margin: 15px 10px; */
+    height: 215px;
+    border: 1px solid #C4C4C4;
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.Adminslec:hover {
+    background-color: #3D5061;
+    transition: 0.5s ease-out;
+}
+
+.Adminslec:hover .Adminlectxt {
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: bold;
+    transition: 0.5s ease-out;
+}
+
+.Adminslec hr {
+    background-color: #3D5061;
+}
+
+.Adminslec:hover hr {
+    color: #FFFFFF;
+    background-color: #FFFFFF;
+    height: 2px;
+    transition: 0.5s ease-out;
+}
+
+.Adminslec:hover .Adminlectxt1 {
+    color: #FFFFFF;
+    transition: 0.5s ease-out;
+}
+
+.icon {
+    color: #3D5061;
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+.Adminslec:hover .icon {
+    color: #FFFFFF;
+    font-size: 80px;
+    transition: 0.5s ease-out;
+}
+
+
+
+
+.Adminlectxt {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-size: 22px;
+    line-height: 30px;
+    color: #000000;
+    text-decoration: unset;
+}

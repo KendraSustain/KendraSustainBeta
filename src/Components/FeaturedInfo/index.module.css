@@ -1,0 +1,61 @@
+.featured {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.featuredItem {
+    position: relative;
+    flex: 1;
+    margin: 0px 20px;
+    padding: 20px 30px;
+    border-radius: 15px;
+    background-color: #fff;
+    cursor: pointer;
+    -webkit-box-shadow: 0 7px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.08);
+    color: #3e64ff;
+}
+
+.featuredTitle {
+    color: #333;
+    font-size: 1rem;
+}
+
+.featuredContainer {
+    margin: 10px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.featuredAmount {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.featuredAmount2 {
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 400;
+    /* margin-left: 15px; */
+    right: 0;
+    margin-right: 25px;
+}
+
+.featuredIcon {
+    font-size: 1.5rem;
+    margin-left: 15px;
+    color: #f72b2b;
+}
+
+.featuredSub {
+    font-size: 0.8rem;
+    color: gray;
+}
+
+@media (max-width: 880px) {
+    .featuredItem {
+        margin: 0px 10px;
+        padding: 20px 20px;
+    }
+}

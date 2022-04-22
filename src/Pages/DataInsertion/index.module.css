@@ -1,0 +1,13 @@
+
+.register {
+ padding: 20px;
+}
+.register a{
+    text-decoration: none;
+    /* color: black; */
+}
+
+.register h6 {
+    color: darkblue;
+    font-weight: bold;
+}

@@ -1,0 +1,316 @@
+{
+    "Scope 1": [
+        {
+            "Date": "2022-04-14",
+            "Energy Prediction": 169,
+            "Carbon Emission Prediction": 30
+        },
+        {
+            "Date": "2022-04-15",
+            "Energy Prediction": 141,
+            "Carbon Emission Prediction": 29
+        },
+        {
+            "Date": "2022-04-16",
+            "Energy Prediction": 169,
+            "Carbon Emission Prediction": 36
+        },
+        {
+            "Date": "2022-04-17",
+            "Energy Prediction": 148,
+            "Carbon Emission Prediction": 39
+        },
+        {
+            "Date": "2022-04-18",
+            "Energy Prediction": 122,
+            "Carbon Emission Prediction": 42
+        },
+        {
+            "Date": "2022-04-19",
+            "Energy Prediction": 168,
+            "Carbon Emission Prediction": 28
+        },
+        {
+            "Date": "2022-04-20",
+            "Energy Prediction": 130,
+            "Carbon Emission Prediction": 42
+        },
+        {
+            "Date": "2022-04-21",
+            "Energy Prediction": 140,
+            "Carbon Emission Prediction": 31
+        },
+        {
+            "Date": "2022-04-22",
+            "Energy Prediction": 122,
+            "Carbon Emission Prediction": 36
+        },
+        {
+            "Date": "2022-04-23",
+            "Energy Prediction": 153,
+            "Carbon Emission Prediction": 30
+        },
+        {
+            "Date": "2022-04-24",
+            "Energy Prediction": 156,
+            "Carbon Emission Prediction": 39
+        },
+        {
+            "Date": "2022-04-25",
+            "Energy Prediction": 143,
+            "Carbon Emission Prediction": 41
+        },
+        {
+            "Date": "2022-04-26",
+            "Energy Prediction": 150,
+            "Carbon Emission Prediction": 28
+        },
+        {
+            "Date": "2022-04-27",
+            "Energy Prediction": 107,
+            "Carbon Emission Prediction": 41
+        },
+        {
+            "Date": "2022-04-28",
+            "Energy Prediction": 110,
+            "Carbon Emission Prediction": 38
+        },
+        {
+            "Date": "2022-04-29",
+            "Energy Prediction": 150,
+            "Carbon Emission Prediction": 33
+        },
+        {
+            "Date": "2022-04-30",
+            "Energy Prediction": 149,
+            "Carbon Emission Prediction": 31
+        },
+        {
+            "Date": "2022-04-31",
+            "Energy Prediction": 117,
+            "Carbon Emission Prediction": 32
+        },
+        {
+            "Date": "2022-05-01",
+            "Energy Prediction": 111,
+            "Carbon Emission Prediction": 32
+        },
+        {
+            "Date": "2022-05-02",
+            "Energy Prediction": 134,
+            "Carbon Emission Prediction": 31
+        },
+        {
+            "Date": "2022-05-03",
+            "Energy Prediction": 150,
+            "Carbon Emission Prediction": 32
+        },
+        {
+            "Date": "2022-05-04",
+            "Energy Prediction": 147,
+            "Carbon Emission Prediction": 27
+        },
+        {
+            "Date": "2022-05-05",
+            "Energy Prediction": 155,
+            "Carbon Emission Prediction": 42
+        },
+        {
+            "Date": "2022-05-06",
+            "Energy Prediction": 131,
+            "Carbon Emission Prediction": 27
+        },
+        {
+            "Date": "2022-05-07",
+            "Energy Prediction": 165,
+            "Carbon Emission Prediction": 29
+        },
+        {
+            "Date": "2022-05-08",
+            "Energy Prediction": 121,
+            "Carbon Emission Prediction": 39
+        },
+        {
+            "Date": "2022-05-09",
+            "Energy Prediction": 119,
+            "Carbon Emission Prediction": 30
+        },
+        {
+            "Date": "2022-05-10",
+            "Energy Prediction": 115,
+            "Carbon Emission Prediction": 27
+        },
+        {
+            "Date": "2022-05-11",
+            "Energy Prediction": 143,
+            "Carbon Emission Prediction": 31
+        },
+        {
+            "Date": "2022-05-12",
+            "Energy Prediction": 137,
+            "Carbon Emission Prediction": 33
+        },
+        {
+            "Date": "2022-05-13",
+            "Energy Prediction": 148,
+            "Carbon Emission Prediction": 41
+        }
+    ],
+    "Scope 2": [
+        {
+            "Date": "2022-04-14",
+            "Energy Prediction": 16063,
+            "Carbon Emission Prediction": 4514
+        },
+        {
+            "Date": "2022-04-15",
+            "Energy Prediction": 21297,
+            "Carbon Emission Prediction": 5547
+        },
+        {
+            "Date": "2022-04-16",
+            "Energy Prediction": 9410,
+            "Carbon Emission Prediction": 3626
+        },
+        {
+            "Date": "2022-04-17",
+            "Energy Prediction": 16653,
+            "Carbon Emission Prediction": 4590
+        },
+        {
+            "Date": "2022-04-18",
+            "Energy Prediction": 20221,
+            "Carbon Emission Prediction": 4451
+        },
+        {
+            "Date": "2022-04-19",
+            "Energy Prediction": 12543,
+            "Carbon Emission Prediction": 4315
+        },
+        {
+            "Date": "2022-04-20",
+            "Energy Prediction": 11767,
+            "Carbon Emission Prediction": 5636
+        },
+        {
+            "Date": "2022-04-21",
+            "Energy Prediction": 14699,
+            "Carbon Emission Prediction": 2299
+        },
+        {
+            "Date": "2022-04-22",
+            "Energy Prediction": 16787,
+            "Carbon Emission Prediction": 4937
+        },
+        {
+            "Date": "2022-04-23",
+            "Energy Prediction": 17911,
+            "Carbon Emission Prediction": 3397
+        },
+        {
+            "Date": "2022-04-24",
+            "Energy Prediction": 16024,
+            "Carbon Emission Prediction": 4258
+        },
+        {
+            "Date": "2022-04-25",
+            "Energy Prediction": 10911,
+            "Carbon Emission Prediction": 4310
+        },
+        {
+            "Date": "2022-04-26",
+            "Energy Prediction": 17043,
+            "Carbon Emission Prediction": 4244
+        },
+        {
+            "Date": "2022-04-27",
+            "Energy Prediction": 23541,
+            "Carbon Emission Prediction": 3194
+        },
+        {
+            "Date": "2022-04-28",
+            "Energy Prediction": 19900,
+            "Carbon Emission Prediction": 5336
+        },
+        {
+            "Date": "2022-04-29",
+            "Energy Prediction": 10755,
+            "Carbon Emission Prediction": 3625
+        },
+        {
+            "Date": "2022-04-30",
+            "Energy Prediction": 23772,
+            "Carbon Emission Prediction": 3828
+        },
+        {
+            "Date": "2022-04-31",
+            "Energy Prediction": 20120,
+            "Carbon Emission Prediction": 3646
+        },
+        {
+            "Date": "2022-05-01",
+            "Energy Prediction": 12878,
+            "Carbon Emission Prediction": 4945
+        },
+        {
+            "Date": "2022-05-02",
+            "Energy Prediction": 22683,
+            "Carbon Emission Prediction": 3203
+        },
+        {
+            "Date": "2022-05-03",
+            "Energy Prediction": 12074,
+            "Carbon Emission Prediction": 5947
+        },
+        {
+            "Date": "2022-05-04",
+            "Energy Prediction": 18531,
+            "Carbon Emission Prediction": 4300
+        },
+        {
+            "Date": "2022-05-05",
+            "Energy Prediction": 22960,
+            "Carbon Emission Prediction": 2604
+        },
+        {
+            "Date": "2022-05-06",
+            "Energy Prediction": 20101,
+            "Carbon Emission Prediction": 4815
+        },
+        {
+            "Date": "2022-05-07",
+            "Energy Prediction": 14983,
+            "Carbon Emission Prediction": 358
+        },
+        {
+            "Date": "2022-05-08",
+            "Energy Prediction": 12595,
+            "Carbon Emission Prediction": 2819
+        },
+        {
+            "Date": "2022-05-09",
+            "Energy Prediction": 17320,
+            "Carbon Emission Prediction": 2361
+        },
+        {
+            "Date": "2022-05-10",
+            "Energy Prediction": 14096,
+            "Carbon Emission Prediction": 3682
+        },
+        {
+            "Date": "2022-05-11",
+            "Energy Prediction": 19082,
+            "Carbon Emission Prediction": 5968
+        },
+        {
+            "Date": "2022-05-12",
+            "Energy Prediction": 14267,
+            "Carbon Emission Prediction": 2811
+        },
+        {
+            "Date": "2022-05-13",
+            "Energy Prediction": 23748,
+            "Carbon Emission Prediction": 4283
+        }
+    ]
+}
