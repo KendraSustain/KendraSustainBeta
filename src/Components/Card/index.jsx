@@ -1,15 +1,15 @@
-import * as React from "react";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import { Divider } from "@material-ui/core";
+import * as React from 'react'
+import Card from '@mui/material/Card'
+import CardActions from '@mui/material/CardActions'
+import CardContent from '@mui/material/CardContent'
+import CardMedia from '@mui/material/CardMedia'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
+import { Divider } from '@material-ui/core'
 
 export default function MediaCard({ img, title, content, buttons, style }) {
   return (
-    <Card style={{ minHeight: "120px", textAlign: "center", ...style }}>
+    <Card style={{ minHeight: '120px', textAlign: 'center', ...style }}>
       {img ? (
         <CardMedia
           component="img"
@@ -25,6 +25,7 @@ export default function MediaCard({ img, title, content, buttons, style }) {
           </Typography>
           {/* <Divider/> */}
           <Typography variant="h5" color="text.primary">
+            {/* {Math.round(content)} */}
             {content}
           </Typography>
         </CardContent>
@@ -37,5 +38,5 @@ export default function MediaCard({ img, title, content, buttons, style }) {
         </CardActions>
       ) : null}
     </Card>
-  );
+  )
 }

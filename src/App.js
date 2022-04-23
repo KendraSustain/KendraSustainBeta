@@ -242,13 +242,11 @@ const Main2 = () => {
             height: 'calc(100vh - 60px )',
           }}
         >
-          <Box>
-            <Routes>
-              {routes.map((item, pos) => (
-                <Route key={pos} path={item.route} element={item.component} />
-              ))}
-            </Routes>
-          </Box>
+          <Routes>
+            {routes.map((item, pos) => (
+              <Route key={pos} path={item.route} element={item.component} />
+            ))}
+          </Routes>
         </Box>
       </Box>
     )

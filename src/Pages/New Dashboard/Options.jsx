@@ -19,30 +19,5 @@ const Data = [
   },
 ]
 export default function Options() {
-  return (
-    <>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 5,
-        }}
-      >
-        {Data.map((item, pos) => (
-          <Grid key={pos}>
-            <Typography fontWeight={400} fontSize={25}>
-              {item.name}
-            </Typography>
-            {item.children.map((i, j) => (
-              <ColorBall
-                lable={i + ' ' + (j + 1)}
-                key={j}
-                bgColor={item.color}
-              />
-            ))}
-          </Grid>
-        ))}
-      </div>
-    </>
-  )
+  return <></>
 }

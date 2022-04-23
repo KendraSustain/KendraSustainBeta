@@ -9,28 +9,32 @@ export default function PieChart({
   options,
   series,
 }) {
-  console.log(series)
   const option = {
     tooltip: {
       trigger: 'item',
     },
-    legend: {
-      orient: 'horizontal',
-    },
+
     series: series
       ? series
       : [
           {
             data: data,
-            type: type,
-            smooth: true,
-            radius: subtype === 'doughnut' ? ['50%', '70%'] : ['0%', '90%'],
+            type: 'pie',
+            radius: ['40%', '70%'],
+            avoidLabelOverlap: false,
+            label: {
+              show: false,
+              position: 'center',
+            },
             emphasis: {
-              itemStyle: {
-                shadowBlur: 10,
-                shadowOffsetX: 0,
-                shadowColor: 'rgba(0, 0, 0, 0.5)',
+              label: {
+                show: true,
+                fontSize: '20',
+                // fontWeight: 'bold'
               },
+            },
+            labelLine: {
+              show: false,
             },
           },
         ],
@@ -47,6 +51,9 @@ export default function PieChart({
       notMerge={true}
       lazyUpdate={true}
       showLoading={showLoading}
+      style={{
+        height: '140px',
+      }}
       // theme={'theme_name'}
       // onChartReady={this.onChartReadyCallback}
       // onEvents={EventsDict}

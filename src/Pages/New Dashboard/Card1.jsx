@@ -9,6 +9,9 @@ export default function Card1({
   parsantage = 27,
   description = 'Scope 1 emission includes the direct GHG that occur from sources that are controlled or owned by an organization.',
   color = '#21409A',
+  scope1,
+  scope2,
+  scope3,
 }) {
   return (
     <Box
@@ -32,9 +35,9 @@ export default function Card1({
             >
               {emission}
             </span>{' '}
-            <span>
+            <p>
               kgCO<sub>2/KwH</sub>
-            </span>
+            </p>
           </Typography>
           <Typography fontWeight={600} fontSize={35} color={color}>
             {parsantage} %
@@ -43,14 +46,32 @@ export default function Card1({
         <Grid xs={6}>
           <PieChart
             data={[
-              { value: 735, name: 'C' },
-              { value: 510, name: 'D' },
-              { value: 434, name: 'B' },
-              { value: 335, name: 'A' },
+              {
+                name: 'Scope1',
+                value: scope1,
+                backgroundColor: 'red',
+                itemStyle: {
+                  color: '#4E69BC',
+                },
+              },
+              {
+                name: 'Scope2',
+                value: scope2,
+                itemStyle: {
+                  color: '#FF8B4B',
+                },
+              },
+              {
+                name: 'Scope3',
+                value: scope3,
+                itemStyle: {
+                  color: '#3FC27D',
+                },
+              },
             ]}
-            options={{
-              legend: { show: false },
-            }}
+            // options={{
+            //   legend: { show: false },
+            // }}
           />
         </Grid>
         <Grid xs={12}>

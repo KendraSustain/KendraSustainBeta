@@ -4,7 +4,13 @@ import React from 'react'
 import { PieChart } from '../../Components'
 import Pie from './Pie'
 
-export default function Lable() {
+export default function Lable({
+  emission = 516,
+  company = 'Stream Electric CO LTD',
+  scope1,
+  scope2,
+  scope3,
+}) {
   return (
     <>
       <Box
@@ -21,17 +27,41 @@ export default function Lable() {
               Total Carbon Emission
             </Typography>
             <Typography variant="p" fontSize={25}>
-              Stream Electric CO LTD
+              {company}
             </Typography>
           </Grid>
           <Grid item xs={5}>
             <Typography fontSize={35} fontWeight={600} letterSpacing={2}>
-              51,650 kgCO<sub>2</sub>/KwH
+              {emission} kgCO<sub>2</sub>/KwH
             </Typography>
           </Grid>
           <Grid justifyContent={'center'} item xs={1.2}>
-            <Pie />
-            {/* <PieChart /> */}
+            <PieChart
+              data={[
+                {
+                  name: 'Scope1',
+                  value: scope1,
+                  backgroundColor: 'red',
+                  itemStyle: {
+                    color: '#4E69BC',
+                  },
+                },
+                {
+                  name: 'Scope2',
+                  value: scope2,
+                  itemStyle: {
+                    color: '#FF8B4B',
+                  },
+                },
+                {
+                  name: 'Scope3',
+                  value: scope3,
+                  itemStyle: {
+                    color: '#3FC27D',
+                  },
+                },
+              ]}
+            />
           </Grid>
         </Grid>
       </Box>

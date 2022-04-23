@@ -29,12 +29,6 @@ const menus = [
 ]
 const icons = [
   {
-    icon: 'bx bx-plus',
-
-    onClick: () => console.log('Hello'),
-    to: '/',
-  },
-  {
     icon: 'bx bx-bell',
 
     onClick: () => console.log('Hello'),
@@ -57,7 +51,7 @@ const icons = [
   },
 ]
 export default function Topbar({
-  menu = menus,
+  menu = [],
   icon = icons,
   close = false,
   onClose,

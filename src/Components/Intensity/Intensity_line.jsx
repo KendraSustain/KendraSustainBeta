@@ -1,47 +1,46 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { Grid } from "@mui/material";
-import BarChart from "../Chart";
-import MTable from "../Table/Material Table";
-import { getUser } from "../../Auth";
-import NIUKData from "../../Helper/NIUK.json";
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import { Grid } from '@mui/material'
+import BarChart from '../Chart'
+import MTable from '../Table/Material Table'
+import { getUser } from '../../Auth'
+import NIUKData from '../../Helper/NIUK.json'
 
 function Intensity(props) {
-  const authToken = `Bearer ${localStorage.getItem("authToken")}`;
-  const user = JSON.parse(localStorage.getItem("user"));
-  console.log(user.id);
+  const authToken = `Bearer ${localStorage.getItem('authToken')}`
+  const user = JSON.parse(localStorage.getItem('user'))
   // const [data2, setData] = React.useState([])
-  const [localDate, setLocalDate] = useState([]);
-  const [intensity, setIntensity] = useState([]);
+  const [localDate, setLocalDate] = useState([])
+  const [intensity, setIntensity] = useState([])
   useEffect(() => {
     async function getData() {
-      let Date = [];
-      let Intensity = [];
+      let Date = []
+      let Intensity = []
       // let date = []
       // let prediction = []
       const apiGetData = axios.create({
         baseURL: process.env.REACT_APP_API_URL,
         headers: {
-          Accept: "application/json",
+          Accept: 'application/json',
           Authorization: authToken,
         },
-      });
+      })
       await apiGetData.get(`/api/v0.0.1/carbon_intensity`).then((res) => {
         res.data.forEach((element) => {
-          Date.push(element.To.slice(11, 16));
-          Intensity.push(element.Intensity);
-        });
+          Date.push(element.To.slice(11, 16))
+          Intensity.push(element.Intensity)
+        })
 
-        setLocalDate(Date);
-        setIntensity(Intensity);
-      });
+        setLocalDate(Date)
+        setIntensity(Intensity)
+      })
     }
 
-    getData();
-  }, [authToken]);
+    getData()
+  }, [authToken])
 
   return (
-    <div {...props} style={{ marginTop: "50px" }}>
+    <div {...props} style={{ marginTop: '50px' }}>
       {/* {user.id === 71 ?
         (
           <>
@@ -91,11 +90,11 @@ function Intensity(props) {
         x_items={localDate}
         y_item={intensity}
         title="Carbon Intensity for UK (gC02/Kwh)"
-        label={"Carbon Intensity"}
+        label={'Carbon Intensity'}
         type="bar"
       />
     </div>
-  );
+  )
 }
 
-export default Intensity;
+export default Intensity
