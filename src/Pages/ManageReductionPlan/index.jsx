@@ -1,16 +1,16 @@
-import { useEffect } from "react";
-import * as React from "react";
-import Grid from "@mui/material/Grid";
-import { Appbar } from "../../Components";
-import Scope1Com from "./Scope1";
-import Scope2Com from "./Scope2";
-import Scope3Com from "./Scope3";
-import Summary from "./Summry";
-import NIUK from "./NIUK";
-import NIUK_sum from "./NiukSum";
+import { useEffect } from 'react'
+import * as React from 'react'
+import Grid from '@mui/material/Grid'
+import { Appbar } from '../../Components'
+import Scope1Com from './Scope1'
+import Scope2Com from './Scope2'
+import Scope3Com from './Scope3'
+import Summary from './Summry'
+import NIUK from './NIUK'
+import NIUK_sum from './NiukSum'
 export default function DataMonitor() {
-  useEffect(() => {}, []);
-  const user = JSON.parse(localStorage.getItem("user"));
+  useEffect(() => {}, [])
+  const user = { id: 71 }
 
   return (
     <div>
@@ -18,11 +18,11 @@ export default function DataMonitor() {
         item
         xs={12}
         style={{
-          textAlign: "center",
-          height: "50px",
-          color: "black",
-          fontSize: "30px",
-          fontWeight: "bold",
+          textAlign: 'center',
+          height: '50px',
+          color: 'black',
+          fontSize: '30px',
+          fontWeight: 'bold',
         }}
       >
         Carbon Footprint Calculator
@@ -44,5 +44,5 @@ export default function DataMonitor() {
         }
       />
     </div>
-  );
+  )
 }

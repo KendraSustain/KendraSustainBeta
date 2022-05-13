@@ -1,0 +1,9 @@
+.root>span {
+    /* color: red; */
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.scope1>ol>li>span>label {
+    font-weight: bold;
+}

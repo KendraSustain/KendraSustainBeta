@@ -1,0 +1,118 @@
+$secondary: #909090;
+$primary: #4554d0;
+$breakPoint: 705px;
+$inputWidth: 440px;
+.container {
+  background-color: #001555;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  color: white;
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-wrap: wrap;
+
+  .leftSide {
+    // width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 80px;
+    background-size: contain;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-image: url(./shape.svg);
+    background-repeat: no-repeat;
+    background-position-x: left;
+    .leftImg {
+      max-width: 550px;
+    }
+    .logo {
+      max-width: 320px;
+      margin: 10px 0;
+    }
+    h1 {
+      font-size: 2.4rem;
+    }
+    p {
+      margin-top: 30px;
+      font-size: 20px;
+    }
+    .content {
+      width: 100%;
+    }
+  }
+
+  .rightSide {
+    flex-grow: 1;
+    form {
+      max-width: $inputWidth;
+      min-width: 200px;
+      margin: auto;
+      label {
+        background-color: #f0efff;
+        margin: 25px 0;
+        padding: 15px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-height: 45px;
+        i {
+          color: $primary;
+          cursor: pointer;
+        }
+        input {
+          width: 100%;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          margin-left: 10px;
+          font-weight: bold;
+          &::placeholder {
+            color: $primary;
+            font-weight: bold;
+          }
+        }
+      }
+      .forgot {
+        width: 100%;
+        text-align: right;
+        a {
+          color: $secondary;
+        }
+      }
+      button {
+        width: 100%;
+        background-color: $primary;
+        border: none;
+        color: #ffffff;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        height: 40px;
+        margin-top: 20px;
+      }
+
+      p {
+        color: $secondary;
+        margin: 20px 0;
+        text-align: center;
+        a {
+          color: #ffffff;
+        }
+      }
+      .icons {
+        text-align: center;
+        img {
+          width: 22px;
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+}

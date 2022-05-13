@@ -1,143 +1,99 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Grid from '@mui/material/Grid'
-import Box from '@mui/material/Box'
-import axios from 'axios'
-import { CardChart, MediaCard } from '../../Components'
+import { CardChart, TextCards } from '../../Components'
+import { Context } from '../../Context'
 
 const CarbonFootprintCalculator = () => {
-  const authToken = `Bearer ${localStorage.getItem('authToken')}`
-  const [data1, setData1] = useState([])
+  const { scopeTwoData, scopeTwoAsset } = useContext(Context)
   const [CE, setCE] = useState([])
   const [GC, setGC] = useState([])
-  const user = JSON.parse(localStorage.getItem('user'))
-  const [asset, setAsset] = useState([])
   useEffect(() => {
-    async function getData() {
-      const apiGetData = axios.create({
-        baseURL: process.env.REACT_APP_API_URL,
-        headers: {
-          Accept: 'application/json',
-          Authorization: authToken,
-        },
-      })
-      const { data } = await apiGetData.get(`/api/asset/${user.id}`)
-      setAsset(data)
-      let dum = []
-      for (let i = 0; i < data.length; i++) {
-        await apiGetData
-          .post(
-            `/api/getEmission?name=${data[i].asset_name}&type=${'emission'}`,
-          )
-          .then((res) => {
-            dum.push(res.data)
-          })
-      }
-      setData1(dum)
-      let temp = dum.map((e) => e.map((i) => i['Carbon Emission']))
-      temp = temp.flat()
-      setCE(temp)
-      temp = dum.map((e) => e.map((i) => i['Energy Consumption']))
-      temp = temp.flat()
-      setGC(temp)
-    }
-    getData()
+    let temp = scopeTwoData.map((e) => e.map((i) => i['Carbon Emission']))
+    temp = temp.flat()
+    setCE(temp)
+    temp = scopeTwoData.map((e) => e.map((i) => i['Energy Consumption']))
+    temp = temp.flat()
+    setGC(temp)
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [authToken])
+  }, [])
 
-  useEffect(() => {
-    console.log(CE)
-  }, [CE])
-
-  const style = {
-    display: 'flex',
-    backgroundColor: '#ffffff',
-    height: '150px',
-    borderRadius: '8px',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: 3,
-  }
   const [select, setSelect] = useState(0)
-
+  const content = [
+    {
+      title: 'Total Carbon Emission',
+      data:
+        Math.round(CE.reduce((a, b) => a + b, 0) * 100) / 100 + ' kgCO2/kwH',
+    },
+    {
+      title: 'Max Carbon Emission',
+      data: Math.round(Math.max(...CE) * 100) / 100 + ' kgCO2/kwH',
+    },
+    {
+      title: 'Min Carbon Emission',
+      data: Math.round(Math.min(...CE) * 100) / 100 + ' kgCO2/kwH',
+    },
+    {
+      title: 'Avrage Carbon Emission',
+      data:
+        Math.round((CE.reduce((a, b) => a + b, 0) * 100) / CE.length) / 100 +
+        ' kgCO2/kwH',
+    },
+  ]
   return (
-    data1.length && (
-      <div>
-        <Box sx={{ width: '100%' }}>
-          <Grid
-            container
-            rowSpacing={1}
-            columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+    <div>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-around',
+          gap: 20,
+          paddingBottom: 10,
+        }}
+      >
+        {scopeTwoAsset.map((x, i) => (
+          <div
+            key={i}
+            style={{
+              border: select === i ? '1px solid black' : '',
+              padding: '10px 0',
+              flexGrow: 1,
+              textAlign: 'center',
+              borderRadius: 10,
+              boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+              cursor: 'pointer',
+            }}
+            onClick={() => setSelect(i)}
           >
-            {asset.map((item, pos) => (
-              <Grid item key={pos} xs={12 / asset.length}>
-                <Box
-                  sx={{
-                    ...style,
-                    border: '2px solid',
-                    borderColor: select === pos ? '#00034F' : 'transparent',
-                  }}
-                  onClick={() => setSelect(pos)}
-                >
-                  {item.asset_type}
-                </Box>
-              </Grid>
-            ))}
-
-            <Grid item xs={3}>
-              <MediaCard
-                title={'Total Carbon Emission(kgCO2/kWh)'}
-                content={Math.round(CE.reduce((a, b) => a + b, 0) * 100) / 100}
-              />
-            </Grid>
-            <Grid item xs={3}>
-              <MediaCard
-                title={'Max Carbon Emission(kgCO2/kWh)'}
-                content={Math.round(Math.max(...CE) * 100) / 100}
-              />
-            </Grid>
-            <Grid item xs={3}>
-              <MediaCard
-                title={'Min Carbon Emission(kgCO2/kWh)'}
-                content={Math.round(Math.min(...CE) * 100) / 100}
-              />
-            </Grid>
-            <Grid item xs={3}>
-              <MediaCard
-                title={'Avrage Carbon Emission(kgCO2/kWh)'}
-                content={
-                  Math.round(
-                    (CE.reduce((a, b) => a + b, 0) * 100) / CE.length,
-                  ) / 100
-                }
-              />
-            </Grid>
-
-            <Grid item xs={12} md={12}>
-              <CardChart
-                title={asset[select].assetName}
-                x_items={data1[select].map((e) => e.Date)}
-                type="line"
-                showYear={true}
-                y_item={data1[select].map((e) => e['Carbon Emission'])}
-                label={'Carbon Emission for ' + asset[select].asset_type}
-              />
-            </Grid>
-
-            <Grid item md={12}>
-              <CardChart
-                title={asset[select].assetName}
-                x_items={data1[select].map((e) => e.Date)}
-                type="bar"
-                showYear={true}
-                y_item={data1[select].map((e) => e['Carbon Emission'])}
-                label={'Carbon Emission for ' + asset[select].asset_type}
-              />
-            </Grid>
-          </Grid>
-        </Box>
+            <h5>{x.asset_type}</h5>
+            <p>{x.asset_name}</p>
+          </div>
+        ))}
       </div>
-    )
+      <TextCards cards={content} grid={4} />
+      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <Grid item xs={12}>
+          <CardChart
+            title={scopeTwoData[select].assetName}
+            x_items={scopeTwoData[select].map((e) => e.Date)}
+            type="line"
+            showYear={true}
+            y_item={scopeTwoData[select].map((e) => e['Carbon Emission'])}
+            label={'Carbon Emission for ' + scopeTwoAsset[select].asset_type}
+          />
+        </Grid>
+
+        <Grid item xs={12}>
+          <CardChart
+            title={scopeTwoAsset[select].assetName}
+            x_items={scopeTwoData[select].map((e) => e.Date)}
+            type="bar"
+            showYear={true}
+            y_item={scopeTwoData[select].map((e) => e['Carbon Emission'])}
+            label={'Carbon Emission for ' + scopeTwoAsset[select].asset_type}
+          />
+        </Grid>
+      </Grid>
+    </div>
   )
 }
 

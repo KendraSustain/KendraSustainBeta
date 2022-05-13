@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Grid, Box, Button } from '@material-ui/core'
-import { CardChart } from '../../Components'
+import { CardChart, TextCards } from '../../Components'
 import TempData from '../Measure/Assets/NiukData.json'
 import style from './index.module.css'
 import options from '../Measure/DataMoitor/Options.json'
@@ -35,40 +35,77 @@ export default function NIUK() {
     gap: 3,
     cursor: 'pointer',
   }
+  const content = [
+    {
+      title: 'Maximum Carbon Emission',
+      data: Math.max(...temp) + ' kgCO2/KWh',
+    },
+    {
+      title: 'Total  Carbon Emission',
+      data:
+        Math.round(temp.reduce((a, b) => a + b, 0) * 100) / 100 + ' kgCO2/KWh',
+    },
+    {
+      title: 'Minimum Carbon Emission',
+      data: Math.min(...temp) + ' kgCO2/KWh',
+    },
+  ]
   return (
     <div>
       <Grid container spacing={1}>
-        {options.map((item, pos) => (
-          <Grid item xs={4}>
-            <Box
-              sx={{
-                ...styless,
-                border: '2px solid',
-                borderColor: select === pos ? '#00034F' : 'transparent',
+        <Grid
+          item
+          xs={12}
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            gap: 10,
+            position: 'relative',
+          }}
+        >
+          {options.map((x, i) => (
+            <div
+              key={i}
+              style={{
+                flexGrow: 1,
+                borderRadius: 10,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: 20,
+                maxHeight: 160,
+                overflowY: 'scroll',
+                paddingBottom: 10,
+                boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
               }}
-              onClick={() => setSelect(pos)}
             >
-              {item.name}
-              {select === pos && (
-                <Box style={{ ...styless, flexWrap: 'wrap' }}>
-                  {item.children.map((i, j) => (
-                    <Button
-                      variant={subselect === j ? 'contained' : 'outlined'}
-                      color={subselect === j ? 'primary' : 'default'}
-                      key={j}
-                      onClick={() => {
-                        setSubselect(j)
-                        setOptionsSelected(i.name)
-                      }}
-                    >
-                      {i.name}
-                    </Button>
-                  ))}
-                </Box>
-              )}
-            </Box>
-          </Grid>
-        ))}
+              <b
+                style={{
+                  width: '100%',
+                  background: 'white',
+                  textAlign: 'center',
+                  position: 'sticky',
+                  top: 0,
+                  zIndex: 2,
+                }}
+              >
+                {x.name}
+              </b>
+              {x.children.map((y, j) => (
+                <Button
+                  variant={
+                    optionsSelected === y.name ? 'contained' : 'outlined'
+                  }
+                  color={'primary'}
+                  key={j}
+                  onClick={() => setOptionsSelected(y.name)}
+                >
+                  {y.name}
+                </Button>
+              ))}
+            </div>
+          ))}
+        </Grid>
         <Grid item xs={12} style={{ textAlign: 'center', padding: '10px' }}>
           <h2>{optionsSelected}</h2>
         </Grid>
@@ -76,35 +113,7 @@ export default function NIUK() {
 
       {Data[optionsSelected] ? (
         <>
-          <div className={style.container}>
-            <div className={style.card}>
-              <span>Maximum Carbon Emission </span>
-              <p
-                style={{
-                  fontSize: '25px',
-                  fontWeight: 'bolder',
-                  letterSpacing: '1px',
-                }}
-              >
-                {' '}
-                {Math.max(...temp)} kgCO2/KWh{' '}
-              </p>
-            </div>
-            <div className={style.card}>
-              <span>Total Carbon Emission </span>
-              <p
-                style={{
-                  fontSize: '25px',
-                  fontWeight: 'bolder',
-                  letterSpacing: '1px',
-                }}
-              >
-                {' '}
-                {Math.round(temp.reduce((a, b) => a + b, 0) * 100) / 100}{' '}
-                kgCO2/KWh
-              </p>
-            </div>
-          </div>
+          <TextCards cards={content} />
           <Grid container spacing={2}>
             {Data[optionsSelected].map((item) => (
               <>

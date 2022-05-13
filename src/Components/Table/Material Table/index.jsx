@@ -1,50 +1,40 @@
-import React, { useState } from "react";
-import { forwardRef } from "react";
-import AddBox from "@material-ui/icons/AddBox";
-import ArrowDownward from "@material-ui/icons/ArrowDownward";
-import Check from "@material-ui/icons/Check";
-import ChevronLeft from "@material-ui/icons/ChevronLeft";
-import ChevronRight from "@material-ui/icons/ChevronRight";
-import Clear from "@material-ui/icons/Clear";
-import DeleteOutline from "@material-ui/icons/DeleteOutline";
-import Edit from "@material-ui/icons/Edit";
-import FilterList from "@material-ui/icons/FilterList";
-import FirstPage from "@material-ui/icons/FirstPage";
-import LastPage from "@material-ui/icons/LastPage";
-import Remove from "@material-ui/icons/Remove";
-import SaveAlt from "@material-ui/icons/SaveAlt";
-import Search from "@material-ui/icons/Search";
-import ViewColumn from "@material-ui/icons/ViewColumn";
-import MaterialTable from "@material-table/core";
+import React, { useEffect, useState } from 'react'
+import { forwardRef } from 'react'
+import AddBox from '@material-ui/icons/AddBox'
+import ArrowDownward from '@material-ui/icons/ArrowDownward'
+import Check from '@material-ui/icons/Check'
+import ChevronLeft from '@material-ui/icons/ChevronLeft'
+import ChevronRight from '@material-ui/icons/ChevronRight'
+import Clear from '@material-ui/icons/Clear'
+import DeleteOutline from '@material-ui/icons/DeleteOutline'
+import Edit from '@material-ui/icons/Edit'
+import FilterList from '@material-ui/icons/FilterList'
+import FirstPage from '@material-ui/icons/FirstPage'
+import LastPage from '@material-ui/icons/LastPage'
+import Remove from '@material-ui/icons/Remove'
+import SaveAlt from '@material-ui/icons/SaveAlt'
+import Search from '@material-ui/icons/Search'
+import ViewColumn from '@material-ui/icons/ViewColumn'
+import MaterialTable from '@material-table/core'
 
 export default function MTable(props) {
-  React.useEffect(() => {
-    setTableData(props.tableData);
-  }, [props]);
-  const [tableData, setTableData] = useState(props.tableData);
-  const [pageSize, setPageSize] = useState(props.pageSize);
-  const [isRun, setIsRun] = useState(false);
-  function run() {
-    if (isRun) return;
-    if (Array.isArray(props.tableData))
-      if (props.tableData.length < 10 && props.tableData.length > 0)
-        setPageSize(props.tableData.length);
-    setIsRun(true);
-  }
-  run();
   const options = {
     sorting: true,
-    search: false,
+    search: true,
     searchAutoFocus: true,
-    searchFieldVariant: "standard",
+    searchFieldVariant: 'standard',
     paging: true,
-    pageSize: pageSize ? pageSize : 7,
-    paginationType: "stepped",
+    pageSize: 10,
+    //   props.tableData.length < 11 && props.tableData.length > 0
+    //     ? props.tableData.length
+    //     : 10,
+    // pageSize: 10,
+    paginationType: 'stepped',
     showFirstLastPageButtons: false,
     exportButton: true,
     exportAllData: true,
-    exportFileName: "TableData",
-    addRowPosition: "first",
+    exportFileName: 'TableData',
+    addRowPosition: 'first',
     actionsColumnIndex: -1,
     showSelectAllCheckbox: false,
     showTextRowsSelected: false,
@@ -53,10 +43,20 @@ export default function MTable(props) {
     }),
 
     columnsButton: true,
-    rowStyle: (data, index) =>
-      index % 2 === 0 ? { background: "#f5f5f5" } : null,
-    headerStyle: { background: "var(--dark-blue)", color: "white" },
-  };
+    // rowStyle: (data, index) =>
+    //   index % 2 === 0 ? { background: '#f5f5f5' } : null,
+    showTitle: props.title ? true : false,
+    headerStyle: {
+      fontSize: '1rem',
+      fontWeight: 'bold',
+      borderBottom: 'none',
+      whiteSpace: 'nowrap',
+      // textAlign: 'left'
+      background: '#E4E4E4',
+      color: '#000000',
+    },
+    emptyRowsWhenPaging: false,
+  }
   const tableIcons = {
     Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
     Check: forwardRef((props, ref) => <Check {...props} ref={ref} />),
@@ -83,16 +83,16 @@ export default function MTable(props) {
       <Remove {...props} ref={ref} />
     )),
     ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />),
-  };
+  }
   return (
     <div>
       <MaterialTable
         style={{
-          boxShadow: "none",
+          boxShadow: 'none',
         }}
         rowsPerPage={4}
         columns={props.columns}
-        data={tableData}
+        data={props.tableData}
         editable={{ ...props.editable }}
         onRowClick={props.onRowClick}
         actions={props.actions}
@@ -106,5 +106,5 @@ export default function MTable(props) {
         icons={tableIcons}
       />
     </div>
-  );
+  )
 }

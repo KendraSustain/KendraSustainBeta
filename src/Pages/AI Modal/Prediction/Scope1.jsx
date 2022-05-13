@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
 import { CardChart, MediaCard, MTable } from '../../../Components'
 import Data9696969 from './NIUKData.json'
+import { Context } from '../../../Context'
 function Scope1() {
   const [tableData, setTableData] = useState([])
-  const user = JSON.parse(localStorage.getItem('user'))
+  const { user } = useContext(Context)
   const [show, setShow] = useState(true)
   useEffect(() => {
     const authToken = `Bearer ${localStorage.getItem('authToken')}`

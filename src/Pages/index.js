@@ -27,8 +27,10 @@ import BillingAccount from './User Managment/Admin/Billing/BillingAccount'
 import Payment from './User Managment/Admin/Billing/Payment'
 import AssetScopeOneDetails from './Measure/Assets/ScopeOneDetails'
 import CloudCarbon from './Measure/Cloud Carbon'
-import DashboardNew from './New Dashboard'
+import DashboardNew from './NewDashboard'
+import Error from '../Components/Error'
 export {
+  Error,
   DashboardNew,
   CloudCarbon,
   AssetScopeOneDetails,

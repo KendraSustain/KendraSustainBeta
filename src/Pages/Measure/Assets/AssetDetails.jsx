@@ -1,154 +1,154 @@
-import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
+import React, { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+import Grid from '@mui/material/Grid'
+import Box from '@mui/material/Box'
 
-import axios from "axios";
-import { MediaCard, MTable } from "../../../Components";
-import CardChart from "../../../Components/Chart/CardChart";
+import axios from 'axios'
+import { MediaCard, MTable } from '../../../Components'
+import CardChart from '../../../Components/Chart/CardChart'
 
 export default function AssetDetail(props) {
-  const authToken = `Bearer ${localStorage.getItem("authToken")}`;
-  const user = JSON.parse(localStorage.getItem("user"));
+  const authToken = `Bearer ${localStorage.getItem('authToken')}`
+  const user = JSON.parse(localStorage.getItem('user'))
 
-  const location = useLocation();
-  const [rows, setRows] = React.useState([]);
+  const location = useLocation()
+  const [rows, setRows] = React.useState([])
 
   useEffect(() => {
     async function getData() {
       const apiGetData = axios.create({
         baseURL: process.env.REACT_APP_API_URL,
         headers: {
-          Accept: "application/json",
+          Accept: 'application/json',
           Authorization: authToken,
         },
-      });
+      })
       let meta = {
         assetName: location.state.detail.asset_name,
-        type: "emission",
-      };
+        type: 'emission',
+      }
       const { data } = await apiGetData.post(
-        `/api/getEmission?name=${meta.assetName}&type=${meta.type}`
-      );
-      setRows(data);
+        `/api/getEmission?name=${meta.assetName}&type=${meta.type}`,
+      )
+      setRows(data)
     }
-    getData();
-  }, [authToken, location]);
+    getData()
+  }, [authToken, location])
 
   const metadata = [
     {
       name:
         user.id === 71 &&
-        location.state.detail.asset_name === "MPAN-G4w00541251826"
-          ? "Maximum Gas Consumption"
-          : "Maximum Electricity Consumption",
+        location.state.detail.asset_name === 'MPAN-G4w00541251826'
+          ? 'Maximum Gas Consumption'
+          : 'Maximum Electricity Consumption',
 
       data:
         user.id === 71 &&
-        location.state.detail.asset_name === "MPAN-G4w00541251826"
-          ? "12,995 KwH"
-          : 24001 + " KwH",
+        location.state.detail.asset_name === 'MPAN-G4w00541251826'
+          ? '12,995 KwH'
+          : 24001 + ' KwH',
     },
     {
       name:
         user.id === 71 &&
-        location.state.detail.asset_name === "MPAN-G4w00541251826"
-          ? "Minimum Gas Consumption"
-          : "Minimum Electricity Consumption",
+        location.state.detail.asset_name === 'MPAN-G4w00541251826'
+          ? 'Minimum Gas Consumption'
+          : 'Minimum Electricity Consumption',
 
       data:
         user.id === 71 &&
-        location.state.detail.asset_name === "MPAN-G4w00541251826"
-          ? "7044 KwH"
-          : 6383 + " KwH",
+        location.state.detail.asset_name === 'MPAN-G4w00541251826'
+          ? '7044 KwH'
+          : 6383 + ' KwH',
     },
     {
       name:
         user.id === 71 &&
-        location.state.detail.asset_name === "MPAN-G4w00541251826"
-          ? "Average Gas Consumption"
-          : "Average Electricity Consumption",
+        location.state.detail.asset_name === 'MPAN-G4w00541251826'
+          ? 'Average Gas Consumption'
+          : 'Average Electricity Consumption',
       data:
         user.id === 71 &&
-        location.state.detail.asset_name === "MPAN-G4w00541251826"
-          ? "8810 KwH"
-          : "16,828 KwH",
+        location.state.detail.asset_name === 'MPAN-G4w00541251826'
+          ? '8810 KwH'
+          : '16,828 KwH',
     },
     {
       name:
         user.id === 71 &&
-        location.state.detail.asset_name === "MPAN-G4w00541251826"
-          ? "Maximum Carbon Emission"
-          : "Maximum Carbon Emission",
+        location.state.detail.asset_name === 'MPAN-G4w00541251826'
+          ? 'Maximum Carbon Emission'
+          : 'Maximum Carbon Emission',
 
       data:
         user.id === 71 &&
-        location.state.detail.asset_name === "MPAN-G4w00541251826"
-          ? "3321 kgCO2/kWh"
-          : 6134 + " kgCO2/KWh",
+        location.state.detail.asset_name === 'MPAN-G4w00541251826'
+          ? '3321 kgCO2/kWh'
+          : 6134 + ' kgCO2/KWh',
     },
     {
       name:
         user.id === 71 &&
-        location.state.detail.asset_name === "MPAN-G4w00541251826"
-          ? "Minimum Gas Consumption"
-          : "Minimum Carbon Emissions",
+        location.state.detail.asset_name === 'MPAN-G4w00541251826'
+          ? 'Minimum Gas Consumption'
+          : 'Minimum Carbon Emissions',
 
       data:
         user.id === 71 &&
-        location.state.detail.asset_name === "MPAN-G4w00541251826"
-          ? "1310 kgCO2/kWh"
-          : 1631 + " kgCO2/KWh",
+        location.state.detail.asset_name === 'MPAN-G4w00541251826'
+          ? '1310 kgCO2/kWh'
+          : 1631 + ' kgCO2/KWh',
     },
     {
       name:
         user.id === 71 &&
-        location.state.detail.asset_name === "MPAN-G4w00541251826"
-          ? "Average Carbon Emission"
-          : "Average Carbon Emissions",
+        location.state.detail.asset_name === 'MPAN-G4w00541251826'
+          ? 'Average Carbon Emission'
+          : 'Average Carbon Emissions',
       data:
         user.id === 71 &&
-        location.state.detail.asset_name === "MPAN-G4w00541251826"
-          ? "2251  kgCO2/kWh"
-          : "4301 kgCO2/kWh",
+        location.state.detail.asset_name === 'MPAN-G4w00541251826'
+          ? '2251  kgCO2/kWh'
+          : '4301 kgCO2/kWh',
     },
-  ];
+  ]
   const columns = [
-    { field: "Date", title: "Date" },
+    { field: 'Date', title: 'Date' },
     {
-      field: "Energy Consumption",
+      field: 'Energy Consumption',
       title:
         user.id === 71 &&
-        location.state.detail.asset_name === "MPAN-G4w00541251826"
-          ? "Gas Consumption"
-          : "Electricity Consumption",
+        location.state.detail.asset_name === 'MPAN-G4w00541251826'
+          ? 'Gas Consumption'
+          : 'Electricity Consumption',
     },
     {
-      field: "Carbon Emission",
-      title: "Carbon Emission (kgCO2/KWh)",
-      render: (i) => Math.round(i["Carbon Emission"] * 100) / 100,
+      field: 'Carbon Emission',
+      title: 'Carbon Emission (kgCO2/KWh)',
+      render: (i) => Math.round(i['Carbon Emission'] * 100) / 100,
     },
-  ];
+  ]
 
   return (
     <div>
-      <Box sx={{ width: "100%" }}>
+      <Box sx={{ width: '100%' }}>
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
           <Grid
             item
             xs={12}
             style={{
-              textAlign: "center",
-              height: "90px",
-              color: "black",
-              fontSize: "30px",
-              fontWeight: "bold",
+              textAlign: 'center',
+              height: '90px',
+              color: 'black',
+              fontSize: '30px',
+              fontWeight: 'bold',
             }}
           >
             {user.id === 71
-              ? "Newbury Investments (UK) Limited Stearn Electrical"
+              ? 'Newbury Investments (UK) Limited Stearn Electrical'
               : null}
-            <span style={{ fontSize: "18px" }}>
+            <span style={{ fontSize: '18px' }}>
               ({location.state.detail.asset_name})
             </span>
           </Grid>
@@ -164,9 +164,9 @@ export default function AssetDetail(props) {
               columns={columns}
               title={
                 user.id === 71 &&
-                location.state.detail.asset_name === "MPAN-G4w00541251826"
-                  ? "Gas Consumption"
-                  : "Electricity Consumption"
+                location.state.detail.asset_name === 'MPAN-G4w00541251826'
+                  ? 'Gas Consumption'
+                  : 'Electricity Consumption'
               }
               tableData={rows}
               options={{
@@ -177,19 +177,19 @@ export default function AssetDetail(props) {
 
           <Grid item xs={12} md={12}>
             <CardChart
-              x_items={rows.map((item) => item["Date"])}
-              y_item={rows.map((item) => item["Energy Consumption"])}
+              x_items={rows.map((item) => item['Date'])}
+              y_item={rows.map((item) => item['Energy Consumption'])}
               showYear={true}
               title={`${(user.id =
-                71 && location.state.detail.asset_name === "MPAN-G4w00541251826"
+                71 && location.state.detail.asset_name === 'MPAN-G4w00541251826'
                   ? `Gas Consumption for ${user.company} `
                   : `Electricity Consumption for ${user.company} `)} (kWh)`}
               label={
                 (user.id =
                   71 &&
-                  location.state.detail.asset_name === "MPAN-G4w00541251826"
-                    ? "Gas Consumption"
-                    : "Electricity Consumption")
+                  location.state.detail.asset_name === 'MPAN-G4w00541251826'
+                    ? 'Gas Consumption'
+                    : 'Electricity Consumption')
               }
               time="Date"
               assetName={location.state.detail.asset_name}
@@ -199,8 +199,8 @@ export default function AssetDetail(props) {
 
           <Grid item xs={12} md={12}>
             <CardChart
-              x_items={rows.map((item) => item["Date"])}
-              y_item={rows.map((item) => item["Carbon Emission"])}
+              x_items={rows.map((item) => item['Date'])}
+              y_item={rows.map((item) => item['Carbon Emission'])}
               showYear={true}
               title={`Carbon Emission for ${user.company} (x1000 kgCO2/KWh)`}
               label="Carbon Emission"
@@ -211,19 +211,19 @@ export default function AssetDetail(props) {
           </Grid>
           <Grid item xs={12} md={12}>
             <CardChart
-              x_items={rows.map((item) => item["Date"])}
-              y_item={rows.map((item) => item["Energy Consumption"])}
+              x_items={rows.map((item) => item['Date'])}
+              y_item={rows.map((item) => item['Energy Consumption'])}
               showYear={true}
               title={`${(user.id =
-                71 && location.state.detail.asset_name === "MPAN-G4w00541251826"
+                71 && location.state.detail.asset_name === 'MPAN-G4w00541251826'
                   ? `Gas Consumption for ${user.company}`
                   : `Electricity Consumption for ${user.company}`)} (kWh) `}
               label={
                 (user.id =
                   71 &&
-                  location.state.detail.asset_name === "MPAN-G4w00541251826"
-                    ? "Gas Consumption"
-                    : "Electricity Consumption")
+                  location.state.detail.asset_name === 'MPAN-G4w00541251826'
+                    ? 'Gas Consumption'
+                    : 'Electricity Consumption')
               }
               time="Date"
               assetName={location.state.detail.asset_name}
@@ -233,8 +233,8 @@ export default function AssetDetail(props) {
 
           <Grid item xs={12} md={12}>
             <CardChart
-              x_items={rows.map((item) => item["Date"])}
-              y_item={rows.map((item) => item["Carbon Emission"])}
+              x_items={rows.map((item) => item['Date'])}
+              y_item={rows.map((item) => item['Carbon Emission'])}
               showYear={true}
               title={`Carbon Emission for ${user.company} (x1000 kgCO2/KWh)`}
               label="Carbon Emission"
@@ -254,5 +254,5 @@ export default function AssetDetail(props) {
         </Grid>
       </Box>
     </div>
-  );
+  )
 }

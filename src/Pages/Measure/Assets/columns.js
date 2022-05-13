@@ -1,31 +1,30 @@
 export const columns = [
   {
+    title: 'S.NO',
+    field: 'sn',
+    width: '5%',
+  },
+  {
     title: 'Asset Name',
-    // cellStyle: {
-    //   borderBottom: '1px solid rgba(0,0,0,0.03)',
-    //   fontSize: '0.8rem',
-    //   whiteSpace: 'nowrap',
-    //   textAlign: 'left',
-    // },
+
     headerStyle: {
       fontSize: '1rem',
       fontWeight: 'bold',
       borderBottom: 'none',
       whiteSpace: 'nowrap',
-      // textAlign: 'left'
     },
-    render: rowData => (
+    render: (rowData) => (
       <span
         style={{
           borderRadius: '5px',
           background: '#fff',
           padding: '5px 8px',
-          color: '#333'
+          color: '#333',
         }}
       >
         NIUK Stearn Electrical
       </span>
-    )
+    ),
   },
   {
     title: 'Name of Asset',
@@ -43,18 +42,18 @@ export const columns = [
       whiteSpace: 'nowrap',
       // textAlign: 'left'
     },
-    render: rowData => (
+    render: (rowData) => (
       <span
         style={{
           borderRadius: '5px',
           background: '#fff',
           padding: '5px 8px',
-          color: '#333'
+          color: '#333',
         }}
       >
         {rowData.asset_name}
       </span>
-    )
+    ),
   },
   {
     title: 'Asset Type',
@@ -70,20 +69,20 @@ export const columns = [
       fontWeight: 'bold',
       borderBottom: 'none',
       whiteSpace: 'nowrap',
-      textAlign: 'center'
+      textAlign: 'center',
     },
-    render: rowData => (
+    render: (rowData) => (
       <span
         style={{
           borderRadius: '5px',
           background: '#fff',
           padding: '5px 8px',
-          color: '#333'
+          color: '#333',
         }}
       >
         {rowData.asset_type}
       </span>
-    )
+    ),
   },
 
   {
@@ -100,19 +99,19 @@ export const columns = [
       fontWeight: 'bold',
       borderBottom: 'none',
       whiteSpace: 'nowrap',
-      textAlign: 'center'
+      textAlign: 'center',
     },
-    render: rowData => (
+    render: (rowData) => (
       <span
         style={{
           borderRadius: '5px',
           background: '#fff',
           padding: '5px 8px',
-          color: '#333'
+          color: '#333',
         }}
       >
         {rowData.location}
       </span>
-    )
-  }
+    ),
+  },
 ]

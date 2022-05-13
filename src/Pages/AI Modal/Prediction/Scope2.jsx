@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
 import { CardChart, MediaCard, MTable } from '../../../Components'
 import Data from './NIUKData.json'
+import { Context } from '../../../Context'
 function Scope2() {
   const [tableData, setTableData] = useState([])
-  const user = JSON.parse(localStorage.getItem('user'))
+  const { user } = useContext(Context)
   const [show, setShow] = useState(true)
 
   useEffect(() => {

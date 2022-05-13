@@ -5,19 +5,20 @@
   padding: 0;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 :root {
   --sidebar-primary: #11101d;
   --sidebar-secondary: #1d1b31;
-  --white: #ffffff;
   --dark-blue: #00034f;
+  --white: #ffffff;
 }
 
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
+  // display: none;
 }
 
 ::-webkit-scrollbar-track {
@@ -26,12 +27,28 @@
 
 ::-webkit-scrollbar-thumb {
   background: #888;
+  border-radius: 15px;
+  background: #2f3da9;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
+// used in react-checkbox-tree
+.rct-text {
+  margin: 10px 0;
+}
+.rct-text label {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+.rct-checkbox {
+  font-size: 22px;
+  padding: 0px !important;
+  height: 25px;
+  width: 23px;
+}
 .navTop {
   * {
     font-family: 'Nunito Sans', sans-serif;
@@ -121,58 +138,46 @@
   }
 }
 
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
+.sidebar2 {
+  border-radius: 0 24px 24px 0;
   height: 100%;
-  width: 260px;
-  background: var(--sidebar-primary);
-  z-index: 100;
+  padding-top: 5px;
+  width: 270px;
+  z-index: 10;
   transition: all 0.5s ease;
-
-  .logoDetails {
-    height: 60px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    div {
-      min-width: 78px;
-      height: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      &.logo {
-        display: none;
-        > img {
-          width: 25px;
-          height: 25px;
-        }
-      }
-      &.fullLogo {
-        padding: 22px;
-        transition: 0.3s ease;
-        transition-delay: 0.1s;
-        > img {
-          overflow: hidden;
-          object-fit: cover;
-        }
+  background-color: #001555;
+  display: flex;
+  flex-direction: column;
+  i {
+    cursor: pointer;
+    font-size: 20px;
+  }
+  .navLinks {
+    .selected {
+      background-color: #e6ecff;
+      .linkName,
+      i {
+        color: #001555;
       }
     }
-  }
-
-  .navLinks {
-    height: 100%;
-    padding: 10px 0 150px 0;
-    overflow: auto;
     li {
       position: relative;
       list-style: none;
       transition: all 0.4s ease;
       margin: 5px 10px;
       border-radius: 8px;
+      font-size: 0.7rem;
       &:hover {
-        background: #5d62fb;
+        background-color: #e6ecff;
+        a {
+          color: #001555;
+        }
+        i {
+          color: #001555;
+        }
+        .linkName {
+          color: #001555;
+        }
       }
       .iconLink {
         display: flex;
@@ -180,13 +185,12 @@
         justify-content: space-between;
       }
       i {
-        height: 50px;
-        min-width: 58px;
+        min-width: 48px;
         text-align: center;
-        line-height: 50px;
-        color: var(--white);
-        font-size: 1.1rem;
+        line-height: 40px;
+        font-size: 1rem;
         cursor: pointer;
+        color: #ffffff;
         transition: all 0.3s ease;
       }
       a {
@@ -195,9 +199,9 @@
         align-items: center;
         text-decoration: none;
         .linkName {
-          font-size: 0.9rem;
-          font-weight: 400;
-          color: var(--white);
+          font-size: 0.8rem;
+          font-weight: 500;
+          color: #ffffff;
           transition: all 0.4s ease;
         }
       }
@@ -208,41 +212,46 @@
         .linkName {
           display: none;
         }
+        .listHead {
+          display: none;
+        }
         .listWrapper {
           padding: 6px 6px 14px 20px;
-          background: var(--sidebar-secondary);
+          background-color: #e6ecff;
+          color: #001555;
           border-radius: 8px;
         }
         a {
           position: relative;
           color: var(--white);
-          font-size: 0.7rem;
+          font-size: 0.6rem;
+          font-weight: 500;
           padding: 5px 10px;
           white-space: nowrap;
-          opacity: 0.6;
+          opacity: 0.8;
           transition: all 0.3s ease;
           &:hover {
             opacity: 1;
           }
         }
-        .blank {
-          opacity: 1;
-          pointer-events: auto;
-          padding: 3px 20px 6px 14px;
-          opacity: 0;
-          pointer-events: none;
-        }
       }
       &.showMenu {
-        background: var(--sidebar-secondary);
+        background-color: #e6ecff;
+        a {
+          color: #001555;
+        }
+        .linkName {
+          color: #001555;
+        }
+        i {
+          color: #001555;
+        }
+
         i.arrow {
           transform: rotate(-180deg);
         }
         .subMenu {
           display: block;
-        }
-        .blank {
-          display: none;
         }
       }
       &:hover {
@@ -255,47 +264,36 @@
       }
     }
   }
-  .profileDetails {
-    position: fixed;
-    bottom: 0;
-    width: 260px;
+
+  .logoDetails {
+    flex-grow: 1;
+    position: relative;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: var(--sidebar-secondary);
-    padding: 12px 0;
-    transition: all 0.5s ease;
-    margin: -5px -10px;
-    .nameJob {
-      overflow: hidden;
-    }
-    .profileContent {
-      display: flex;
-      align-items: center;
-      label {
-        cursor: pointer;
+    justify-content: center;
+    bottom: 0;
+    .logo {
+      position: absolute;
+      bottom: 20px;
+      display: none;
+      img {
+        width: 40px;
+        height: 40px;
       }
     }
-    img {
-      height: 52px;
-      width: 52px;
-      object-fit: cover;
-      border-radius: 16px;
-      margin: 0 14px 0 12px;
-      background: var(--sidebar-secondary);
-      transition: all 0.5s ease;
+    .fullLogo {
+      position: absolute;
+      bottom: 20px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
     }
-    .profileName,
-    .job {
-      color: var(--white);
-      font-size: 0.8rem;
-      font-weight: 500;
-      white-space: nowrap;
-      font-size: 0.6rem;
+    img {
+      width: 75%;
     }
   }
   &.close {
-    width: 78px;
+    width: 70px;
     .logoDetails {
       div {
         &.fullLogo {
@@ -333,7 +331,7 @@
           left: 100%;
           top: -10px;
           margin-top: 0;
-          padding-left: 14px;
+          padding-left: 12px;
           opacity: 0;
           display: block;
           pointer-events: none;
@@ -344,10 +342,20 @@
             display: block;
           }
           .listWrapper {
-            padding: 6px 8px 8px 15px;
+            padding: 1px;
+            background-color: red;
+            background-color: #001555;
+            color: #ffffff;
           }
           li {
+            background-color: transparent;
             &.listHead {
+              display: block;
+              a {
+                font-size: 0.7rem;
+                text-align: center;
+                font-weight: 600;
+              }
               &:hover {
                 background: none;
               }
@@ -364,6 +372,7 @@
           }
         }
         &:hover .subMenu {
+          overflow: hidden;
           top: 0;
           opacity: 1;
           pointer-events: auto;
@@ -371,18 +380,6 @@
         }
       }
     }
-    .profileDetails {
-      background: none;
-      width: 78px;
-      img {
-        padding: 5px;
-      }
-      i,
-      .profileName,
-      .job {
-        display: none;
-      }
-    }
   }
 
   @media (max-width: 420px) {
@@ -391,207 +388,71 @@
     }
   }
 }
-.sidebar2 {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 244px;
-  z-index: 100;
-  transition: all 0.5s ease;
-  background-color: #001555;
-  display: flex;
-  flex-direction: column;
-  .navLinks {
-    .selected {
-      background-color: #e6ecff;
-      .linkName,
-      i {
-        color: #001555;
-      }
-    }
-    overflow: auto;
-    li {
-      position: relative;
-      list-style: none;
-      transition: all 0.4s ease;
-      margin: 5px 10px;
-      border-radius: 8px;
-      font-size: 0.7rem;
-      &:hover {
-        background-color: #e6ecff;
-        a {
-          color: #001555;
-        }
-        i {
-          color: #001555;
-        }
-        .linkName {
-          color: #001555;
-        }
-      }
-      .iconLink {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      i {
-        min-width: 40px;
-        text-align: center;
-        line-height: 40px;
-        font-size: 1rem;
-        cursor: pointer;
-        color: #ffffff;
-        transition: all 0.3s ease;
-      }
-      a {
-        position: relative;
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        .linkName {
-          font-size: 0.8rem;
-          font-weight: 500;
-          color: var(--white);
-          transition: all 0.4s ease;
-        }
-      }
-      .subMenu {
-        display: none;
-        background: transparent;
-        margin-top: -10px;
-        .linkName {
-          display: none;
-        }
-        .listWrapper {
-          padding: 6px 6px 14px 20px;
-          background-color: #e6ecff;
-          color: #001555;
-          border-radius: 8px;
-        }
-        a {
-          position: relative;
-          color: var(--white);
-          font-size: 0.6rem;
-          font-weight: 500;
-          padding: 5px 10px;
-          white-space: nowrap;
-          opacity: 0.8;
-          transition: all 0.3s ease;
-          &:hover {
-            opacity: 1;
-          }
-        }
-        .blank {
-          opacity: 1;
-          pointer-events: auto;
-          padding: 3px 20px 6px 14px;
-          opacity: 0;
-          pointer-events: none;
-        }
-      }
-      &.showMenu {
-        background-color: #e6ecff;
-        a {
-          color: #001555;
-        }
-        .linkName {
-          color: #001555;
-        }
-        i {
-          color: #001555;
-        }
 
-        i.arrow {
-          transform: rotate(-180deg);
-        }
-        .subMenu {
-          display: block;
-        }
-        .blank {
-          display: none;
-        }
-      }
-      &:hover {
-        .subMenu {
-          &.blank {
-            top: 50%;
-            transform: translateY(-50%);
-          }
-        }
-      }
-    }
-  }
-
-  .logoDetails {
-    flex-grow: 1;
-    position: relative;
-    bottom: 0;
-    .fullLogo {
-      position: absolute;
-      bottom: 10px;
-    }
-    img {
-      width: 80%;
-    }
-  }
-
-  @media (max-width: 420px) {
-    .close .navLinks li .subMenu {
-      display: none;
-    }
+.main-home {
+  width: calc(100% - 270px);
+  padding: 20px;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 100%;
+  overflow-x: hidden;
+  transition: width 0.5s ease;
+  &.close {
+    width: calc(100% - 60px);
   }
 }
 
 .topbar {
-  width: 100%;
   height: 60px;
+  width: 100%;
   display: flex;
   align-items: center;
-  background-color: #fff;
-  position: fixed;
-  top: 0;
   z-index: 5;
-  background-color: transparent;
-  backdrop-filter: blur(80px);
-  left: 260px;
-  width: calc(100% - 260px);
+  margin-left: 0;
   transition: all 0.5s ease;
+  background-color: #001555;
+
   a {
     text-decoration: none;
   }
-  &.close {
-    left: 78px;
-    width: calc(100% - 78px);
-  }
   .topbarWrapper {
     height: 100%;
-    padding: 0 0 0 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
   }
-  .topLeft i {
-    color: var(--sidebar-primary);
-    font-size: 2rem;
-
-    cursor: pointer;
-    background-attachment: fixed;
+  .topLeft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    min-width: 244px;
+    i {
+      font-size: 1.5rem;
+      margin-right: 10px;
+      cursor: pointer;
+    }
   }
 
   .topRight {
     display: flex;
     align-items: center;
-  }
+    i {
+      color: #ffffff;
+      cursor: pointer;
+      font-size: 1.3rem;
+      margin-right: 18px;
+    }
+    .topbarIconContainer {
+      font-size: 1.3rem;
+      margin-right: 18px;
 
-  .topbarIconContainer {
-    font-size: 1.3rem;
-    margin-right: 18px;
-    a {
-      i {
-        color: black;
-        color: #ffffff;
+      a {
+        i {
+          margin-right: 5px;
+          color: #ffffff;
+        }
       }
     }
   }

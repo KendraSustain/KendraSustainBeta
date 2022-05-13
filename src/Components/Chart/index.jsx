@@ -14,7 +14,7 @@ export default function BarChart({
 }) {
   useEffect(() => {}, [x_items, y_item])
   const tool = {
-    legend: {},
+    legend: legend,
     toolbox: {
       feature: {
         dataZoom: {
@@ -23,6 +23,7 @@ export default function BarChart({
         saveAsImage: {
           pixelRatio: 2,
         },
+        magicType: { show: true, type: ['stack', 'tiled'] },
       },
     },
     tooltip: {
@@ -65,6 +66,7 @@ export default function BarChart({
           yAxis: {
             type: 'category',
             data: x_items,
+            boundaryGap: false,
           },
           xAxis: {
             type: 'value',
@@ -75,7 +77,8 @@ export default function BarChart({
 
           xAxis: {
             type: 'category',
-            axisLabel: { rotate: 30 },
+            // boundaryGap: false,
+            // axisLabel: { rotate: 30 },
             data: x_items,
           },
           yAxis: {

@@ -23,6 +23,7 @@ export default function CardChart(props) {
     if (e.target.value === 0) {
       setLABELS(props.x_items)
       setData(props.y_item)
+      setShowLoading(false)
       return
     }
     const tempData = []
