@@ -1,4 +1,3 @@
-import { ContactSupportOutlined } from '@material-ui/icons'
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import companyLogo from '../../../Assets/Images/kendra-white-full.png'
@@ -108,8 +107,13 @@ const Sidebar = ({
   }, [close])
 
   const getSelect = (item: MenuItem) => {
-    console.log(location.pathname)
-    return false
+    if (!item.subMenu) {
+      return location.pathname === item.to ? 'selected' : null
+    }
+    if (!location.pathname || !item.subMenu[0]) return
+    const [, sec] = location.pathname.split('/')
+    const [, b] = item.subMenu[0].to.split('/')
+    return b === sec ? 'selected' : null
   }
   return (
     <div className={['sidebar2', close ? 'close' : ''].join(' ')}>
