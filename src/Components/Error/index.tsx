@@ -7,7 +7,7 @@ export default function Error() {
       <div className={style.main}>
         <div className={style.foo}>
           <h1>Error 404</h1>
-          <Link to={'/newdashboard'}>Go To dashboard</Link>
+          <Link to={'/dashboard'}>Go To dashboard</Link>
           <Link
             to={'/login'}
             onClick={() => localStorage.removeItem('authToken')}

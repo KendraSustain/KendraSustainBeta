@@ -1,14 +1,19 @@
 import { useContext, useEffect } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import { Error, Home, Login } from './Pages'
 import MainContext, { Context } from './Context'
 import { Sidebar, Spinner, Topbar } from './Components'
 import { Box } from '@material-ui/core'
 import routes from './Routes'
 const Main = () => {
-  const { loading, getAllScopeData, close, setClose, user } =
+  const { loading, getAllScopeData, close, setClose, user, authToken } =
     useContext(Context)
+  const navigate = useNavigate()
   useEffect(() => {
+    if (authToken.includes('null')) {
+      navigate('/login')
+      return
+    }
     getAllScopeData()
   }, [])
   return (
@@ -78,7 +83,7 @@ const Router = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
-      {/* <Route path="/error" element={<Error />} /> */}
+      <Route path="/error" element={<Error />} />
       <Route path="/*" element={<Main />} />
     </Routes>
   )

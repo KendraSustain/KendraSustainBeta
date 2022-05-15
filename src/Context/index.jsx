@@ -28,8 +28,9 @@ export default function MainContext(props) {
 
   const getUser = async () => {
     setLoading(true)
-
-    if (authToken.includes('null')) navigate('/login')
+    if (authToken.includes('null')) {
+      return
+    }
     let temp = await axiosURL.get('/api/users/me')
     temp = temp.data
     if (temp) {
