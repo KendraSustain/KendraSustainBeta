@@ -404,7 +404,7 @@ export default function AssetDetails() {
             y_item={data.map(
               (i) => Math.round(i['Energy Consumption'] * 100) / 100,
             )}
-            label="Carbon Emission"
+            label="Energy Consumption"
             type="line"
           />
         </Grid>
@@ -424,7 +424,7 @@ export default function AssetDetails() {
             y_item={data.map(
               (i) => Math.round(i['Energy Consumption'] * 100) / 100,
             )}
-            label="Carbon Emission"
+            label="Energy Consumption"
             type="bar"
           />
         </Grid>
