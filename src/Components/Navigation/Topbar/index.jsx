@@ -57,8 +57,14 @@ export default function Topbar({
   close,
   onClose,
   newIcon,
+  user = {
+    firstname: 'User',
+    lastname: 'Lastname',
+    email: 'email',
+    company: 'company',
+    id: 1,
+  },
 }) {
-  const user = JSON.parse(localStorage.getItem('user'))
   return (
     <>
       <div className={['topbar', close ? 'close' : null].join(' ')}>

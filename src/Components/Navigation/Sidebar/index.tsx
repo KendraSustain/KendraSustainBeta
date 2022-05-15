@@ -1,3 +1,4 @@
+import { ContactSupportOutlined } from '@material-ui/icons'
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import companyLogo from '../../../Assets/Images/kendra-white-full.png'
@@ -8,7 +9,7 @@ const menus = [
     menu: 'Dashboard',
     icon: 'bx bxs-dashboard',
     list: 'Dashboard',
-    to: '/newdashboard',
+    to: '/dashboard',
   },
 
   {
@@ -107,13 +108,8 @@ const Sidebar = ({
   }, [close])
 
   const getSelect = (item: MenuItem) => {
-    if (!item.subMenu) {
-      return location.pathname === item.to ? 'selected' : null
-    }
-    if (!location.pathname || !item.subMenu[0]) return
-    const [, sec] = location.pathname.split('/')
-    const [, b] = item.subMenu[0].to.split('/')
-    return b === sec ? 'selected' : null
+    console.log(location.pathname)
+    return false
   }
   return (
     <div className={['sidebar2', close ? 'close' : ''].join(' ')}>

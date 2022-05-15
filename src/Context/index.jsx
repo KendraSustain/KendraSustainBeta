@@ -75,7 +75,6 @@ export default function MainContext(props) {
       setLoading(false)
     } catch (error) {
       navigate('/error')
-      console.log('Hello')
     }
   }
 
@@ -116,6 +115,7 @@ export default function MainContext(props) {
     scopeThreeData,
     loading,
     close,
+    authToken,
   }
 
   return (

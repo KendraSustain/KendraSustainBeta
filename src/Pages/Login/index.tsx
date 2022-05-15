@@ -1,4 +1,4 @@
-import style from './login.module.scss'
+import style from './index.module.scss'
 import leftLogo from './Login1.svg'
 import React, {
   ChangeEvent,
@@ -35,10 +35,10 @@ export default function Login() {
       console.log('Not able to login')
       return
     }
-    navigate('/newdashboard')
+    navigate('/dashboard')
   }
   useEffect(() => {
-    if (localStorage.getItem('authToken')) navigate('/newdashboard')
+    if (localStorage.getItem('authToken')) navigate('/dashboard')
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 

@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, useContext } from 'react'
+import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { MTable } from '../../../Components'
 import { Context } from '../../../Context'

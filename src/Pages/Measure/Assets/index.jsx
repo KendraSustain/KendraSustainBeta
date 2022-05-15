@@ -1,15 +1,13 @@
-import { useEffect } from 'react'
 import * as React from 'react'
-import Grid from '@mui/material/Grid'
 import Scope1Com from './Scope1'
 import Scope2Com from './Scope2'
 import Scope3Com from './Scope3'
 import { Appbar } from '../../../Components'
 import NIUK from './NIUK'
+import { Context } from '../../../Context'
 
 export default function Asset() {
-  useEffect(() => {}, [])
-  const user = JSON.parse(localStorage.getItem('user'))
+  const { user } = React.useContext(Context)
 
   return (
     <div>

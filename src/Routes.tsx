@@ -26,14 +26,13 @@ import {
   Payment,
   AssetScopeOneDetails,
   CloudCarbon,
-  DashboardNew,
+  Dashboard,
 } from './Pages'
 const routes = [
   {
-    route: '/newdashboard',
-    component: <DashboardNew />,
+    route: '/dashboard',
+    component: <Dashboard />,
   },
-
   {
     route: '/ingestion/activeflow',
     component: <ActiveFlow />,
