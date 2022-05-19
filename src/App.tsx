@@ -1,10 +1,9 @@
 import { useContext, useEffect } from 'react'
 import { Route, Routes, useNavigate } from 'react-router-dom'
-import { Error, Home, Login } from './Pages'
-import MainContext, { Context } from './Context'
-import { Sidebar, Spinner, Topbar } from './Components'
-import { Box } from '@material-ui/core'
-import routes from './Routes'
+import { Error, Home, Login } from 'Pages'
+import MainContext, { Context } from 'Context'
+import { Sidebar, Spinner } from 'Components'
+import routes from 'Routes'
 const Main = () => {
   const { loading, getAllScopeData, close, setClose, user, authToken } =
     useContext(Context)
@@ -15,6 +14,7 @@ const Main = () => {
       return
     }
     getAllScopeData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (
     <div

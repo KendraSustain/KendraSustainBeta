@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import { Grid, Box, Button } from '@material-ui/core'
-import { CardChart, TextCards } from '../../Components'
+import React, { useState } from 'react'
+import { Grid, Button } from '@material-ui/core'
+import { CardChart, TextCard } from '../../Components'
 import TempData from '../Measure/Assets/NiukData.json'
-import style from './index.module.css'
 import options from '../Measure/DataMoitor/Options.json'
 export default function NIUK() {
   // const temp = Data.map((item) => item["CO2 Emission"]);
   const Data = { 'On-Road Vehicles': TempData }
 
-  const [select, setSelect] = useState(0)
-  const [subselect, setSubselect] = useState(0)
   const [optionsSelected, setOptionsSelected] = useState(
     options[0].children[0].name,
   )
@@ -20,21 +17,7 @@ export default function NIUK() {
       )
     : []
   temp = temp.flat()
-  useEffect(() => {
-    setSubselect(0)
-    setOptionsSelected(options[select].children[0].name)
-  }, [select])
-  const styless = {
-    display: 'flex',
-    backgroundColor: '#ffffff',
-    height: '210px',
-    borderRadius: '8px',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: 3,
-    cursor: 'pointer',
-  }
+
   const content = [
     {
       title: 'Maximum Carbon Emission',
@@ -113,7 +96,7 @@ export default function NIUK() {
 
       {Data[optionsSelected] ? (
         <>
-          <TextCards cards={content} />
+          <TextCard cards={content} />
           <Grid container spacing={2}>
             {Data[optionsSelected].map((item) => (
               <>

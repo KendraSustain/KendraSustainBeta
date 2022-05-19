@@ -1,0 +1,99 @@
+.mainContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+    padding-bottom: 30px;
+}
+
+.headingContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    width: 50%;
+}
+
+.headingContainer .p1 {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.headingContainer .p2 {
+    margin-top: 7px;
+    font-size: 0.8rem;
+    text-align: center;
+    color: gray;
+}
+
+.container {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.container .brandContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.container .brandContainer img {
+    object-fit: contain;
+    margin: 0;
+    padding: 10px;
+    /* border: 1px solid gray; */
+}
+
+.container .buttonWrapper {
+    margin-top: 80px;
+}
+
+.container .buttonWrapper button {
+    background: #2091F9;
+    color: #fff;
+    border-radius: 35px;
+    border: none;
+    padding: 8px 30px;
+    font-weight: 700;
+    transition: all 0.3s ease-in-out;
+}
+
+.container .buttonWrapper button:hover {
+    background: #116dc4;
+}
+
+
+@media (max-width: 992px) {}
+
+@media (max-width: 576px) {
+    .mainContainer {
+        padding: 0;
+    }
+
+    .headingContainer {
+        width: 70%;
+    }
+
+    .headingContainer .p2 {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .container .brandContainer img {
+        width: 70px;
+    }
+}
+
+@media (max-width: 400px) {}

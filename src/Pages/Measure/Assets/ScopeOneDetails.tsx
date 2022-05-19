@@ -1,7 +1,7 @@
 import { Grid } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import { CardChart, MTable, TextCards } from '../../../Components'
+import { CardChart, MTable, TextCard } from '../../../Components'
 import style from './index.module.css'
 
 const columns = [
@@ -80,7 +80,7 @@ export default function ScopeOneDetails() {
   ]
   return (
     <div>
-      <TextCards cards={content} />
+      <TextCard cards={content} />
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <MTable

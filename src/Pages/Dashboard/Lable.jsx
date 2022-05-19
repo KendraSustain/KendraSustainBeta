@@ -1,7 +1,6 @@
-import { Grid, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
-import { PieChart } from '../../Components'
 import Pie from './Pie'
 
 export default function Lable({

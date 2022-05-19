@@ -1,7 +1,5 @@
-import { Navbar, Organize } from '../../Components'
 import React from 'react'
-import { HomeDetails } from '../../Components'
-import { Features } from '../../Components'
+import { Navbar, HomeDetails, Features, Organize, Footer } from 'Components'
 export default function Home() {
   return (
     <>
@@ -9,6 +7,7 @@ export default function Home() {
       <HomeDetails />
       <Features />
       <Organize />
+      <Footer />
     </>
   )
 }

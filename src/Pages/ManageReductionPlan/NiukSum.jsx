@@ -1,7 +1,7 @@
 import { Grid } from '@material-ui/core'
 import React, { useContext } from 'react'
 import Data from '../Measure/Assets/NiukData.json'
-import { CardChart, TextCards } from '../../Components'
+import { CardChart, TextCard } from '../../Components'
 import style from './index.module.css'
 import Scope2 from './Scope2'
 import { Context } from '../../Context'
@@ -63,7 +63,7 @@ export default function NIUK_sum() {
 
   return (
     <div>
-      {<TextCards cards={content} />}
+      {<TextCard cards={content} />}
 
       <Grid container spacing={1}>
         <Grid item xs={6}>

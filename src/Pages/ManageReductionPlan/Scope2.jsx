@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Grid from '@mui/material/Grid'
-import { CardChart, TextCards } from '../../Components'
+import { CardChart, TextCard } from '../../Components'
 import { Context } from '../../Context'
 
 const CarbonFootprintCalculator = () => {
@@ -69,7 +69,7 @@ const CarbonFootprintCalculator = () => {
           </div>
         ))}
       </div>
-      <TextCards cards={content} grid={4} />
+      <TextCard cards={content} grid={4} />
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid item xs={12}>
           <CardChart

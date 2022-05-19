@@ -392,10 +392,9 @@
 .main-home {
   width: calc(100% - 270px);
   padding: 20px;
-  overflow: hidden;
-  overflow-y: scroll;
+  overflow: scroll;
+
   height: 100%;
-  overflow-x: hidden;
   transition: width 0.5s ease;
   &.close {
     width: calc(100% - 60px);

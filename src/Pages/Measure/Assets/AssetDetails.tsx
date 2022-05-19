@@ -262,7 +262,7 @@
 import { Grid } from '@material-ui/core'
 import React, { useContext, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import { CardChart, MTable, TextCards } from '../../../Components'
+import { CardChart, MTable, TextCard } from '../../../Components'
 import { AssetDataType, AssetType } from '../../../Types'
 import { Context } from '../../../Context'
 
@@ -374,7 +374,7 @@ export default function AssetDetails() {
       >
         {asset.asset_type}({asset.asset_name})
       </p>
-      <TextCards cards={content} />
+      <TextCard cards={content} />
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <MTable

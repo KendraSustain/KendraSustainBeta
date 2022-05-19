@@ -5,10 +5,9 @@ interface Data {
   children?: Data[]
   symbolSize?: number
 }
-const node: any = {
+const node: Data = {
   name: 'Scope',
   symbolSize: 100,
-  symbolRoatate: 90,
   children: [
     {
       name: 'Scope 1',

@@ -1,6 +1,6 @@
-import { Box, Grid, Typography } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import BarChart from '../../Components/Chart'
+import { BarChart } from 'Components'
 import ColorBall from './ColorBall'
 import * as echarts from 'echarts'
 export default function Total({ scope1, scope2, scope3 }) {
