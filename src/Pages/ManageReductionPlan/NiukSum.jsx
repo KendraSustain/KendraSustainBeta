@@ -5,6 +5,7 @@ import { CardChart, TextCard } from '../../Components'
 import style from './index.module.css'
 import Scope2 from './Scope2'
 import { Context } from '../../Context'
+import { Round } from 'Helper'
 export default function NIUK_sum() {
   const { scopeOneData, scopeTwoData } = useContext(Context)
 
@@ -32,31 +33,22 @@ export default function NIUK_sum() {
     {
       title: 'Maximum Carbon Emission for scope 2',
       data:
-        Math.round(
-          100 * Math.max(...scopeTwo.map((i) => i['Carbon Emission'])),
-        ) /
-          100 +
+        Round(Math.max(...scopeTwo.map((i) => i['Carbon Emission']))) +
         ' kgCO2/KwH',
     },
     {
       title: 'Avrage Carbon Emission for scope 2',
       data:
-        Math.round(
-          (100 *
-            (Math.min(...scopeTwo.map((i) => i['Carbon Emission'])) +
-              Math.max(...scopeTwo.map((i) => i['Carbon Emission'])))) /
+        Round(
+          (Math.min(...scopeTwo.map((i) => i['Carbon Emission'])) +
+            Math.max(...scopeTwo.map((i) => i['Carbon Emission']))) /
             2,
-        ) /
-          100 +
-        ' kgCO2/KwH',
+        ) + ' kgCO2/KwH',
     },
     {
       title: 'Mimimum Carbon Emission for scope 2',
       data:
-        Math.round(
-          100 * Math.min(...scopeTwo.map((i) => i['Carbon Emission'])),
-        ) /
-          100 +
+        Round(Math.min(...scopeTwo.map((i) => i['Carbon Emission']))) +
         ' kgCO2/KwH',
     },
   ]

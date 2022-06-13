@@ -17,6 +17,7 @@ export default function MainContext(props) {
   const [scopeTwoAsset, setscopeTwoAsset] = useState([])
   const [scopeThreeData, setScopeThreeData] = useState([])
   const [loading, setLoading] = useState(true)
+  const [headText, setHeadText] = useState(<></>)
 
   const axiosURL = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
@@ -117,6 +118,8 @@ export default function MainContext(props) {
     loading,
     close,
     authToken,
+    headText,
+    setHeadText,
   }
 
   return (

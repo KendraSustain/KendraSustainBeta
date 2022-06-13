@@ -126,7 +126,7 @@
 //     {
 //       field: 'Carbon Emission',
 //       title: 'Carbon Emission (kgCO2/KWh)',
-//       render: (i) => Math.round(i['Carbon Emission'] * 100) / 100,
+//       render: (i) => Math.round(i['Carbon Emission']  / 100,
 //     },
 //   ]
 
@@ -265,7 +265,8 @@ import { useLocation } from 'react-router-dom'
 import { CardChart, MTable, TextCard } from '../../../Components'
 import { AssetDataType, AssetType } from '../../../Types'
 import { Context } from '../../../Context'
-
+import { Round } from 'Helper'
+import { RoundedCorner } from '@material-ui/icons'
 export default function AssetDetails() {
   const location: any = useLocation()
   const { scopeTwoAsset, scopeTwoData } = useContext(Context)
@@ -290,58 +291,39 @@ export default function AssetDetails() {
     {
       title: 'Maximum Energy Consumption',
       data:
-        Math.round(
-          Math.max(...data.map((i) => i['Energy Consumption'])) * 100,
-        ) /
-          100 +
-        'KwH',
+        Round(Math.max(...data.map((i) => i['Energy Consumption']))) + 'KwH',
     },
     {
       title: 'Minimum Energy Consumption',
       data:
-        Math.round(
-          Math.min(...data.map((i) => i['Energy Consumption'])) * 100,
-        ) /
-          100 +
-        'KwH',
+        Round(Math.min(...data.map((i) => i['Energy Consumption']))) + 'KwH',
     },
     {
       title: 'Average Energy Consumption',
       data:
-        Math.round(
+        Round(
           (100 *
             data
               .map((i) => i['Energy Consumption'])
               .reduce((a, b) => a + b, 0)) /
             data.length,
-        ) /
-          100 +
-        'KwH',
+        ) + 'KwH',
     },
     {
       title: 'Maximum Carbon Emission',
-      data:
-        Math.round(Math.max(...data.map((i) => i['Carbon Emission'])) * 100) /
-          100 +
-        'KwH',
+      data: Round(Math.max(...data.map((i) => i['Carbon Emission']))) + 'KwH',
     },
     {
       title: 'Minimum Carbon Emission',
-      data:
-        Math.round(Math.min(...data.map((i) => i['Carbon Emission'])) * 100) /
-          100 +
-        'KwH',
+      data: Round(Math.min(...data.map((i) => i['Carbon Emission']))) + 'KwH',
     },
     {
       title: 'Average Carbon Emission',
       data:
-        Math.round(
-          (100 *
-            data.map((i) => i['Carbon Emission']).reduce((a, b) => a + b, 0)) /
+        Round(
+          data.map((i) => i['Carbon Emission']).reduce((a, b) => a + b, 0) /
             data.length,
-        ) /
-          100 +
-        'KwH',
+        ) + 'KwH',
     },
   ]
   const column = [
@@ -382,9 +364,8 @@ export default function AssetDetails() {
             tableData={data.map((i, j) => ({
               sn: j + 1,
               ...i,
-              'Energy Consumption':
-                Math.round(i['Energy Consumption'] * 100) / 100,
-              'Carbon Emission': Math.round(i['Carbon Emission'] * 100) / 100,
+              'Energy Consumption': Round(i['Energy Consumption']),
+              'Carbon Emission': Round(i['Carbon Emission']),
             }))}
           />
         </Grid>
@@ -401,9 +382,7 @@ export default function AssetDetails() {
         <Grid item xs={12}>
           <CardChart
             x_items={data.map((i) => i['Date'])}
-            y_item={data.map(
-              (i) => Math.round(i['Energy Consumption'] * 100) / 100,
-            )}
+            y_item={data.map((i) => Round(i['Energy Consumption']))}
             label="Energy Consumption"
             type="line"
           />
@@ -421,9 +400,7 @@ export default function AssetDetails() {
         <Grid item xs={12}>
           <CardChart
             x_items={data.map((i) => i['Date'])}
-            y_item={data.map(
-              (i) => Math.round(i['Energy Consumption'] * 100) / 100,
-            )}
+            y_item={data.map((i) => Round(i['Energy Consumption']))}
             label="Energy Consumption"
             type="bar"
           />

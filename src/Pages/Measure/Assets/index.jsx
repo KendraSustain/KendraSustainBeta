@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useContext, useEffect } from 'react'
 import Scope1Com from './Scope1'
 import Scope2Com from './Scope2'
 import Scope3Com from './Scope3'
@@ -7,28 +7,31 @@ import NIUK from './NIUK'
 import { Context } from '../../../Context'
 
 export default function Asset() {
-  const { user } = React.useContext(Context)
-
-  return (
-    <div>
-      <div
+  const { user, setHeadText } = React.useContext(Context)
+  useEffect(() => {
+    setHeadText(
+      <p
         style={{
-          height: '50px',
-          color: 'black',
-          fontSize: '30px',
-          fontWeight: 'bold',
+          fontFamily: 'Manrope',
+          fontWeight: 700,
+          fontSize: 22,
         }}
       >
-        Assets {'>'}{' '}
+        Assets /{' '}
         <span
           style={{
-            fontSize: 15,
-            color: '#9D9D9D',
+            color: '#808080',
+            fontFamily: 'Manrope',
           }}
         >
           Measure
         </span>
-      </div>
+      </p>,
+    )
+  }, [])
+
+  return (
+    <div>
       <Appbar
         components={
           user.id === 66

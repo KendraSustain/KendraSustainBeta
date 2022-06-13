@@ -1,4 +1,4 @@
-import { Grid, Button } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 import { useState, useContext } from 'react'
 import { CardChart, MTable } from '../../../Components'
 import { Context } from '../../../Context'
@@ -24,30 +24,46 @@ export default function NIUK() {
       field: 'Vehicle Reg',
       title: 'Vehicle Reg',
     },
+    // {
+    //   field: 'Litres',
+    //   title: 'Avg. Litres',
+    //   render: (i) => Math.round(i['Litres'] * 100) / 100,
+    // },
+    // {
+    //   field: 'Odometer',
+    //   title: 'Avg. Odometer Reading',
+    //   render: (i) => Math.round(i['Odometer'] * 100) / 100,
+    // },
+    // {
+    //   field: 'DistanceTraveled',
+    //   title: 'Avg. Distance Covered(km)',
+    //   render: (i) => Math.round(i['DistanceTraveled'] * 100) / 100,
+    // },
+    // {
+    //   field: 'Price/Litre',
+    //   title: 'Avg. Price/Litre(£)',
+    //   render: (i) => Math.round(i['Price/Litre'] * 100) / 100,
+    // },
+    // {
+    //   field: 'CO2 Emission',
+    //   title: 'Avg. Carbon Emission(kgCO2/KwH)',
+    //   render: (i) => Math.round(i['CO2 Emission'] * 100) / 100,
+    // },
     {
-      field: 'Litres',
-      title: 'Avg. Litres',
-      render: (i) => Math.round(i['Litres'] * 100) / 100,
+      field: 'Vehicle type',
+      title: 'Vehicle type',
     },
     {
-      field: 'Odometer',
-      title: 'Avg. Odometer Reading',
-      render: (i) => Math.round(i['Odometer'] * 100) / 100,
+      field: 'Fuel type',
+      title: 'Fuel type',
     },
     {
-      field: 'DistanceTraveled',
-      title: 'Avg. Distance Covered(km)',
-      render: (i) => Math.round(i['DistanceTraveled'] * 100) / 100,
+      field: 'Vehicle Reg Driver',
+      title: 'Vehicle Reg Owner',
     },
     {
-      field: 'Price/Litre',
-      title: 'Avg. Price/Litre(£)',
-      render: (i) => Math.round(i['Price/Litre'] * 100) / 100,
-    },
-    {
-      field: 'CO2 Emission',
-      title: 'Avg. Carbon Emission(kgCO2/KwH)',
-      render: (i) => Math.round(i['CO2 Emission'] * 100) / 100,
+      field: 'Location',
+      title: 'Location',
     },
   ]
 
@@ -63,9 +79,11 @@ export default function NIUK() {
           xs={12}
           style={{
             display: 'flex',
-            justifyContent: 'space-between',
+            justifyContent: 'space-around',
             gap: 10,
-            position: 'relative',
+            border: '1px solid rgba(0, 0, 0, 0.05)',
+            borderRadius: 16,
+            padding: 10,
           }}
         >
           {options.map((x, i) => (
@@ -73,40 +91,64 @@ export default function NIUK() {
               key={i}
               style={{
                 flexGrow: 1,
-                borderRadius: 10,
+                // borderRadius: 10,
                 display: 'flex',
                 flexDirection: 'column',
-                alignItems: 'center',
+                // alignItems: 'center',
                 gap: 20,
-                maxHeight: 160,
-                overflowY: 'scroll',
-                paddingBottom: 10,
-                boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+                // maxHeight: 160,
+                // overflowY: 'scroll',
+                // boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+                padding: 10,
               }}
             >
-              <b
+              <p
                 style={{
                   width: '100%',
                   background: 'white',
-                  textAlign: 'center',
+                  // textAlign: 'center',
                   position: 'sticky',
                   top: 0,
                   zIndex: 2,
+                  fontStyle: 'normal',
+                  fontWeight: 800,
+                  fontSize: 15,
                 }}
               >
                 {x.name}
-              </b>
+              </p>
               {x.children.map((y, j) => (
-                <Button
-                  variant={
-                    optionsSelected === y.name ? 'contained' : 'outlined'
-                  }
-                  color={'primary'}
-                  key={j}
-                  onClick={() => setOptionsSelected(y.name)}
+                <div
+                  style={{
+                    display: 'flex',
+                    // justifyContent: 'center',
+                    alignItems: 'center',
+                  }}
                 >
-                  {y.name}
-                </Button>
+                  <div
+                    style={{
+                      height: 20,
+                      width: 20,
+                      backgroundColor:
+                        optionsSelected === y.name ? '#2F3DA9' : '#DADADA',
+                      borderRadius: 4,
+                      cursor: 'pointer',
+                      marginRight: 5,
+                    }}
+                    onClick={() => setOptionsSelected(y.name)}
+                  ></div>
+                  <p
+                    style={{
+                      fontFamily: 'Manrope',
+                      fontStyle: 'normal',
+                      fontWeight: 600,
+                      fontSize: 14,
+                      color: '#828282',
+                    }}
+                  >
+                    {y.name}
+                  </p>
+                </div>
               ))}
             </div>
           ))}
@@ -124,8 +166,9 @@ export default function NIUK() {
               tableData={DataToMeShowed[optionsSelected].map((d, p) => {
                 return {
                   sn: p + 1,
-                  'Vehicle Reg': d['Vehicle Reg'],
-                  ...d.Data[0],
+                  // 'Vehicle Reg': d['Vehicle Reg'],
+                  // ...d.Data[0],
+                  ...d,
                 }
               })}
             />

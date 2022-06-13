@@ -6,11 +6,12 @@ interface PropType {
   x_items?: string[]
   type?: 'line' | 'bar'
   y_item?: number[] | string[]
-  axis: 'x' | 'y'
-  label: string
-  name: string
-  legend: any
-  showLoading: boolean
+  axis?: 'x' | 'y'
+  label?: string
+  name?: string
+  legend?: any
+  showLoading?: boolean
+  extraOptions?: any
 }
 const BarChart: React.FC<PropType> = ({
   series,
@@ -22,6 +23,7 @@ const BarChart: React.FC<PropType> = ({
   name,
   legend,
   showLoading,
+  extraOptions = {},
 }) => {
   useEffect(() => {}, [x_items, y_item])
   const tool = {
@@ -41,7 +43,7 @@ const BarChart: React.FC<PropType> = ({
       trigger: 'axis',
     },
     grid: {
-      bottom: 90,
+      bottom: 30,
     },
     dataZoom: [
       {
@@ -85,7 +87,7 @@ const BarChart: React.FC<PropType> = ({
           xAxis: {
             type: 'category',
             // boundaryGap: false,
-            axisLabel: { rotate: 30 },
+            // axisLabel: { rotate: 30 },
             data: x_items,
           },
           yAxis: {
@@ -94,7 +96,7 @@ const BarChart: React.FC<PropType> = ({
         }
   return (
     <ReactECharts
-      option={options}
+      option={{ ...options, ...extraOptions }}
       notMerge={true}
       lazyUpdate={true}
       showLoading={showLoading}

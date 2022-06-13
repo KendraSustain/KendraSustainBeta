@@ -34,6 +34,7 @@ const Scope2Com = () => {
       // render: (i:any) => Math.round(i['Carbon Emission'] * 100) / 100,
     },
   ]
+  const grapToBeSelected = columns.map((i) => i['field'])
   const style = {
     display: 'flex',
     backgroundColor: '#ffffff',
@@ -52,27 +53,54 @@ const Scope2Com = () => {
       <div
         style={{
           display: 'flex',
-          justifyContent: 'space-around',
+          flexDirection: 'column',
           gap: 20,
           paddingBottom: 10,
         }}
       >
         {asset.map((x, i) => (
           <div
-            key={i}
             style={{
-              border: select === i ? '1px solid black' : '',
-              padding: '10px 0',
-              flexGrow: 1,
-              textAlign: 'center',
-              borderRadius: 10,
-              boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-              cursor: 'pointer',
+              display: 'flex',
+              // justifyContent: 'center',
+              alignItems: 'center',
             }}
-            onClick={() => setSelect(i)}
+            key={i}
           >
-            <h5>{x.asset_type}</h5>
-            <p>{x.asset_name}</p>
+            <div
+              style={{
+                height: 20,
+                width: 20,
+                backgroundColor: select === i ? '#2F3DA9' : '#DADADA',
+                borderRadius: 4,
+                cursor: 'pointer',
+                marginRight: 5,
+              }}
+              onClick={() => setSelect(i)}
+            ></div>
+            <p
+              style={{
+                fontFamily: 'Manrope',
+                fontStyle: 'normal',
+                fontWeight: 800,
+                fontSize: 14,
+                color: '#2F3DA9',
+                marginRight: 5,
+              }}
+            >
+              {x.asset_type}
+            </p>
+            <p
+              style={{
+                fontFamily: 'Manrope',
+                fontStyle: 'normal',
+                fontWeight: 600,
+                fontSize: 14,
+                color: '#828282',
+              }}
+            >
+              {x.asset_name}
+            </p>
           </div>
         ))}
       </div>

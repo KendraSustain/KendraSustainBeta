@@ -3,6 +3,7 @@ import { Grid, Button } from '@material-ui/core'
 import { CardChart, TextCard } from '../../Components'
 import TempData from '../Measure/Assets/NiukData.json'
 import options from '../Measure/DataMoitor/Options.json'
+import { Round } from 'Helper'
 export default function NIUK() {
   // const temp = Data.map((item) => item["CO2 Emission"]);
   const Data = { 'On-Road Vehicles': TempData }
@@ -25,8 +26,7 @@ export default function NIUK() {
     },
     {
       title: 'Total  Carbon Emission',
-      data:
-        Math.round(temp.reduce((a, b) => a + b, 0) * 100) / 100 + ' kgCO2/KWh',
+      data: Round(temp.reduce((a, b) => a + b, 0)) + ' kgCO2/KWh',
     },
     {
       title: 'Minimum Carbon Emission',

@@ -8,28 +8,33 @@ import NIUK from './NIUK'
 import { Context } from '../../../Context'
 
 export default function DataMonitor() {
-  const { user } = useContext(Context)
+  const { user, setHeadText } = useContext(Context)
+  useEffect(() => {
+    setHeadText(
+      <p
+        style={{
+          fontFamily: 'Manrope',
+          fontWeight: 700,
+          fontSize: 22,
+        }}
+      >
+        Assets /{' '}
+        <span
+          style={{
+            color: '#808080',
+            fontFamily: 'Manrope',
+          }}
+        >
+          Data Monitor
+        </span>
+      </p>,
+    )
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <div>
-      <div
-        style={{
-          height: '50px',
-          color: 'black',
-          fontSize: '30px',
-          fontWeight: 'bold',
-        }}
-      >
-        Data Monitor {'>'}{' '}
-        <span
-          style={{
-            fontSize: 15,
-            color: '#9D9D9D',
-          }}
-        >
-          Measure
-        </span>
-      </div>
       <Appbar
         components={
           user.id === 66

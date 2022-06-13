@@ -1,112 +1,112 @@
 export interface Nodes {
-  name: string
+  title: string
   children?: Nodes[]
 }
 
 export const nodes: Nodes[] = [
   {
-    name: 'Scope',
+    title: 'Scope',
     children: [
       {
-        name: 'Scope 1',
+        title: 'Scope 1',
         children: [
           {
-            name: 'Mobile combustion',
+            title: 'Mobile combustion',
             children: [
-              { name: 'On-Road cehicle' },
-              { name: 'Non On-Road cehicle' },
+              { title: 'On-Road cehicle' },
+              { title: 'Non On-Road cehicle' },
             ],
           },
           {
-            name: 'Fugitive Emissions',
+            title: 'Fugitive Emissions',
             children: [
-              { name: 'Refrigerated Transport' },
+              { title: 'Refrigerated Transport' },
               {
-                name: 'Industrial Process Refriferation',
+                title: 'Industrial Process Refriferation',
               },
               {
-                name: 'Cloud Strorage Warehouse',
+                title: 'Cloud Strorage Warehouse',
               },
               {
-                name: 'Mobile AID Conditioning',
+                title: 'Mobile AID Conditioning',
               },
             ],
           },
           {
-            name: 'Stationary Combustion Emission',
+            title: 'Stationary Combustion Emission',
             children: [
               {
-                name: 'Boilers',
+                title: 'Boilers',
               },
               {
-                name: 'Combustion Turbines',
+                title: 'Combustion Turbines',
               },
               {
-                name: 'Process Heaters',
+                title: 'Process Heaters',
               },
               {
-                name: 'Incinerators',
+                title: 'Incinerators',
               },
             ],
           },
         ],
       },
       {
-        name: 'Scope 2',
+        title: 'Scope 2',
 
         children: [
           {
-            name: 'Electricity',
+            title: 'Electricity',
           },
         ],
       },
       {
-        name: 'Scope 3',
+        title: 'Scope 3',
         children: [
           {
-            name: 'Purchased Goods and Services',
+            title: 'Purchased Goods and Services',
           },
           {
-            name: 'Capital Goods',
+            title: 'Capital Goods',
           },
           {
-            name: 'Fuel- and Energy-Related Activities',
+            title: 'Fuel- and Energy-Related Activities',
           },
           {
-            name: 'Upstream Transportation and Distribution',
+            title: 'Upstream Transportation and Distribution',
           },
           {
-            name: 'Waste Generated in Operations',
+            title: 'Waste Generated in Operations',
           },
           {
-            name: 'Business Travel',
+            title: 'Business Travel',
           },
           {
-            name: 'Employee Commuting',
+            title: 'Employee Commuting',
           },
           {
-            name: 'Upstream Leased Assets',
+            title: 'Upstream Leased Assets',
           },
           {
-            name: 'Downstream Transportation and Distribution',
+            title: 'Downstream Transportation and Distribution',
           },
           {
-            name: 'Processing of Sold Products',
+            title: 'Processing of Sold Products',
           },
           {
-            name: 'Use of Sold Products',
+            title: 'Use of Sold Products',
           },
           {
-            name: 'End-of-Life Treatment of Sold Products',
+            title: 'End-of-Life Treatment of Sold Products',
           },
           {
-            name: 'Downstream Leased Assets',
+            title: 'Downstream Leased Assets',
           },
           {
-            name: 'Franchises',
+            title: 'Franchises',
           },
           {
-            name: 'Investments',
+            title: 'Investments',
           },
         ],
       },

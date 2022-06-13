@@ -1,15 +1,36 @@
-import { useEffect } from 'react'
-import * as React from 'react'
+import { useEffect, useContext } from 'react'
 import Grid from '@mui/material/Grid'
-import { Appbar } from '../../Components'
+import { Appbar } from 'Components'
 import Scope1Com from './Scope1'
 import Scope2Com from './Scope2'
 import Scope3Com from './Scope3'
 import Summary from './Summry'
 import NIUK from './NIUK'
 import NIUK_sum from './NiukSum'
+import { Context } from 'Context'
 export default function DataMonitor() {
-  useEffect(() => {}, [])
+  const { setHeadText } = useContext(Context)
+  useEffect(() => {
+    setHeadText(
+      <p
+        style={{
+          fontFamily: 'Manrope',
+          fontWeight: 700,
+          fontSize: 22,
+        }}
+      >
+        Carbon Footprint Calculator /{' '}
+        <span
+          style={{
+            color: '#808080',
+            fontFamily: 'Manrope',
+          }}
+        >
+          Manage Reduction Plan
+        </span>
+      </p>,
+    )
+  }, [])
   const user = { id: 71 }
 
   return (

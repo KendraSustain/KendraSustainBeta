@@ -1,0 +1,61 @@
+.container {
+  background: #001555;
+  border: 1px solid #f8f8f8;
+  border-radius: 16px;
+  height: 100%;
+  padding: 15px;
+  color: #dbdfea;
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    i {
+      font-size: 1.5rem;
+    }
+    h3 {
+      color: #dbdfea;
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 19px;
+    }
+  }
+  .data {
+    padding-top: 20px;
+    hr {
+      margin: 10px 0;
+      color: #8e8e8e;
+    }
+    & > div {
+      display: flex;
+
+      justify-content: space-between;
+      .date {
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 10px;
+        line-height: 11px;
+        color: #a3a3a3;
+        margin-top: 8px;
+      }
+      .value {
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 700;
+        line-height: 14px;
+        color: #e03a45;
+        font-size: 14px;
+      }
+      .name {
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 400;
+        line-height: 14px;
+        color: #dbdfea;
+        font-size: 14px;
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import { Error, Home, Login } from 'Pages'
 import MainContext, { Context } from 'Context'
-import { Sidebar, Spinner } from 'Components'
+import { Sidebar, Spinner, Topbar } from 'Components'
 import routes from 'Routes'
 const Main = () => {
   const { loading, getAllScopeData, close, setClose, user, authToken } =
@@ -59,11 +59,14 @@ const Main = () => {
         {loading ? (
           <Spinner />
         ) : (
-          <Routes>
-            {routes.map((item, pos) => (
-              <Route key={pos} path={item.route} element={item.component} />
-            ))}
-          </Routes>
+          <>
+            <Topbar />
+            <Routes>
+              {routes.map((item, pos) => (
+                <Route key={pos} path={item.route} element={item.component} />
+              ))}
+            </Routes>
+          </>
         )}
       </div>
     </div>
@@ -83,6 +86,7 @@ const Router = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Login />} />
       <Route path="/error" element={<Error />} />
       <Route path="/*" element={<Main />} />
     </Routes>

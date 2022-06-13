@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import ReactECharts from 'echarts-for-react'
 import { nodes } from './Data'
+import Tree from './Tree'
+import { Context } from 'Context'
 
 const options = {
   tooltip: {
@@ -48,9 +50,33 @@ export default function FactorTree() {
 
   // TODO: remove flashing of Echarts component somehow when clicking on Node
   // TODO: performance optimization => only include needed comps
+  const { setHeadText } = useContext(Context)
+  useEffect(() => {
+    setHeadText(
+      <p
+        style={{
+          fontFamily: 'Manrope',
+          fontWeight: 700,
+          fontSize: 22,
+        }}
+      >
+        Emission Factor /{' '}
+        <span
+          style={{
+            color: '#808080',
+            fontFamily: 'Manrope',
+          }}
+        >
+          Data Marketplace
+        </span>
+      </p>,
+    )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <>
-      <ReactECharts
+      {/* <ReactECharts
         style={{
           height: '100vh',
           width: '100%',
@@ -59,7 +85,8 @@ export default function FactorTree() {
           // maxWidth: 1000,
         }}
         option={options}
-      />
+      /> */}
+      <Tree />
     </>
   )
 }

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import Grid from '@mui/material/Grid'
 import { CardChart, TextCard } from '../../Components'
 import { Context } from '../../Context'
-
+import { Round } from 'Helper'
 const CarbonFootprintCalculator = () => {
   const { scopeTwoData, scopeTwoAsset } = useContext(Context)
   const [CE, setCE] = useState([])
@@ -22,22 +22,19 @@ const CarbonFootprintCalculator = () => {
   const content = [
     {
       title: 'Total Carbon Emission',
-      data:
-        Math.round(CE.reduce((a, b) => a + b, 0) * 100) / 100 + ' kgCO2/kwH',
+      data: Round(CE.reduce((a, b) => a + b, 0)) + ' kgCO2/kwH',
     },
     {
       title: 'Max Carbon Emission',
-      data: Math.round(Math.max(...CE) * 100) / 100 + ' kgCO2/kwH',
+      data: Round(Math.max(...CE)) + ' kgCO2/kwH',
     },
     {
       title: 'Min Carbon Emission',
-      data: Math.round(Math.min(...CE) * 100) / 100 + ' kgCO2/kwH',
+      data: Round(Math.min(...CE)) + ' kgCO2/kwH',
     },
     {
       title: 'Avrage Carbon Emission',
-      data:
-        Math.round((CE.reduce((a, b) => a + b, 0) * 100) / CE.length) / 100 +
-        ' kgCO2/kwH',
+      data: Round(CE.reduce((a, b) => a + b, 0) / CE.length) + ' kgCO2/kwH',
     },
   ]
   return (
